@@ -7,6 +7,9 @@
   <meta property="og:title" content="Fog Off — Tell Mosquitoes to Fog Off This Summer"/>
   <meta property="og:description" content="Charlotte's only neighbor-run mosquito fogging service. 28205 only. Text us directly."/>
   <title>Fog Off — Mosquito Fogging · Charlotte 28205</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e2d1e'/%3E%3Ctext x='16' y='22' font-family='Georgia%2Cserif' font-size='18' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231e2d1e'/%3E%3Ctext x='90' y='128' font-family='Georgia%2Cserif' font-size='110' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+  <meta name="theme-color" content="#1e2d1e"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -42,11 +45,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--linen); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    @media(max-width:640px){ body { padding-bottom: 80px; } }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
     /* ── UTILITY ── */
-    .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+    @media(max-width:480px){ .container { padding: 0 16px; } }
     .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
 
     /* ── NAVBAR ── */
@@ -76,16 +81,22 @@
     @media(max-width:700px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .nav-cta { font-size: 10px; padding: 9px 14px; }
       .nav.open .nav-links {
         display: flex; flex-direction: column; position: fixed;
         top: 64px; left: 0; right: 0; background: var(--linen);
         padding: 24px; gap: 20px; border-bottom: 0.5px solid var(--linen-dark);
+        z-index: 998;
       }
+    }
+    @media(max-width:380px) {
+      .nav-logo { font-size: 22px; }
+      .nav-cta { display: none; }
     }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100svh; padding: 120px 24px 80px;
+      min-height: 100svh; padding: clamp(90px, 18vw, 120px) 20px clamp(60px, 10vw, 80px);
       display: flex; align-items: center;
       background: var(--ink);
       position: relative; overflow: hidden;
@@ -111,7 +122,7 @@
     .hero-eyebrow span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-light); }
     .hero-h1 {
       font-family: var(--serif); font-weight: 700;
-      font-size: clamp(72px, 14vw, 156px);
+      font-size: clamp(58px, 14vw, 156px);
       line-height: 0.9; letter-spacing: -0.02em;
       color: var(--linen);
       margin-bottom: 6px;
@@ -147,7 +158,7 @@
       transition: border-color .2s, background .2s;
     }
     .btn-ghost:hover { border-color: rgba(245,240,232,0.5); background: rgba(245,240,232,0.05); }
-    .hero-trust { margin-top: 52px; display: flex; flex-wrap: wrap; gap: 20px; }
+    .hero-trust { margin-top: clamp(32px, 6vw, 52px); display: flex; flex-wrap: wrap; gap: clamp(12px, 3vw, 20px); }
     .trust-pill {
       display: flex; align-items: center; gap: 7px;
       font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
@@ -160,7 +171,7 @@
     .wave svg { display: block; }
 
     /* ── SECTION COMMON ── */
-    section { padding: 96px 0; }
+    section { padding: clamp(56px, 10vw, 96px) 0; }
     .section-eyebrow { margin-bottom: 12px; }
     .section-h2 { font-family: var(--serif); font-size: clamp(40px, 7vw, 80px); font-weight: 700; line-height: 0.95; color: var(--ink); margin-bottom: 20px; }
     .section-h2 em { color: var(--terra); font-style: italic; }
@@ -182,7 +193,7 @@
     .plans .section-h2 em { color: var(--gold); }
     .plans .section-eyebrow .eyebrow { color: var(--gold); }
     .plans .section-body { color: rgba(245,240,232,0.55); }
-    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px; }
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; margin-top: clamp(28px,5vw,48px); }
     .plan {
       background: rgba(245,240,232,0.04); border: 1px solid rgba(245,240,232,0.1);
       border-radius: var(--r-lg); padding: 36px 32px;
@@ -217,7 +228,8 @@
 
     /* ── HOW IT WORKS ── */
     .how { background: var(--cream); }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 1px solid var(--linen-dark); border-radius: var(--r-lg); overflow: hidden; margin-top: 48px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--linen-dark); border-radius: var(--r-lg); overflow: hidden; margin-top: clamp(28px,5vw,48px); }
+    @media(max-width:640px){ .steps { grid-template-columns: 1fr; } }
     .step { padding: 40px 32px; background: var(--cream); border-right: 1px solid var(--linen-dark); position: relative; }
     .step:last-child { border-right: none; }
     @media(max-width:700px) { .step { border-right: none; border-bottom: 1px solid var(--linen-dark); } .step:last-child { border-bottom: none; } }
@@ -234,7 +246,9 @@
       background: var(--ink); border-radius: var(--r-lg);
       aspect-ratio: 4/5; display: flex; flex-direction: column;
       align-items: center; justify-content: center; position: relative; overflow: hidden;
+      min-height: 340px;
     }
+    @media(max-width:768px){ .about-visual { aspect-ratio: 16/9; min-height: 260px; } }
     .about-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(74,124,89,0.2) 0%, transparent 65%); }
     .about-logo { font-family: var(--serif); font-size: 80px; font-weight: 700; color: var(--linen); line-height: 0.9; text-align: center; position: relative; }
     .about-logo em { color: var(--terra); font-style: italic; display: block; }
@@ -246,7 +260,7 @@
     .about-stat-label { font-size: 13px; color: var(--muted-dark); margin-top: 4px; }
 
     /* ── REVIEWS ── */
-    .reviews { background: var(--forest); padding: 72px 0; }
+    .reviews { background: var(--forest); padding: clamp(48px,8vw,72px) 0; }
     .reviews-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-width: none; }
     .reviews-track::-webkit-scrollbar { display: none; }
     .review { min-width: 300px; flex-shrink: 0; scroll-snap-align: start; background: rgba(245,240,232,0.06); border: 1px solid rgba(245,240,232,0.1); border-radius: var(--r-lg); padding: 28px; }
@@ -271,9 +285,9 @@
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-dark); margin-bottom: 6px; }
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px 14px;
+      width: 100%; padding: 13px 14px;
       background: var(--cream); border: 1px solid var(--linen-dark); border-radius: var(--r-sm);
-      color: var(--ink); font-family: var(--sans); font-size: 15px; outline: none;
+      color: var(--ink); font-family: var(--sans); font-size: 16px; outline: none;
       transition: border-color .2s; appearance: none;
     }
     .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(74,90,74,0.35); }
@@ -301,8 +315,8 @@
     .faq-q {
       width: 100%; background: none; border: none;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 22px 0; cursor: pointer;
-      font-family: var(--sans); font-size: 17px; color: var(--ink); text-align: left; gap: 16px;
+      padding: clamp(18px, 3vw, 22px) 0; cursor: pointer; min-height: 56px;
+      font-family: var(--sans); font-size: clamp(15px, 2.5vw, 17px); color: var(--ink); text-align: left; gap: 16px;
     }
     .faq-q:hover { color: var(--terra); }
     .faq-icon { width: 22px; height: 22px; border: 1px solid var(--linen-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; color: var(--sage); transition: transform .25s; }
@@ -328,7 +342,7 @@
     .fade.visible { opacity: 1; transform: translateY(0); }
 
     /* ── MOBILE STICKY ── */
-    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; padding: 12px 16px; background: var(--linen); border-top: 1px solid var(--linen-dark); }
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom)); background: var(--linen); border-top: 1px solid var(--linen-dark); }
     @media(max-width:640px) { .sticky-cta { display: block; } }
     .sticky-cta a { display: block; text-align: center; background: var(--terra); color: var(--white); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px; border-radius: var(--r-sm); }
   </style>
@@ -493,7 +507,8 @@
 <section class="how" id="how">
   <div class="container">
     <div class="section-eyebrow fade"><span class="eyebrow">The process</span></div>
-    <h2 class="section-h2 fade">Three steps.<br><em>Fog-get about it.</em></h2>
+    <h2 class="section-h2 fade">Set it &amp; Fog-get<br><em>about it.</em></h2>
+    <p class="section-body fade" style="margin-top:12px">In three easy steps.</p>
     <div class="steps">
       <div class="step fade">
         <div class="step-num">1</div>
@@ -511,14 +526,9 @@
         <div class="step-num">3</div>
         <div class="step-icon">🌿</div>
         <div class="step-title">Your yard. Fog-free.</div>
-        <p class="step-body">We treat, you get a completion text, your card charges automatically. Keep pets in for 30 min. That's it.</p>
+        <p class="step-body">We treat, you get a completion text, your card charges automatically. Keep pets in for 30 min. Next treatment schedules itself. Fog-get about it.</p>
       </div>
-      <div class="step fade" style="transition-delay:.3s">
-        <div class="step-num">4</div>
-        <div class="step-icon">🔁</div>
-        <div class="step-title">Repeat, automatically</div>
-        <p class="step-body">Your next treatment schedules itself. No reminders needed on your end. Mosquito season handled — fog-get about it.</p>
-      </div>
+
     </div>
   </div>
 </section>
@@ -551,6 +561,7 @@
           <div class="about-stat"><div class="about-stat-val">30m</div><div class="about-stat-label">Pet-safe from application</div></div>
           <div class="about-stat"><div class="about-stat-val">5d</div><div class="about-stat-label">Re-treat guarantee</div></div>
         </div>
+
       </div>
     </div>
   </div>
