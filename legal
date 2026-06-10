@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Privacy — Fog Off</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e2d1e'/%3E%3Ctext x='16' y='23' font-family='Georgia%2Cserif' font-size='19' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1e2d1e; --forest: #2a3d2a; --sage: #4a7c59;
+      --terra: #c4622d; --linen: #f5f0e8; --linen2: #ece5d8;
+      --cream: #faf7f2; --muted: #6a7a6a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--linen); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .nav {
+      background: var(--ink); padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 99;
+    }
+    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--linen); text-decoration: none; }
+    .nav-logo em { color: var(--terra); font-style: italic; }
+    .nav-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: rgba(245,240,232,0.5); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: var(--linen); }
+
+    /* TABS */
+    .tabs { background: var(--forest); display: flex; border-bottom: 1px solid rgba(245,240,232,0.1); }
+    .tab { padding: 14px 28px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.45); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; transition: all .2s; }
+    .tab.active { color: var(--linen); border-bottom-color: var(--terra); }
+
+    /* CONTENT */
+    .content { display: none; max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .content.active { display: block; }
+    .content-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--linen2); }
+    .content-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
+    .content-title { font-family: var(--serif); font-size: clamp(36px,6vw,56px); font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 12px; }
+    .content-meta { font-size: 13px; color: var(--muted); }
+
+    /* SECTIONS */
+    .doc-section { margin-bottom: 36px; }
+    .doc-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--linen2); }
+    .doc-section p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .doc-section ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .doc-section ul li { font-size: 15px; color: var(--muted); line-height: 1.7; padding-left: 16px; position: relative; }
+    .doc-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--sage); }
+    .highlight-box { background: var(--cream); border: 1px solid var(--linen2); border-left: 3px solid var(--terra); border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 16px 0; }
+    .highlight-box p { margin: 0; font-size: 14px; }
+    .highlight-box strong { color: var(--ink); font-weight: 500; }
+
+    /* FOOTER */
+    .doc-footer { background: var(--forest); padding: 32px 24px; text-align: center; margin-top: 48px; }
+    .doc-footer-logo { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--linen); }
+    .doc-footer-logo em { color: var(--terra); font-style: italic; }
+    .doc-footer p { font-size: 13px; color: rgba(245,240,232,0.45); margin-top: 8px; }
+    .doc-footer a { color: var(--terra); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Fog<em>Off</em></a>
+  <a href="/" class="nav-back">← Back to fogoff.net</a>
+</nav>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('tos', this)">Terms of Service</button>
+  <button class="tab" onclick="showTab('privacy', this)">Privacy Policy</button>
+</div>
+
+<!-- TERMS OF SERVICE -->
+<div id="tos" class="content active">
+  <div class="content-header">
+    <div class="content-eyebrow">Legal</div>
+    <h1 class="content-title">Terms of Service</h1>
+    <p class="content-meta">Fog Off LLC · Charlotte, NC 28205 · Last updated: June 2026</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>1. The Service</h2>
+    <p>Fog Off LLC ("Fog Off," "we," "us") provides residential and commercial mosquito fogging and pest control services in the 28205 zip code area of Charlotte, North Carolina. By booking a service or submitting our contact form, you agree to these terms.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. Service Area</h2>
+    <p>Fog Off currently serves zip code 28205 only, including Plaza Midwood, Belmont, Chantilly, Villa Heights, and Commonwealth neighborhoods. We reserve the right to decline service outside our designated service area.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. Scheduling & Appointments</h2>
+    <p>All appointments are confirmed via text message. Your appointment is considered confirmed once you receive a confirmation text from Fog Off and complete payment via the provided Stripe payment link.</p>
+    <p>We reserve the right to reschedule appointments due to weather conditions, equipment issues, or other circumstances beyond our control. We will notify you by text as soon as possible in these cases.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. Cancellation & Refund Policy</h2>
+    <div class="highlight-box">
+      <p><strong>Cancellations must be made at least 24 hours before your scheduled appointment.</strong> Cancellations made less than 24 hours before the scheduled service time are non-refundable. No exceptions.</p>
+    </div>
+    <p>To cancel, simply text us at our service number. Your cancellation is confirmed when you receive a reply from us acknowledging it.</p>
+    <ul>
+      <li>Cancellations 24+ hours before service — full refund or credit applied</li>
+      <li>Cancellations less than 24 hours before service — no refund</li>
+      <li>No-shows (property inaccessible at time of service) — no refund</li>
+      <li>Weather-related reschedules initiated by Fog Off — full credit applied to next visit</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. Subscription Plans</h2>
+    <p>Monthly subscription plans (Starter Fog, Full Send, Fog Boss) are billed automatically each month. You may cancel or pause your subscription at any time by texting us directly. Cancellations take effect at the end of the current billing period.</p>
+    <p>Fog Off reserves the right to adjust pricing with 30 days written notice via text or email.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. Re-Treatment Guarantee</h2>
+    <p>If you are unsatisfied with your treatment, contact us within 5 days of service and we will re-treat your property at no additional charge. This guarantee applies to one re-treatment per service visit.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. Chemical Application & Safety</h2>
+    <p>Fog Off uses EPA-registered products applied by a licensed North Carolina Pesticide Applicator (Category 7B). You agree to follow all safety instructions provided at time of service, including keeping pets and children off treated areas for the recommended period (typically 30 minutes after application).</p>
+    <p>You are responsible for notifying Fog Off of any known allergies, sensitivities, or health conditions prior to service. We are not liable for adverse reactions resulting from failure to disclose this information.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Property Access</h2>
+    <p>You agree to provide Fog Off with reasonable access to your property at the scheduled service time. This includes ensuring gates are unlocked, dogs are secured indoors, and any relevant access codes are provided in advance.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. SMS Communications</h2>
+    <p>By submitting our booking form and checking the SMS consent box, you expressly consent to receive text messages from Fog Off regarding:</p>
+    <ul>
+      <li>Service appointments, confirmations, and reminders</li>
+      <li>Payment links and billing updates</li>
+      <li>Account updates and service notifications</li>
+      <li>Seasonal promotions, special offers, and referral program updates</li>
+      <li>Neighborhood-specific mosquito alerts and service recommendations</li>
+    </ul>
+    <p>Message frequency varies. Message and data rates may apply. Reply STOP at any time to opt out of all messages. Reply HELP for assistance. Opting out of marketing messages will not affect transactional service messages unless you specifically request it.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>10. Referral Program</h2>
+    <p>Fog Off's referral program grants a $20 credit to both the referring customer and the new customer upon the new customer's first paid service. Credits are applied to future treatments and have no cash value. Fog Off reserves the right to modify or discontinue the referral program at any time.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>11. Limitation of Liability</h2>
+    <p>Fog Off carries general liability insurance. Our liability is limited to the cost of the service provided. We are not responsible for indirect, incidental, or consequential damages arising from the use of our services.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>12. Governing Law</h2>
+    <p>These terms are governed by the laws of the State of North Carolina. Any disputes shall be resolved in Mecklenburg County, North Carolina.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>13. Changes to Terms</h2>
+    <p>We may update these terms at any time. Continued use of our services after changes constitutes acceptance of the updated terms. Current terms are always available at fogoff.net/legal.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Contact</h2>
+    <p>Questions about these terms? Text us directly or email <a href="mailto:hello@fogoff.net" style="color:var(--terra)">hello@fogoff.net</a>.</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="privacy" class="content">
+  <div class="content-header">
+    <div class="content-eyebrow">Legal</div>
+    <h1 class="content-title">Privacy Policy</h1>
+    <p class="content-meta">Fog Off LLC · Charlotte, NC 28205 · Last updated: June 2026</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>1. Who We Are</h2>
+    <p>Fog Off LLC ("Fog Off," "we," "us," "our") is a mosquito fogging service operating in Charlotte, NC 28205. We are committed to protecting your personal information and your right to privacy.</p>
+    <p>If you have questions about this policy, contact us at <a href="mailto:hello@fogoff.net" style="color:var(--terra)">hello@fogoff.net</a>.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. Information We Collect</h2>
+    <p>We collect information you provide directly when you submit our booking form:</p>
+    <ul>
+      <li>Name, email address, and phone number</li>
+      <li>Service address and zip code</li>
+      <li>Service plan selection and notes</li>
+      <li>SMS consent status</li>
+      <li>Payment information (processed securely by Stripe — we never store card details)</li>
+    </ul>
+    <p>We also automatically collect:</p>
+    <ul>
+      <li>How you found us (referral source, UTM parameters)</li>
+      <li>The page you visited and URL parameters</li>
+      <li>Device type and browser (via standard web analytics)</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use your information solely to operate and improve our service:</p>
+    <ul>
+      <li>To confirm, schedule, and fulfill your service appointments</li>
+      <li>To send you SMS appointment reminders and service confirmations</li>
+      <li>To process payments via Stripe</li>
+      <li>To respond to your questions and requests</li>
+      <li>To send seasonal service reminders (you can opt out at any time)</li>
+      <li>To understand how customers find us and improve our marketing</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. SMS Communications</h2>
+    <div class="highlight-box">
+      <p><strong>We will never sell or share your phone number with third parties for marketing purposes.</strong> SMS communications are strictly for service-related messages. Reply STOP at any time to opt out. Reply HELP for assistance. Message and data rates may apply.</p>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. How We Share Your Information</h2>
+    <p>We do not sell, trade, or rent your personal information. We share your information only with trusted service providers who help us operate our business:</p>
+    <ul>
+      <li><strong style="color:var(--ink);font-weight:500">Stripe</strong> — payment processing</li>
+      <li><strong style="color:var(--ink);font-weight:500">Twilio</strong> — SMS delivery</li>
+      <li><strong style="color:var(--ink);font-weight:500">Web3Forms</strong> — form processing</li>
+      <li><strong style="color:var(--ink);font-weight:500">Google Workspace</strong> — business email and data storage</li>
+    </ul>
+    <p>Each of these providers has their own privacy policy and is contractually required to protect your data.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. Cookies</h2>
+    <p>Our website uses minimal cookies to understand how visitors use our site. We use:</p>
+    <ul>
+      <li>Analytics cookies to understand page visits and traffic sources (no personally identifiable information)</li>
+      <li>No advertising or third-party tracking cookies are currently in use</li>
+    </ul>
+    <p>You can disable cookies in your browser settings at any time without affecting your ability to book our services.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. Data Retention</h2>
+    <p>We retain your information for as long as you are an active customer and for a reasonable period afterward for legal and business purposes. Form submission data is retained in Web3Forms for up to one year on our Pro plan. You may request deletion of your data at any time by contacting us.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access the personal information we hold about you</li>
+      <li>Request correction of inaccurate information</li>
+      <li>Request deletion of your data</li>
+      <li>Opt out of SMS communications at any time by replying STOP</li>
+      <li>Opt out of email communications by replying to any email with "unsubscribe"</li>
+    </ul>
+    <p>To exercise any of these rights, text or email us at <a href="mailto:hello@fogoff.net" style="color:var(--terra)">hello@fogoff.net</a>.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. Data Security</h2>
+    <p>We take reasonable measures to protect your information. All data is transmitted over HTTPS. Payment processing is handled by Stripe, which is PCI-DSS compliant. We never store credit card numbers.</p>
+    <p>No method of transmission over the internet is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>10. Children's Privacy</h2>
+    <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. We will notify active customers of significant changes via text or email. The current policy is always available at fogoff.net/legal.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>12. Contact Us</h2>
+    <p>Questions about our privacy practices? Reach us at <a href="mailto:hello@fogoff.net" style="color:var(--terra)">hello@fogoff.net</a> or text us directly at our service number.</p>
+    <p style="margin-top:8px">Fog Off LLC · 28205 · Charlotte, NC</p>
+  </div>
+</div>
+
+<div class="doc-footer">
+  <div class="doc-footer-logo">Fog<em>Off</em></div>
+  <p>© 2026 Fog Off LLC · Charlotte, NC · <a href="/">fogoff.net</a></p>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
