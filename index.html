@@ -365,7 +365,57 @@
       border-left: 3px solid var(--sage);
     }
     .fmot-ooa-promise { border-left-color: var(--terra); }
+    .fmot-ref-hed { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
     .fmot-ref-text { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .fmot-ref-how { background: var(--linen); border-radius: 8px; padding: 12px 14px; margin: 12px 0 10px; }
+    .fmot-ref-how-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
+    .fmot-ref-step { font-size: 13px; color: var(--muted-dark); line-height: 1.65; }
+    .fmot-ref-fine { font-size: 12px; color: var(--muted); line-height: 1.6; font-style: italic; }
+
+    /* SMS PREVIEW THREAD */
+    .fmot-sms-preview { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .sms-them {
+      background: var(--cream); border: 1px solid var(--linen2);
+      border-radius: 14px 14px 14px 4px; padding: 10px 14px;
+      font-size: 13px; color: var(--ink); line-height: 1.55; position: relative;
+    }
+    .sms-sender {
+      display: block; font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 4px;
+    }
+
+    /* REFERRAL SHARE */
+    .fmot-ref-sms-wrap { display: flex; flex-direction: column; gap: 8px; margin-top: 0; }
+    .fmot-ref-sms {
+      background: var(--linen); border: 1px solid var(--linen2);
+      border-radius: 10px; padding: 12px 14px;
+      font-size: 13px; color: var(--ink); line-height: 1.65;
+      font-style: italic;
+    }
+    .fmot-copy-btn {
+      background: var(--ink); color: var(--linen);
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; padding: 10px 16px; border-radius: 4px;
+      border: none; cursor: pointer; text-align: center;
+      transition: background .15s; width: 100%;
+    }
+    .fmot-copy-btn:hover { background: var(--forest); }
+    .fmot-copy-btn.copied { background: var(--sage); }
+    .fmot-ref-or {
+      text-align: center; font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    }
+    .fmot-sms-btn {
+      display: block; width: 100%; text-align: center;
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; padding: 13px;
+      border-radius: 4px; border: none; cursor: pointer;
+      transition: background .15s;
+    }
+    .fmot-sms-btn:hover { background: var(--terra2); }
+    .fmot-sms-btn-sm { padding: 9px 16px; font-size: 10px; width: auto; }
     .fmot-ref-sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
     .fmot-ooa-why { }
 
@@ -508,7 +558,7 @@
           <li>Weekly treatments</li>
           <li>Larvicide + barrier combo</li>
           <li>Priority scheduling</li>
-          <li>Referral credits</li>
+          <li>$20 referral credit — you and them</li>
         </ul>
         <a href="#book" class="plan-btn">Get started →</a>
       </div>
@@ -688,21 +738,33 @@
           <div class="form-success" id="formSuccess" style="display:none">
             <div class="fmot-success">
               <div class="fmot-icon">🌿</div>
-              <div class="fmot-eyebrow">You're in.</div>
-              <div class="fmot-headline">Your yard's about to fog off.</div>
-              <p class="fmot-body">We'll text you within 2 hours to confirm your first treatment. In the meantime — go enjoy that backyard. The mosquitoes' days are numbered.</p>
+              <div class="fmot-eyebrow">Fog Yeah!</div>
+              <div class="fmot-headline">We got it.<br>Mosquitoes didn't.</div>
+              <p class="fmot-body">Check your texts — we'll confirm your first treatment within 2 hours. Everything from here happens over text. No apps. No calls. No portals.</p>
               <div class="fmot-divider"></div>
               <div class="fmot-what-next">
-                <div class="fmot-next-label">What happens next</div>
-                <div class="fmot-next-item"><span class="fmot-next-num">1</span> We text you within 2 hours to confirm your slot</div>
-                <div class="fmot-next-item"><span class="fmot-next-num">2</span> We send a payment link — no card on file until you confirm</div>
-                <div class="fmot-next-item"><span class="fmot-next-num">3</span> You get a 24h reminder text the day before</div>
-                <div class="fmot-next-item"><span class="fmot-next-num">4</span> We show up, fog off, text you when it's done</div>
+                <div class="fmot-next-label">Everything over text — here's the thread</div>
+                <div class="fmot-sms-preview">
+                  <div class="sms-them"><span class="sms-sender">Fog Off</span>Hey [Name]! Fog Yeah — we got your request. Locking you in for [date] between [time]. Here's your payment link → [link] 🌿</div>
+                  <div class="sms-them"><span class="sms-sender">Fog Off · 24h before</span>Tomorrow's the day! Your treatment is between [time]. Got dogs? Keep them in for 30 min after. Any gate codes or notes? Just reply here.</div>
+                  <div class="sms-them"><span class="sms-sender">Fog Off · day of</span>We're 15 min out. Your yard is about to be a no-fly zone. 🌿</div>
+                  <div class="sms-them"><span class="sms-sender">Fog Off · done</span>Your yard is fog-free ✅ Pets back out in 30 min. Found standing water near [spot] and dropped a dunk in it. See you in two weeks — fog-get about it.</div>
+                </div>
               </div>
               <div class="fmot-divider"></div>
               <div class="fmot-referral">
-                <div class="fmot-ref-text">Know someone on your street who's suffering?</div>
-                <div class="fmot-ref-sub">Spread the fog, not the bite. Refer a neighbor and get $20 off your next treatment. Just tell them to mention your name.</div>
+                <div class="fmot-ref-hed">Show your fogging care. 🌿</div>
+                <div class="fmot-ref-sub">Spread the love to those you care about in 28205 — and you both save $20 on your next treatment.</div>
+                <div class="fmot-ref-how">
+                  <div class="fmot-ref-how-label">Forward this text to a neighbor right now</div>
+                  <div class="fmot-ref-sms-wrap">
+                    <div class="fmot-ref-sms">"Hey! I just signed up for Fog Off — mosquito fogging for 28205 only. Eco-safe, same person every visit, you just text them. You and I both save $20 when you book → fogoff.net 🌿"</div>
+                    <button class="fmot-copy-btn" onclick="copyRef()">Copy text →</button>
+                  </div>
+                  <div class="fmot-ref-or">or</div>
+                  <a class="fmot-sms-btn" href="sms:?&body=Hey! I just signed up for Fog Off — mosquito fogging for 28205 only. Eco-safe, same person every visit, you just text them. You and I both save $20 when you book → fogoff.net 🌿" id="smsShareBtn">Open in Messages →</a>
+                </div>
+                <div class="fmot-ref-fine">When they book and mention your name, $20 comes off both of your next treatments. No codes. No apps. Just text.</div>
               </div>
             </div>
           </div>
@@ -711,24 +773,35 @@
           <div class="form-ooa" id="formOOA" style="display:none">
             <div class="fmot-ooa">
               <div class="fmot-icon">📍</div>
-              <div class="fmot-eyebrow">Not quite.</div>
-              <div class="fmot-headline">We don't serve your zip yet.</div>
-              <p class="fmot-body">Fog Off is 28205 only right now — Plaza Midwood, Belmont, Chantilly, Villa Heights, and Commonwealth. That's not forever. That's the plan.</p>
+              <div class="fmot-eyebrow">Not yet — but soon.</div>
+              <div class="fmot-headline">You're just outside our fog zone.</div>
+              <p class="fmot-body">We're 28205 only right now — Plaza Midwood, Belmont, Chantilly, Villa Heights, Commonwealth. Not because we don't want your business. Because we refuse to do this badly.</p>
               <div class="fmot-divider"></div>
               <div class="fmot-ooa-why">
-                <div class="fmot-next-label">Why only 28205?</div>
-                <p style="font-size:14px;color:var(--muted);line-height:1.65;margin:0">We'd rather be exceptional in one neighborhood than mediocre across twenty zip codes. The nationals cover all of Charlotte. Nobody actually knows your yard. We do things differently.</p>
+                <div class="fmot-next-label">The honest reason</div>
+                <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0">Every national chain covers 20 zip codes. Nobody actually knows your yard. We'd rather be the best mosquito service one neighborhood has ever seen than be just okay across Charlotte. When we come to your zip — and we will — we'll do it right.</p>
               </div>
               <div class="fmot-divider"></div>
               <div class="fmot-ooa-next">
-                <div class="fmot-next-label">Two things you can do right now</div>
-                <div class="fmot-next-item"><span class="fmot-next-num">1</span> <span>Join the waitlist — we're expanding to 28207 (Myers Park) next season. <a href="mailto:hello@fogoff.net" style="color:var(--terra)">Email us your address →</a></span></div>
-                <div class="fmot-next-item"><span class="fmot-next-num">2</span> <span>Know someone in 28205? Tell them about us. <em style="color:var(--muted)">Spread the fog, not the bite.</em></span></div>
+                <div class="fmot-next-label">Two things — takes 30 seconds</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">1</span>
+                  <span><strong style="font-weight:500;color:var(--ink)">Text us to join the waitlist.</strong> We're expanding to 28207 (Myers Park) next season. One text puts you first in line.<br>
+                  <a class="fmot-sms-btn fmot-sms-btn-sm" href="sms:(704)000-0000&body=Hey! I'm outside 28205 but want to be on the Fog Off waitlist. My address is:" style="margin-top:8px;display:inline-block">Text us your address →</a></span>
+                </div>
+                <div class="fmot-next-item" style="margin-top:12px"><span class="fmot-next-num">2</span>
+                  <span><strong style="font-weight:500;color:var(--ink)">Show your fogging care.</strong> Know someone in 28205? Send them this — they save $20 on their first treatment, and you get a $20 credit waiting when we expand to your zip.<br>
+                  <div class="fmot-ref-sms-wrap" style="margin-top:10px">
+                    <div class="fmot-ref-sms">"Hey! Check out Fog Off — mosquito fogging for 28205. Eco-safe, same neighbor every visit, all over text. You save $20 when you mention my name → fogoff.net 🌿"</div>
+                    <button class="fmot-copy-btn" onclick="copyOOARef()">Copy text →</button>
+                  </div>
+                  <a class="fmot-sms-btn" href="sms:?&body=Hey! Check out Fog Off — mosquito fogging for 28205. Eco-safe, same neighbor every visit, all over text. You save $20 when you mention my name → fogoff.net 🌿" style="margin-top:8px;display:block">Open in Messages →</a>
+                  </span>
+                </div>
               </div>
               <div class="fmot-divider"></div>
               <div class="fmot-ooa-promise">
-                <div class="fmot-ref-text">We'll be in your neighborhood.</div>
-                <div class="fmot-ref-sub">28207 (Myers Park) is next. Then 28211 (Cotswold). We expand when we can do it right — not before. You'll be the first to know.</div>
+                <div class="fmot-ref-text">We're coming to your neighborhood. 🌿</div>
+                <div class="fmot-ref-sub">28207 (Myers Park) is next — we're targeting next season. Then 28211 (Cotswold). We build the waitlist first, then we expand. You won't miss it.</div>
               </div>
             </div>
           </div>
@@ -857,7 +930,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY',
+          access_key: '5281736b-9f0f-49fe-8c70-d6d78c0cc8a0',
           from_name: 'Fog Off · fogoff.net',
           subject: `New Fog Off booking — ${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
           name: `${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
@@ -881,6 +954,36 @@
       document.getElementById('formSuccess').style.display = 'block';
     }
   });
+
+  // Copy referral text to clipboard
+  function copyRef() {
+    const text = "Hey! I just signed up for Fog Off — mosquito fogging for 28205 only. Eco-safe, same person every visit, you just text them. You and I both save $20 when you book → fogoff.net 🌿";
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.fmot-copy-btn');
+      if(btn){ btn.textContent = 'Copied! ✓'; btn.classList.add('copied'); setTimeout(()=>{ btn.textContent = 'Copy text →'; btn.classList.remove('copied'); }, 2500); }
+    });
+  }
+
+  function copyOOARef() {
+    const text = "Hey! Check out Fog Off — mosquito fogging for 28205. Eco-safe, same neighbor every visit, all over text. You save $20 when you mention my name → fogoff.net 🌿";
+    navigator.clipboard.writeText(text).then(() => {
+      const btns = document.querySelectorAll('.fmot-copy-btn');
+      btns.forEach(btn => { btn.textContent = 'Copied! ✓'; btn.classList.add('copied'); setTimeout(()=>{ btn.textContent = 'Copy text →'; btn.classList.remove('copied'); }, 2500); });
+    });
+  }
+
+  // On mobile, hide "Copy text" and show only "Open in Messages"
+  // On desktop, hide "Open in Messages" and show only "Copy text"
+  function detectMobile() {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    document.querySelectorAll('.fmot-ref-or').forEach(el => el.style.display = isMobile ? 'none' : 'block');
+    if(isMobile) {
+      document.querySelectorAll('.fmot-copy-btn').forEach(el => el.style.display = 'none');
+    } else {
+      document.querySelectorAll('.fmot-sms-btn:not(.fmot-sms-btn-sm)').forEach(el => el.style.display = 'none');
+    }
+  }
+  detectMobile();
 
   // Nav scroll
   const nav = document.querySelector('.nav');
