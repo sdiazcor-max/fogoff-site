@@ -734,6 +734,13 @@
             </select>
           </div>
           <div class="fg"><label for="nt">Anything we should know? (optional)</label><textarea id="nt" name="notes" placeholder="Dogs, garden, near Briar Creek..."></textarea></div>
+          <input type="hidden" id="utm_source" name="utm_source"/>
+<input type="hidden" id="utm_medium" name="utm_medium"/>
+<input type="hidden" id="utm_campaign" name="utm_campaign"/>
+<input type="hidden" id="utm_content" name="utm_content"/>
+<input type="hidden" id="utm_term" name="utm_term"/>
+<input type="hidden" id="referrer" name="referrer"/>
+<input type="hidden" id="landing_page" name="landing_page"/>
           <button type="submit" class="form-cta">Fog off my yard →</button>
           <p class="form-note">No payment now. We confirm by text then send a payment link.</p>
           <!-- SUCCESS STATE -->
@@ -884,7 +891,25 @@
   // Fade on scroll
   const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-
+(function() {
+  const p = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+    const el = document.getElementById(k);
+    if(el) el.value = p.get(k) || '';
+  });
+  const ref = document.getElementById('referrer');
+  if(ref) {
+    const r = document.referrer;
+    if(r.includes('nextdoor')) ref.value = 'nextdoor';
+    else if(r.includes('facebook')) ref.value = 'facebook';
+    else if(r.includes('instagram')) ref.value = 'instagram';
+    else if(r.includes('google')) ref.value = 'google';
+    else if(r) ref.value = r;
+    else ref.value = 'direct';
+  }
+  const lp = document.getElementById('landing_page');
+  if(lp) lp.value = window.location.href;
+})();
   // FAQ
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
