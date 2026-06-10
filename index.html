@@ -327,7 +327,14 @@
       font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
       padding: 15px; border-radius: 4px;
     }
-
+.consent-wrap { margin: 14px 0 10px; }
+.consent-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; position: relative; }
+.consent-label input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.consent-check { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; border: 1.5px solid var(--linen2); border-radius: 3px; background: var(--cream); transition: all .15s; display: flex; align-items: center; justify-content: center; }
+.consent-label input:checked ~ .consent-check { background: var(--sage); border-color: var(--sage); }
+.consent-label input:checked ~ .consent-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; line-height: 1; }
+.consent-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.consent-fine { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.6; padding-left: 28px; opacity: 0.8; }
     /* ── FMOT STATES ── */
     .fmot-success, .fmot-ooa {
       padding: 4px 0 8px;
@@ -741,6 +748,14 @@
 <input type="hidden" id="utm_term" name="utm_term"/>
 <input type="hidden" id="referrer" name="referrer"/>
 <input type="hidden" id="landing_page" name="landing_page"/>
+          <div class="consent-wrap">
+  <label class="consent-label">
+    <input type="checkbox" id="sms_consent" name="sms_consent" value="yes" required/>
+    <span class="consent-check"></span>
+    <span class="consent-text">I agree to receive text messages from Fog Off about my service, appointment reminders, and account updates. Message frequency varies. Message &amp; data rates may apply. Reply STOP to opt out at any time.</span>
+  </label>
+  <div class="consent-fine">By submitting this form you also agree to our <a href="/legal" style="color:var(--terra)">Terms of Service</a> and <a href="/legal" style="color:var(--terra)">Privacy Policy</a>. We will never share or sell your information.</div>
+</div>
           <button type="submit" class="form-cta">Fog off my yard →</button>
           <p class="form-note">No payment now. We confirm by text then send a payment link.</p>
           <!-- SUCCESS STATE -->
@@ -938,6 +953,14 @@
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('.form-cta');
+    const consent = document.getElementById('sms_consent');
+if (!consent.checked) {
+  consent.closest('.consent-label').querySelector('.consent-check').style.borderColor = 'var(--terra)';
+  consent.closest('.consent-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  btn.textContent = 'Please agree to SMS communications →';
+  setTimeout(() => { btn.textContent = 'Fog off my yard →'; }, 2500);
+  return;
+}
     const addr = document.getElementById('addr').value.trim();
     const zip = getZipFromAddress(addr);
 
