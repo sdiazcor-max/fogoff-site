@@ -719,6 +719,7 @@
             <div class="fg"><label for="ln">Last name</label><input type="text" id="ln" name="lname" placeholder="Smith" required autocomplete="family-name"/></div>
           </div>
           <div class="fg"><label for="ph">Phone (we'll text you)</label><input type="tel" id="ph" name="phone" placeholder="(704) 555-0100" required autocomplete="tel"/></div>
+          <div class="fg"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="ashley@gmail.com" required autocomplete="email"/></div>
           <div class="fg"><label for="addr">Address in 28205</label><input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="street-address"/></div>
           <div class="fg">
             <label for="pl">Plan</label>
@@ -934,6 +935,7 @@
           from_name: 'Fog Off · fogoff.net',
           subject: `New Fog Off booking — ${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
           name: `${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
+          email: document.getElementById('em').value,
           phone: document.getElementById('ph').value,
           address: addr,
           plan: document.getElementById('pl').value,
