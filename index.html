@@ -3,433 +3,456 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Charlotte's only zip-bound, neighbor-run mosquito fogging service. Serving Plaza Midwood & 28205. Same person every visit. Eco-safe formula. Text us directly."/>
-  <meta property="og:title" content="Fog Off — Tell Mosquitoes to Fog Off This Summer"/>
-  <meta property="og:description" content="Charlotte's only neighbor-run mosquito fogging service. 28205 only. Text us directly."/>
-  <title>Fog Off — Mosquito Fogging · Charlotte 28205</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e2d1e'/%3E%3Ctext x='16' y='22' font-family='Georgia%2Cserif' font-size='18' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231e2d1e'/%3E%3Ctext x='90' y='128' font-family='Georgia%2Cserif' font-size='110' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+  <meta name="description" content="Mosquito fogging for 28205. Eco-safe. Text us directly. No call centers."/>
+  <meta property="og:title" content="Fog Off — Tell Mosquitoes to Fog Off"/>
+  <meta property="og:description" content="28205 only. Same neighbor every visit. Text us directly."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://fogoff.net"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <meta name="theme-color" content="#1e2d1e"/>
+  <title>Fog Off · Charlotte 28205</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e2d1e'/%3E%3Ctext x='16' y='23' font-family='Georgia%2Cserif' font-size='19' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231e2d1e'/%3E%3Ctext x='90' y='130' font-family='Georgia%2Cserif' font-size='115' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet"/>
   <style>
-    /* ── TOKENS ── */
     :root {
-      --ink:        #1e2d1e;
-      --forest:     #2a3d2a;
-      --sage:       #4a7c59;
-      --sage-light: #6a9e78;
-      --gold:       #c8a84b;
-      --gold-dim:   #a08838;
-      --terra:      #c4622d;
-      --terra-dim:  #a34f22;
-      --linen:      #f5f0e8;
-      --linen-dark: #ece5d8;
-      --cream:      #faf7f2;
-      --bark:       #8a6e4a;
-      --muted:      #7a8a7a;
-      --muted-dark: #4a5a4a;
-      --white:      #ffffff;
-
+      --ink:    #1e2d1e;
+      --forest: #2a3d2a;
+      --sage:   #4a7c59;
+      --gold:   #c8a84b;
+      --terra:  #c4622d;
+      --terra2: #a34f22;
+      --linen:  #f5f0e8;
+      --linen2: #ece5d8;
+      --cream:  #faf7f2;
+      --muted:  #6a7a6a;
       --serif:  'Playfair Display', Georgia, serif;
       --mono:   'Space Mono', monospace;
       --sans:   'DM Sans', system-ui, sans-serif;
-
-      --r-sm: 4px;
-      --r-md: 10px;
-      --r-lg: 18px;
     }
-
-    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body { font-family: var(--sans); background: var(--linen); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    @media(max-width:640px){ body { padding-bottom: 80px; } }
-    img { display: block; max-width: 100%; }
+    @media(max-width:640px){ body { padding-bottom: 76px; } }
     a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-    /* ── UTILITY ── */
-    .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 20px; }
-    @media(max-width:480px){ .container { padding: 0 16px; } }
-    .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
-
-    /* ── NAVBAR ── */
+    /* ── NAV ── */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      height: 64px; padding: 0 24px;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 99;
+      height: 58px; padding: 0 20px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(245,240,232,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid rgba(74,124,89,0.15);
-      transition: background .3s;
+      background: rgba(245,240,232,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linen2);
     }
-    .nav-logo { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
-    .nav-logo em { color: var(--terra); font-style: normal; }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-dark); transition: color .2s; }
-    .nav-links a:hover { color: var(--terra); }
-    .nav-cta {
-      background: var(--terra); color: var(--white);
-      font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
-      padding: 10px 20px; border-radius: var(--r-sm); border: none; cursor: pointer;
-      transition: background .2s, transform .15s;
-    }
-    .nav-cta:hover { background: var(--terra-dim); transform: translateY(-1px); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: all .25s; }
-    @media(max-width:700px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-cta { font-size: 10px; padding: 9px 14px; }
-      .nav.open .nav-links {
-        display: flex; flex-direction: column; position: fixed;
-        top: 64px; left: 0; right: 0; background: var(--linen);
-        padding: 24px; gap: 20px; border-bottom: 0.5px solid var(--linen-dark);
-        z-index: 998;
-      }
-    }
-    @media(max-width:380px) {
-      .nav-logo { font-size: 22px; }
-      .nav-cta { display: none; }
+    .nav-logo { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--ink); }
+    .nav-logo em { color: var(--terra); font-style: italic; }
+    .nav-book {
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      padding: 9px 18px; border-radius: 4px; border: none; cursor: pointer;
+      letter-spacing: 0.05em; white-space: nowrap;
     }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100svh; padding: clamp(90px, 18vw, 120px) 20px clamp(60px, 10vw, 80px);
-      display: flex; align-items: center;
-      background: var(--ink);
+      background: var(--ink); min-height: 100svh;
+      padding: 100px 24px 60px;
+      display: flex; flex-direction: column; justify-content: center;
       position: relative; overflow: hidden;
     }
-    .hero-texture {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        radial-gradient(ellipse at 60% 40%, rgba(74,124,89,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 80%, rgba(196,98,45,0.08) 0%, transparent 50%);
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 55% 40%, rgba(74,124,89,0.2) 0%, transparent 65%);
     }
-    .hero-grain {
-      position: absolute; inset: 0; pointer-events: none; opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
+    .hero-zip {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+      color: rgba(106,158,120,0.8); text-transform: uppercase;
+      margin-bottom: 20px; position: relative;
+      display: flex; align-items: center; gap: 8px;
     }
-    .hero-content { position: relative; max-width: 780px; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-bottom: 28px;
-    }
-    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); animation: blink 2s ease-in-out infinite; }
-    @keyframes blink { 0%,100%{opacity:1}50%{opacity:.3} }
-    .hero-eyebrow span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-light); }
+    .hero-zip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #6a9e78; display: block; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
     .hero-h1 {
       font-family: var(--serif); font-weight: 700;
-      font-size: clamp(58px, 14vw, 156px);
-      line-height: 0.9; letter-spacing: -0.02em;
-      color: var(--linen);
-      margin-bottom: 6px;
+      font-size: clamp(64px, 16vw, 148px);
+      line-height: 0.88; letter-spacing: -0.02em;
+      color: var(--linen); position: relative;
+      margin-bottom: 4px;
     }
-    .hero-h1 .swoop { position: relative; display: inline-block; color: var(--terra); }
-    .hero-h1 .swoop::after {
-      content: '';
-      position: absolute; bottom: -6px; left: 0; right: 0; height: 3px;
-      background: var(--gold);
-      border-radius: 2px;
-      transform: rotate(-1deg);
+    .hero-h1 em {
+      color: var(--terra); font-style: italic; display: block;
+      position: relative;
     }
-    .hero-tagline {
+    .hero-h1 em::after {
+      content: ''; position: absolute;
+      bottom: -4px; left: 0; width: 60%; height: 3px;
+      background: var(--gold); border-radius: 2px; transform: rotate(-0.8deg);
+    }
+    .hero-line2 {
       font-family: var(--serif); font-style: italic;
-      font-size: clamp(17px, 3vw, 28px); color: var(--gold);
-      margin: 20px 0 24px; letter-spacing: 0.01em;
+      font-size: clamp(16px, 4vw, 26px);
+      color: var(--gold); margin: 22px 0 28px;
+      line-height: 1.3;
     }
-    .hero-sub { font-size: 16px; color: rgba(245,240,232,0.65); line-height: 1.75; max-width: 500px; margin-bottom: 40px; }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--terra); color: var(--white);
-      font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
-      padding: 15px 28px; border-radius: var(--r-sm); border: none; cursor: pointer;
-      transition: background .2s, transform .15s;
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+    .btn-hero {
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 13px; font-weight: 700;
+      padding: 16px 28px; border-radius: 4px; border: none; cursor: pointer;
+      letter-spacing: 0.04em; transition: background .15s;
+      display: inline-flex; align-items: center; gap: 6px;
     }
-    .btn-primary:hover { background: var(--terra-dim); transform: translateY(-2px); }
+    .btn-hero:hover { background: var(--terra2); }
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
       background: transparent; color: var(--linen);
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em;
-      padding: 15px 28px; border-radius: var(--r-sm); border: 1px solid rgba(245,240,232,0.25); cursor: pointer;
-      transition: border-color .2s, background .2s;
+      font-family: var(--mono); font-size: 13px;
+      padding: 16px 24px; border-radius: 4px;
+      border: 1px solid rgba(245,240,232,0.2); cursor: pointer;
+      letter-spacing: 0.04em; transition: border-color .15s;
     }
-    .btn-ghost:hover { border-color: rgba(245,240,232,0.5); background: rgba(245,240,232,0.05); }
-    .hero-trust { margin-top: clamp(32px, 6vw, 52px); display: flex; flex-wrap: wrap; gap: clamp(12px, 3vw, 20px); }
-    .trust-pill {
-      display: flex; align-items: center; gap: 7px;
-      font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(245,240,232,0.45);
+    .btn-ghost:hover { border-color: rgba(245,240,232,0.5); }
+    .hero-proof {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      padding-top: 28px; border-top: 1px solid rgba(245,240,232,0.08);
     }
-    .trust-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--sage-light); flex-shrink: 0; }
+    .proof-item { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.38); display: flex; align-items: center; gap: 6px; }
+    .proof-item::before { content: '·'; color: #4a7c59; font-size: 16px; }
 
-    /* ── WAVE DIVIDER ── */
-    .wave { width: 100%; overflow: hidden; line-height: 0; display: block; }
+    /* ── WAVE ── */
+    .wave { display: block; overflow: hidden; line-height: 0; }
     .wave svg { display: block; }
 
-    /* ── SECTION COMMON ── */
-    section { padding: clamp(56px, 10vw, 96px) 0; }
-    .section-eyebrow { margin-bottom: 12px; }
-    .section-h2 { font-family: var(--serif); font-size: clamp(40px, 7vw, 80px); font-weight: 700; line-height: 0.95; color: var(--ink); margin-bottom: 20px; }
-    .section-h2 em { color: var(--terra); font-style: italic; }
-    .section-body { font-size: 17px; color: var(--muted-dark); line-height: 1.75; max-width: 520px; }
+    /* ── PUNCHY STRIP ── */
+    .punchy {
+      background: var(--terra); padding: 20px 24px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .punchy-text { font-family: var(--serif); font-style: italic; font-size: clamp(17px,3vw,22px); color: #fff; text-align: center; }
+    .punchy-cta {
+      background: #fff; color: var(--terra);
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      padding: 10px 20px; border-radius: 4px; border: none; cursor: pointer;
+      letter-spacing: 0.05em; white-space: nowrap;
+    }
 
-    /* ── WHY FOG OFF ── */
+    /* ── SECTION COMMON ── */
+    .section { padding: clamp(52px,9vw,88px) 0; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    @media(max-width:400px){ .container { padding: 0 16px; } }
+    .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; display: block; }
+    .big-h { font-family: var(--serif); font-weight: 700; font-size: clamp(36px,7vw,72px); line-height: 0.95; color: var(--ink); margin-bottom: 16px; }
+    .big-h em { color: var(--terra); font-style: italic; }
+    .big-h-light { color: var(--linen); }
+    .big-h-light em { color: var(--gold); }
+
+    /* ── WHY — PILL LIST ── */
     .why { background: var(--linen); }
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--linen-dark); border: 1px solid var(--linen-dark); border-radius: var(--r-lg); overflow: hidden; margin-top: 48px; }
-    .why-card { background: var(--linen); padding: 36px 32px; transition: background .2s; }
-    .why-card:hover { background: var(--cream); }
-    .why-num { font-family: var(--serif); font-size: 52px; font-weight: 400; color: rgba(74,124,89,0.15); line-height: 1; margin-bottom: 14px; }
-    .why-title { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
-    .why-body { font-size: 14px; color: var(--muted-dark); line-height: 1.75; }
-    .why-tag { display: inline-block; margin-top: 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); padding: 4px 10px; border: 1px solid rgba(74,124,89,0.25); border-radius: 20px; }
+    .why-pills { display: flex; flex-direction: column; gap: 2px; margin-top: 32px; }
+    .why-pill {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--cream); border: 1px solid var(--linen2);
+      border-radius: 10px; padding: 18px 20px;
+      transition: border-color .2s;
+    }
+    .why-pill:hover { border-color: var(--sage); }
+    .why-pill-num { font-family: var(--serif); font-size: 32px; font-weight: 700; color: rgba(74,124,89,0.18); line-height: 1; min-width: 36px; }
+    .why-pill-title { font-family: var(--serif); font-size: clamp(17px,3vw,22px); font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .why-pill-body { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .why-tag { display: inline-block; margin-top: 6px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); padding: 3px 8px; border: 1px solid rgba(74,124,89,0.25); border-radius: 20px; }
 
     /* ── PLANS ── */
     .plans { background: var(--forest); }
-    .plans .section-h2 { color: var(--linen); }
-    .plans .section-h2 em { color: var(--gold); }
-    .plans .section-eyebrow .eyebrow { color: var(--gold); }
-    .plans .section-body { color: rgba(245,240,232,0.55); }
-    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; margin-top: clamp(28px,5vw,48px); }
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px,100%), 1fr)); gap: 12px; margin-top: 32px; }
     .plan {
-      background: rgba(245,240,232,0.04); border: 1px solid rgba(245,240,232,0.1);
-      border-radius: var(--r-lg); padding: 36px 32px;
-      transition: background .2s, transform .2s;
+      background: rgba(245,240,232,0.05); border: 1px solid rgba(245,240,232,0.1);
+      border-radius: 14px; padding: 28px 24px;
+      transition: background .2s;
     }
-    .plan:hover { background: rgba(245,240,232,0.07); transform: translateY(-4px); }
-    .plan.featured { background: var(--linen); border-color: var(--gold); border-width: 2px; }
-    .plan-badge { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: var(--gold); color: var(--ink); margin-bottom: 14px; font-weight: 700; }
-    .plan-name { font-family: var(--serif); font-size: 38px; font-weight: 700; color: var(--linen); line-height: 1; }
-    .plan.featured .plan-name { color: var(--ink); }
-    .plan-price { font-family: var(--serif); font-size: 52px; font-weight: 700; color: var(--gold); line-height: 1.1; margin: 8px 0 4px; }
-    .plan.featured .plan-price { color: var(--terra); }
-    .plan-per { font-size: 13px; color: rgba(245,240,232,0.4); margin-bottom: 24px; }
-    .plan.featured .plan-per { color: var(--muted); }
-    .plan-divider { height: 1px; background: rgba(245,240,232,0.1); margin-bottom: 20px; }
-    .plan.featured .plan-divider { background: var(--linen-dark); }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .plan-features li { font-size: 14px; color: rgba(245,240,232,0.65); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
-    .plan.featured .plan-features li { color: var(--muted-dark); }
-    .plan-features li::before { content: '✓'; color: var(--sage-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .plan.featured .plan-features li::before { color: var(--sage); }
-    .plan-cta {
-      display: block; width: 100%; padding: 14px;
-      font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-align: center;
-      border-radius: var(--r-sm); cursor: pointer; transition: all .2s;
+    .plan:hover { background: rgba(245,240,232,0.08); }
+    .plan.pop { background: var(--linen); border-color: var(--gold); border-width: 2px; }
+    .plan-badge { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: var(--gold); color: var(--ink); padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: 12px; font-weight: 700; }
+    .plan-name { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--linen); line-height: 1; }
+    .plan.pop .plan-name { color: var(--ink); }
+    .plan-price { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--gold); line-height: 1.1; margin: 6px 0 2px; }
+    .plan.pop .plan-price { color: var(--terra); }
+    .plan-per { font-size: 12px; color: rgba(245,240,232,0.4); margin-bottom: 18px; }
+    .plan.pop .plan-per { color: var(--muted); }
+    .plan hr { border: none; border-top: 1px solid rgba(245,240,232,0.1); margin-bottom: 16px; }
+    .plan.pop hr { border-color: var(--linen2); }
+    .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+    .plan-feats li { font-size: 14px; color: rgba(245,240,232,0.65); display: flex; gap: 8px; align-items: flex-start; }
+    .plan.pop .plan-feats li { color: var(--muted); }
+    .plan-feats li::before { content: '✓'; color: #6a9e78; font-weight: 700; flex-shrink: 0; }
+    .plan.pop .plan-feats li::before { color: var(--sage); }
+    .plan-btn {
+      display: block; width: 100%; padding: 13px;
+      font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+      text-align: center; text-transform: uppercase;
+      border-radius: 4px; cursor: pointer; transition: all .15s;
       border: 1px solid rgba(245,240,232,0.2); background: transparent; color: var(--linen);
     }
-    .plan.featured .plan-cta { background: var(--terra); color: var(--white); border-color: var(--terra); }
-    .plan-cta:hover { background: rgba(245,240,232,0.1); }
-    .plan.featured .plan-cta:hover { background: var(--terra-dim); }
-    .plans-note { text-align: center; margin-top: 24px; font-family: var(--mono); font-size: 11px; color: rgba(245,240,232,0.3); letter-spacing: 0.08em; }
+    .plan.pop .plan-btn { background: var(--terra); color: #fff; border-color: var(--terra); }
+    .plan-btn:hover { background: rgba(245,240,232,0.1); }
+    .plan.pop .plan-btn:hover { background: var(--terra2); }
+    .plans-fine { text-align: center; margin-top: 16px; font-family: var(--mono); font-size: 10px; color: rgba(245,240,232,0.25); letter-spacing: 0.08em; }
 
-    /* ── HOW IT WORKS ── */
-    .how { background: var(--cream); }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--linen-dark); border-radius: var(--r-lg); overflow: hidden; margin-top: clamp(28px,5vw,48px); }
-    @media(max-width:640px){ .steps { grid-template-columns: 1fr; } }
-    .step { padding: 40px 32px; background: var(--cream); border-right: 1px solid var(--linen-dark); position: relative; }
-    .step:last-child { border-right: none; }
-    @media(max-width:700px) { .step { border-right: none; border-bottom: 1px solid var(--linen-dark); } .step:last-child { border-bottom: none; } }
-    .step-icon { font-size: 26px; margin-bottom: 14px; }
-    .step-num { position: absolute; top: 16px; right: 20px; font-family: var(--serif); font-size: 60px; font-weight: 700; color: rgba(74,124,89,0.08); line-height: 1; }
-    .step-title { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
-    .step-body { font-size: 14px; color: var(--muted-dark); line-height: 1.75; }
+    /* ── STEPS ── */
+    .steps-section { background: var(--cream); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--linen2); border: 1px solid var(--linen2); border-radius: 14px; overflow: hidden; margin-top: 32px; }
+    @media(max-width:600px){ .steps-grid { grid-template-columns: 1fr; } }
+    .step { background: var(--cream); padding: 32px 24px; position: relative; }
+    .step-n { font-family: var(--serif); font-size: 56px; font-weight: 700; color: rgba(74,124,89,0.1); line-height: 1; position: absolute; top: 14px; right: 18px; }
+    .step-icon { font-size: 24px; margin-bottom: 12px; }
+    .step-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .step-body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── REVIEWS — STACKED CARDS ── */
+    .reviews-section { background: var(--forest); }
+    .reviews-stack { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .review {
+      background: rgba(245,240,232,0.06); border: 1px solid rgba(245,240,232,0.1);
+      border-radius: 12px; padding: 20px;
+    }
+    .review-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+    .review-text { font-family: var(--serif); font-style: italic; font-size: 16px; color: rgba(245,240,232,0.88); line-height: 1.55; margin-bottom: 12px; }
+    .review-author { font-family: var(--mono); font-size: 10px; color: rgba(245,240,232,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ── ABOUT ── */
     .about { background: var(--linen); }
-    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    @media(max-width:700px){ .about-inner { grid-template-columns: 1fr; gap: 32px; } }
     .about-visual {
-      background: var(--ink); border-radius: var(--r-lg);
+      background: var(--ink); border-radius: 14px;
       aspect-ratio: 4/5; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; position: relative; overflow: hidden;
-      min-height: 340px;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
-    @media(max-width:768px){ .about-visual { aspect-ratio: 16/9; min-height: 260px; } }
+    @media(max-width:700px){ .about-visual { aspect-ratio: 16/9; } }
     .about-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(74,124,89,0.2) 0%, transparent 65%); }
-    .about-logo { font-family: var(--serif); font-size: 80px; font-weight: 700; color: var(--linen); line-height: 0.9; text-align: center; position: relative; }
+    .about-logo { font-family: var(--serif); font-size: 72px; font-weight: 700; color: var(--linen); line-height: 0.9; text-align: center; position: relative; }
     .about-logo em { color: var(--terra); font-style: italic; display: block; }
-    .about-zip { margin-top: 16px; font-family: var(--mono); font-size: 11px; color: rgba(245,240,232,0.4); letter-spacing: 0.18em; text-transform: uppercase; position: relative; }
-    .about-body { font-size: 16px; color: var(--muted-dark); line-height: 1.8; margin-bottom: 18px; }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
-    .about-stat { background: var(--cream); border-radius: var(--r-md); padding: 18px 20px; border: 1px solid var(--linen-dark); }
-    .about-stat-val { font-family: var(--serif); font-size: 38px; font-weight: 700; color: var(--terra); line-height: 1; }
-    .about-stat-label { font-size: 13px; color: var(--muted-dark); margin-top: 4px; }
+    .about-zip { margin-top: 14px; font-family: var(--mono); font-size: 11px; color: rgba(245,240,232,0.35); letter-spacing: 0.18em; text-transform: uppercase; position: relative; }
+    .about-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .about-bullets li { font-size: 16px; color: var(--ink); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+    .about-bullets li::before { content: '🌿'; flex-shrink: 0; font-size: 14px; margin-top: 2px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+    .stat { background: var(--cream); border: 1px solid var(--linen2); border-radius: 10px; padding: 16px 18px; }
+    .stat-val { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--terra); line-height: 1; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
-    /* ── REVIEWS ── */
-    .reviews { background: var(--forest); padding: clamp(48px,8vw,72px) 0; }
-    .reviews-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-width: none; }
-    .reviews-track::-webkit-scrollbar { display: none; }
-    .review { min-width: 300px; flex-shrink: 0; scroll-snap-align: start; background: rgba(245,240,232,0.06); border: 1px solid rgba(245,240,232,0.1); border-radius: var(--r-lg); padding: 28px; }
-    .review-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
-    .review-text { font-family: var(--serif); font-style: italic; font-size: 15px; color: rgba(245,240,232,0.85); line-height: 1.7; margin-bottom: 16px; }
-    .review-author { font-family: var(--mono); font-size: 10px; color: rgba(245,240,232,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
-
-    /* ── BOOKING ── */
-    .booking { background: var(--cream); }
-    .booking-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    @media(max-width:768px) { .booking-inner { grid-template-columns: 1fr; gap: 40px; } }
-    .booking-detail { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--linen-dark); }
-    .booking-detail:last-child { border-bottom: none; }
-    .bd-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-    .bd-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 3px; }
-    .bd-value { font-size: 15px; color: var(--ink); }
-    .form-wrap { background: var(--linen); border: 1px solid var(--linen-dark); border-radius: var(--r-lg); padding: 36px 32px; }
-    .form-title { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-    .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media(max-width:480px) { .form-row { grid-template-columns: 1fr; } }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-dark); margin-bottom: 6px; }
-    .form-group input, .form-group select, .form-group textarea {
+    /* ── BOOK ── */
+    .book { background: var(--ink); }
+    .book-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    @media(max-width:700px){ .book-inner { grid-template-columns: 1fr; gap: 32px; } }
+    .book-left {}
+    .book-details { margin-top: 24px; display: flex; flex-direction: column; gap: 0; }
+    .book-detail { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.07); }
+    .book-detail:last-child { border-bottom: none; }
+    .bd-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .bd-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 3px; }
+    .bd-val { font-size: 15px; color: var(--linen); }
+    .form-card { background: var(--linen); border-radius: 14px; padding: 28px 24px; }
+    .form-title { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media(max-width:440px){ .form-row { grid-template-columns: 1fr; } }
+    .fg { margin-bottom: 12px; }
+    .fg label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .fg input, .fg select, .fg textarea {
       width: 100%; padding: 13px 14px;
-      background: var(--cream); border: 1px solid var(--linen-dark); border-radius: var(--r-sm);
+      background: var(--cream); border: 1px solid var(--linen2); border-radius: 4px;
       color: var(--ink); font-family: var(--sans); font-size: 16px; outline: none;
-      transition: border-color .2s; appearance: none;
+      transition: border-color .2s; appearance: none; -webkit-appearance: none;
     }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(74,90,74,0.35); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); }
-    .form-group select option { background: var(--cream); }
-    .form-group textarea { resize: vertical; min-height: 88px; }
-    .form-submit {
-      width: 100%; padding: 16px;
-      background: var(--terra); color: var(--white);
-      font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      border: none; border-radius: var(--r-sm); cursor: pointer;
-      transition: background .2s, transform .15s; margin-top: 8px;
+    .fg input::placeholder, .fg textarea::placeholder { color: rgba(74,90,74,0.3); }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--sage); background: var(--cream); }
+    .fg textarea { resize: vertical; min-height: 80px; }
+    .form-cta {
+      width: 100%; padding: 16px; margin-top: 6px;
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      border: none; border-radius: 4px; cursor: pointer; transition: background .15s;
     }
-    .form-submit:hover { background: var(--terra-dim); transform: translateY(-2px); }
-    .form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
-    .form-success { display: none; text-align: center; padding: 24px; }
-    .form-success .success-icon { font-size: 36px; margin-bottom: 10px; }
-    .form-success strong { font-family: var(--serif); font-size: 26px; color: var(--ink); display: block; margin-bottom: 8px; }
-    .form-success p { font-size: 14px; color: var(--muted-dark); }
+    .form-cta:hover { background: var(--terra2); }
+    .form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; }
+    .form-success { display: none; text-align: center; padding: 20px; }
+    .form-success strong { font-family: var(--serif); font-size: 24px; color: var(--ink); display: block; margin-bottom: 6px; }
+    .form-success p { font-size: 14px; color: var(--muted); }
 
     /* ── FAQ ── */
-    .faq { background: var(--linen); }
-    .faq-list { margin-top: 16px; border-top: 1px solid var(--linen-dark); }
-    .faq-item { border-bottom: 1px solid var(--linen-dark); }
+    .faq-section { background: var(--cream); }
+    .faq-list { margin-top: 28px; border-top: 1px solid var(--linen2); }
+    .faq-item { border-bottom: 1px solid var(--linen2); }
     .faq-q {
       width: 100%; background: none; border: none;
       display: flex; justify-content: space-between; align-items: center;
-      padding: clamp(18px, 3vw, 22px) 0; cursor: pointer; min-height: 56px;
-      font-family: var(--sans); font-size: clamp(15px, 2.5vw, 17px); color: var(--ink); text-align: left; gap: 16px;
+      padding: 20px 0; cursor: pointer; min-height: 60px;
+      font-family: var(--sans); font-size: clamp(15px,2.5vw,17px); color: var(--ink);
+      text-align: left; gap: 14px; font-weight: 500;
     }
     .faq-q:hover { color: var(--terra); }
-    .faq-icon { width: 22px; height: 22px; border: 1px solid var(--linen-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; color: var(--sage); transition: transform .25s; }
+    .faq-icon { width: 24px; height: 24px; border: 1px solid var(--linen2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--sage); font-size: 16px; transition: transform .2s; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a { font-size: 15px; color: var(--muted-dark); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .25s; }
-    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+    .faq-a { font-size: 15px; color: var(--muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .2s; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 18px; }
 
     /* ── FOOTER ── */
-    footer { background: var(--ink); padding: 52px 24px 32px; border-top: 3px solid var(--terra); }
-    .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-    @media(max-width:640px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
-    .footer-logo { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--linen); }
-    .footer-logo em { color: var(--terra); font-style: italic; }
-    .footer-tagline { font-size: 13px; color: rgba(245,240,232,0.45); margin-top: 8px; line-height: 1.6; }
-    .footer-col-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    .footer-col a, .footer-col p { font-size: 14px; color: rgba(245,240,232,0.45); line-height: 2.2; display: block; transition: color .2s; }
-    .footer-col a:hover { color: var(--linen); }
-    .footer-bottom { max-width: 1060px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(245,240,232,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-legal { font-family: var(--mono); font-size: 10px; color: rgba(245,240,232,0.25); letter-spacing: 0.08em; }
+    footer { background: var(--ink); padding: 48px 20px 32px; border-top: 3px solid var(--terra); }
+    .foot-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; }
+    @media(max-width:600px){ .foot-inner { grid-template-columns: 1fr; gap: 24px; } }
+    .foot-logo { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--linen); }
+    .foot-logo em { color: var(--terra); font-style: italic; }
+    .foot-tag { font-size: 13px; color: rgba(245,240,232,0.4); margin-top: 6px; line-height: 1.6; }
+    .foot-col-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .foot-col a, .foot-col p { font-size: 14px; color: rgba(245,240,232,0.4); display: block; line-height: 2.2; transition: color .15s; }
+    .foot-col a:hover { color: var(--linen); }
+    .foot-bottom { max-width: 1040px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(245,240,232,0.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .foot-legal { font-family: var(--mono); font-size: 10px; color: rgba(245,240,232,0.2); letter-spacing: 0.07em; }
 
-    /* ── FADE-IN ── */
-    .fade { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-    .fade.visible { opacity: 1; transform: translateY(0); }
+    /* ── STICKY CTA ── */
+    .sticky {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 98;
+      padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+      background: var(--linen); border-top: 1px solid var(--linen2);
+    }
+    @media(max-width:640px){ .sticky { display: block; } }
+    .sticky a {
+      display: block; text-align: center;
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+      padding: 15px; border-radius: 4px;
+    }
 
-    /* ── MOBILE STICKY ── */
-    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom)); background: var(--linen); border-top: 1px solid var(--linen-dark); }
-    @media(max-width:640px) { .sticky-cta { display: block; } }
-    .sticky-cta a { display: block; text-align: center; background: var(--terra); color: var(--white); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px; border-radius: var(--r-sm); }
+    /* ── FMOT STATES ── */
+    .fmot-success, .fmot-ooa {
+      padding: 4px 0 8px;
+    }
+    .fmot-icon { font-size: 40px; margin-bottom: 10px; }
+    .fmot-eyebrow {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sage); margin-bottom: 6px;
+    }
+    .fmot-ooa .fmot-eyebrow { color: var(--terra); }
+    .fmot-headline {
+      font-family: var(--serif); font-size: 26px; font-weight: 700;
+      color: var(--ink); line-height: 1.1; margin-bottom: 10px;
+    }
+    .fmot-body { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+    .fmot-divider { height: 1px; background: var(--linen2); margin: 18px 0; }
+    .fmot-what-next, .fmot-ooa-next { display: flex; flex-direction: column; gap: 10px; }
+    .fmot-next-label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--sage); margin-bottom: 4px;
+    }
+    .fmot-next-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--muted-dark); line-height: 1.5;
+    }
+    .fmot-next-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--sage); color: #fff;
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .fmot-ooa .fmot-next-num { background: var(--terra); }
+    .fmot-referral, .fmot-ooa-promise {
+      background: var(--cream); border-radius: 10px; padding: 14px 16px;
+      border-left: 3px solid var(--sage);
+    }
+    .fmot-ooa-promise { border-left-color: var(--terra); }
+    .fmot-ref-text { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .fmot-ref-sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .fmot-ooa-why { }
+
+    /* ── FADE ── */
+    .fade { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.in { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="nav" id="mainNav">
+<!-- NAV -->
+<nav class="nav">
   <a href="#" class="nav-logo">Fog<em>Off</em></a>
-  <ul class="nav-links">
-    <li><a href="#why">Why us</a></li>
-    <li><a href="#plans">Plans</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#book" class="nav-cta">Fog off my yard →</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#book" class="nav-book">Book a fog →</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-texture"></div>
-  <div class="hero-grain"></div>
+<section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow fade">
-        <span class="dot"></span>
-        <span>Now serving Plaza Midwood &amp; 28205</span>
-      </div>
-      <h1 class="hero-h1 fade" style="transition-delay:.1s">
-        Fog<br><span class="swoop">Off.</span>
-      </h1>
-      <p class="hero-tagline fade" style="transition-delay:.2s">Tell mosquitoes to fog off this summer.</p>
-      <p class="hero-sub fade" style="transition-delay:.3s">Charlotte's only zip-bound, neighbor-run mosquito fogging service. We serve 28205 — and only 28205. Same person every visit. Eco-safe formula. Text us directly.</p>
-      <div class="hero-btns fade" style="transition-delay:.4s">
-        <a href="#book" class="btn-primary">Fog off my yard →</a>
-        <a href="#about" class="btn-ghost">Meet the foggers</a>
-      </div>
-      <div class="hero-trust fade" style="transition-delay:.5s">
-        <span class="trust-pill">NC Licensed Applicator</span>
-        <span class="trust-pill">Fully Insured</span>
-        <span class="trust-pill">Eco-safe Formula</span>
-        <span class="trust-pill">Text us directly</span>
-      </div>
+    <div class="hero-zip">Plaza Midwood · 28205 only</div>
+    <h1 class="hero-h1">
+      Fog<br><em>Off.</em>
+    </h1>
+    <p class="hero-line2">Tell mosquitoes to fog off this summer.</p>
+    <div class="hero-cta-row">
+      <a href="#book" class="btn-hero">Fog off my yard →</a>
+      <a href="#about" class="btn-ghost">Meet the foggers</a>
+    </div>
+    <div class="hero-proof">
+      <span class="proof-item">NC Licensed</span>
+      <span class="proof-item">Fully Insured</span>
+      <span class="proof-item">Eco-safe Formula</span>
+      <span class="proof-item">Text us directly</span>
     </div>
   </div>
 </section>
 
+<!-- PUNCHY STRIP -->
+<div class="punchy">
+  <p class="punchy-text">"We don't charge extra to do the job fogging right."</p>
+  <a href="#book" class="punchy-cta">Book now →</a>
+</div>
+
 <!-- WAVE -->
-<div class="wave" style="background:var(--ink)">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#f5f0e8"/>
+<div class="wave" style="background:var(--terra)">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,20 C300,40 600,0 900,25 C1050,38 1150,10 1200,20 L1200,40 L0,40 Z" fill="#f5f0e8"/>
   </svg>
 </div>
 
-<!-- WHY FOG OFF -->
-<section class="why" id="why">
+<!-- WHY -->
+<section class="section why" id="why">
   <div class="container">
-    <div class="section-eyebrow fade"><span class="eyebrow">Why we're different</span></div>
-    <h2 class="section-h2 fade">Not a franchise.<br><em>Your neighbor.</em></h2>
-    <p class="section-body fade">Every national chain covers 20 zip codes. We cover one. That's not a limitation — that's why we're better.</p>
-    <div class="why-grid">
-      <div class="why-card fade">
-        <div class="why-num">01</div>
-        <div class="why-title">One zip. Done right.</div>
-        <p class="why-body">We only serve 28205. Your entire route is 12 miles of streets we know by name. Faster scheduling, zero drive time, and a tech who knows your yard — and your dogs.</p>
-        <span class="why-tag">28205 only</span>
+    <span class="label fade">Why Fog Off</span>
+    <h2 class="big-h fade">Not a franchise.<br><em>Your neighbor.</em></h2>
+    <div class="why-pills">
+      <div class="why-pill fade">
+        <div class="why-pill-num">01</div>
+        <div>
+          <div class="why-pill-title">One zip. Done right.</div>
+          <div class="why-pill-body">We only serve 28205. We know every street, every yard, every corner of Briar Creek.</div>
+          <span class="why-tag">28205 only</span>
+        </div>
       </div>
-      <div class="why-card fade" style="transition-delay:.1s">
-        <div class="why-num">02</div>
-        <div class="why-title">Same face, every time.</div>
-        <p class="why-body">The #1 complaint about franchise services: a different stranger every visit. We're always the same person. We know which corner of your yard breeds larvae.</p>
-        <span class="why-tag">Zero turnover</span>
+      <div class="why-pill fade">
+        <div class="why-pill-num">02</div>
+        <div>
+          <div class="why-pill-title">Same face. Every time.</div>
+          <div class="why-pill-body">No different stranger every visit. We know your yard, your dogs, your problem spots.</div>
+          <span class="why-tag">Zero turnover</span>
+        </div>
       </div>
-      <div class="why-card fade" style="transition-delay:.2s">
-        <div class="why-num">03</div>
-        <div class="why-title">Text us. Not a call center.</div>
-        <p class="why-body">Need us before your Saturday cookout? Text by noon and we can usually make it happen. No hold music. No ticket numbers. No "your call is important to us."</p>
-        <span class="why-tag">Same-day flex</span>
+      <div class="why-pill fade">
+        <div class="why-pill-num">03</div>
+        <div>
+          <div class="why-pill-title">Text us. Not a call center.</div>
+          <div class="why-pill-body">Need us Thursday before your cookout? Text by noon. We can usually make it happen.</div>
+          <span class="why-tag">Same-day flex</span>
+        </div>
       </div>
-      <div class="why-card fade" style="transition-delay:.3s">
-        <div class="why-num">04</div>
-        <div class="why-title">Eco-right. Not eco-optional.</div>
-        <p class="why-body">We use the right formula because it's the right thing — not as a premium upsell. Safe for your dogs, your garden, and your bees. We don't charge extra to do the job fogging right.</p>
-        <span class="why-tag">Planet promise</span>
+      <div class="why-pill fade">
+        <div class="why-pill-num">04</div>
+        <div>
+          <div class="why-pill-title">Eco-right. Not eco-optional.</div>
+          <div class="why-pill-body">Right formula because it's the right thing. Safe for your dogs, garden, and bees. No upsell.</div>
+          <span class="why-tag">Planet promise</span>
+        </div>
       </div>
     </div>
   </div>
@@ -437,111 +460,150 @@
 
 <!-- WAVE -->
 <div class="wave" style="background:var(--linen)">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C300,50 600,0 900,35 C1050,50 1150,15 1200,20 L1200,60 L0,60 Z" fill="#2a3d2a"/>
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,15 C400,40 700,0 1200,22 L1200,40 L0,40 Z" fill="#2a3d2a"/>
   </svg>
 </div>
 
 <!-- PLANS -->
-<section class="plans" id="plans">
+<section class="section plans" id="plans">
   <div class="container">
-    <div class="section-eyebrow fade"><span class="eyebrow">Pick your fog level</span></div>
-    <h2 class="section-h2 fade">Simple. Transparent.<br><em>No surprises.</em></h2>
-    <p class="section-body fade">All plans include eco-safe formula, SMS confirmations, and our 5-day re-treat guarantee.</p>
+    <span class="label fade" style="color:var(--gold)">Pick your fog level</span>
+    <h2 class="big-h big-h-light fade">Simple.<br><em>No surprises.</em></h2>
     <div class="plans-grid">
       <div class="plan fade">
         <div class="plan-name">Starter Fog</div>
         <div class="plan-price">$69</div>
         <div class="plan-per">per month · up to ¼ acre</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li>Bi-weekly fogging treatment</li>
+        <hr>
+        <ul class="plan-feats">
+          <li>Bi-weekly treatment</li>
           <li>Yard perimeter spray</li>
-          <li>SMS confirmation + arrival window</li>
+          <li>SMS confirmation</li>
           <li>5-day re-treat guarantee</li>
         </ul>
-        <a href="#book" class="plan-cta">Get started →</a>
+        <a href="#book" class="plan-btn">Get started →</a>
       </div>
-      <div class="plan featured fade" style="transition-delay:.1s">
+      <div class="plan pop fade" style="transition-delay:.1s">
         <div class="plan-badge">Most popular</div>
         <div class="plan-name">Full Send</div>
         <div class="plan-price">$119</div>
         <div class="plan-per">per month · up to ½ acre</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li>Bi-weekly fogging + spot treatments</li>
-          <li>Larvicide source inspection</li>
-          <li>SMS confirmation + direct text line</li>
-          <li>1 free add-on per month</li>
+        <hr>
+        <ul class="plan-feats">
+          <li>Bi-weekly + spot treatments</li>
+          <li>Larvicide inspection</li>
+          <li>Direct text line</li>
+          <li>1 free add-on / month</li>
           <li>5-day re-treat guarantee</li>
         </ul>
-        <a href="#book" class="plan-cta">Get started →</a>
+        <a href="#book" class="plan-btn">Get started →</a>
       </div>
       <div class="plan fade" style="transition-delay:.2s">
         <div class="plan-name">Fog Boss</div>
         <div class="plan-price">$179</div>
         <div class="plan-per">per month · up to 1 acre</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
+        <hr>
+        <ul class="plan-feats">
           <li>Weekly treatments</li>
-          <li>Larvicide + barrier spray combo</li>
+          <li>Larvicide + barrier combo</li>
           <li>Priority scheduling</li>
-          <li>Seasonal prep + winterization</li>
-          <li>Referral credit program</li>
+          <li>Referral credits</li>
         </ul>
-        <a href="#book" class="plan-cta">Get started →</a>
+        <a href="#book" class="plan-btn">Get started →</a>
       </div>
     </div>
-    <p class="plans-note">Month-to-month. Cancel or pause anytime by text. No contracts. No games.</p>
+    <p class="plans-fine">Month-to-month. Cancel or pause anytime by text.</p>
   </div>
 </section>
 
 <!-- WAVE -->
 <div class="wave" style="background:var(--forest)">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C150,10 350,55 600,25 C850,0 1050,45 1200,30 L1200,60 L0,60 Z" fill="#faf7f2"/>
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,25 C200,5 500,38 800,15 C1000,0 1150,30 1200,20 L1200,40 L0,40 Z" fill="#faf7f2"/>
   </svg>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
+<!-- STEPS -->
+<section class="section steps-section" id="how">
   <div class="container">
-    <div class="section-eyebrow fade"><span class="eyebrow">The process</span></div>
-    <h2 class="section-h2 fade">Set it &amp; Fog-get<br><em>about it.</em></h2>
-    <p class="section-body fade" style="margin-top:12px">In three easy steps.</p>
-    <div class="steps">
+    <span class="label fade">The process</span>
+    <h2 class="big-h fade">Set it &amp; Fog-get<br><em>about it.</em></h2>
+    <p class="fade" style="font-size:15px;color:var(--muted);margin-top:-8px;margin-bottom:0">In three easy steps.</p>
+    <div class="steps-grid">
       <div class="step fade">
-        <div class="step-num">1</div>
+        <div class="step-n">1</div>
         <div class="step-icon">📱</div>
         <div class="step-title">Book online</div>
-        <p class="step-body">Pick your plan, enter your address, checkout in under two minutes. No phone calls, no quotes, no waiting.</p>
+        <p class="step-body">Pick your plan. Enter your address. Done in 60 seconds.</p>
       </div>
       <div class="step fade" style="transition-delay:.1s">
-        <div class="step-num">2</div>
+        <div class="step-n">2</div>
         <div class="step-icon">💬</div>
         <div class="step-title">We text you</div>
-        <p class="step-body">Confirmation text, 24-hour reminder, and a "15 minutes out" heads-up the day of. All direct. No call centers.</p>
+        <p class="step-body">Confirmation, 24h reminder, "15 min out" heads-up. All direct — no call centers.</p>
       </div>
       <div class="step fade" style="transition-delay:.2s">
-        <div class="step-num">3</div>
+        <div class="step-n">3</div>
         <div class="step-icon">🌿</div>
         <div class="step-title">Your yard. Fog-free.</div>
-        <p class="step-body">We treat, you get a completion text, your card charges automatically. Keep pets in for 30 min. Next treatment schedules itself. Fog-get about it.</p>
+        <p class="step-body">We treat. You get a text. Card charges automatically. Next visit schedules itself. Fog-get about it.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- WAVE -->
 <div class="wave" style="background:var(--cream)">
-  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C200,0 400,55 700,20 C900,0 1100,40 1200,25 L1200,60 L0,60 Z" fill="#f5f0e8"/>
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,20 C300,40 700,5 1200,28 L1200,40 L0,40 Z" fill="#2a3d2a"/>
+  </svg>
+</div>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <span class="label fade" style="color:var(--gold)">What the neighborhood says</span>
+    <h2 class="big-h big-h-light fade">Your neighbors<br><em>already love it.</em></h2>
+    <div class="reviews-stack">
+      <div class="review fade">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Finally someone who actually knows our neighborhood. They knew our yard backed onto Briar Creek before I even mentioned it."</p>
+        <div class="review-author">Sarah M. · Commonwealth Ave · 28205</div>
+      </div>
+      <div class="review fade">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Texted them at 10am about my cookout that Saturday. They squeezed me in same day. Try doing that with Mosquito Squad."</p>
+        <div class="review-author">James K. · The Plaza · 28205</div>
+      </div>
+      <div class="review fade">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Eco-safe formula, dogs back on the lawn within the hour. Three neighbors on my street signed up after seeing my yard."</p>
+        <div class="review-author">Rachel T. · Chantilly · 28205</div>
+      </div>
+      <div class="review fade">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Same person every single visit. They know exactly where our problem spots are. Night and day from the franchise we used before."</p>
+        <div class="review-author">Marcus &amp; Dana L. · Belmont · 28205</div>
+      </div>
+      <div class="review fade">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The name says it all. Two months in and our backyard is completely usable again."</p>
+        <div class="review-author">Priya S. · Villa Heights · 28205</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--forest)">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,10 C250,35 550,5 800,28 C1000,42 1150,12 1200,18 L1200,40 L0,40 Z" fill="#f5f0e8"/>
   </svg>
 </div>
 
 <!-- ABOUT -->
-<section class="about" id="about">
+<section class="section about" id="about">
   <div class="container">
     <div class="about-inner">
       <div class="about-visual fade">
@@ -550,127 +612,125 @@
         <div class="about-zip">Plaza Midwood · 28205</div>
       </div>
       <div>
-        <div class="section-eyebrow fade" style="margin-bottom:12px"><span class="eyebrow">Meet the foggers</span></div>
-        <h2 class="section-h2 fade" style="font-size:clamp(36px,6vw,64px)">We're the foggers your neighbors are already talking about.</h2>
-        <p class="about-body fade">We're not a franchise. Not a call center. Not a different stranger every visit. We're your Plaza Midwood neighbors — with an NC Pesticide license, a fogger, and a genuine hatred of mosquitoes.</p>
-        <p class="about-body fade">We serve 28205 and 28205 only. That's not a limitation — it's the whole point. Doing one thing really well in one neighborhood beats doing everything badly across twenty zip codes.</p>
-        <p class="about-body fade">We use eco-right formula — not as a premium upsell, because it's the right thing. We text you back. We show up on time. And when it rains and your treatment gets compromised, we re-do it that week — no forms, just a text.</p>
+        <span class="label fade">Meet the foggers</span>
+        <h2 class="big-h fade" style="font-size:clamp(32px,6vw,56px)">We're the foggers your neighbors are already talking about.</h2>
+        <ul class="about-bullets fade">
+          <li>We live in 28205. This is our neighborhood too.</li>
+          <li>Same person every visit. We know your yard.</li>
+          <li>Eco-right formula. No upsell. No compromise.</li>
+          <li>Text us directly. We text back.</li>
+        </ul>
         <div class="about-stats fade">
-          <div class="about-stat"><div class="about-stat-val">1</div><div class="about-stat-label">Zip code served — 28205</div></div>
-          <div class="about-stat"><div class="about-stat-val">0</div><div class="about-stat-label">Call centers. Text us.</div></div>
-          <div class="about-stat"><div class="about-stat-val">30m</div><div class="about-stat-label">Pet-safe from application</div></div>
-          <div class="about-stat"><div class="about-stat-val">5d</div><div class="about-stat-label">Re-treat guarantee</div></div>
+          <div class="stat"><div class="stat-val">1</div><div class="stat-label">Zip code. 28205.</div></div>
+          <div class="stat"><div class="stat-val">0</div><div class="stat-label">Call centers.</div></div>
+          <div class="stat"><div class="stat-val">30m</div><div class="stat-label">Pet-safe after treatment.</div></div>
+          <div class="stat"><div class="stat-val">5d</div><div class="stat-label">Re-treat guarantee.</div></div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews">
-  <div class="container">
-    <div class="section-eyebrow fade" style="margin-bottom:24px"><span class="eyebrow" style="color:var(--gold)">What the neighborhood says</span></div>
-    <div class="reviews-track">
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Finally someone who actually knows our neighborhood. They knew our yard backed onto Briar Creek before I even mentioned it."</p>
-        <div class="review-author">Sarah M. · Commonwealth Ave · 28205</div>
-      </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"I texted them at 10am about my cookout that Saturday and they squeezed me in same day. Try doing that with Mosquito Squad."</p>
-        <div class="review-author">James K. · The Plaza · 28205</div>
-      </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Love that it's eco-safe. My dogs are back on the lawn within the hour. Three neighbors on my street signed up after seeing my yard."</p>
-        <div class="review-author">Rachel T. · Chantilly · 28205</div>
-      </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Same person every single visit. They know exactly where our problem spots are. Night and day from the franchise we used before."</p>
-        <div class="review-author">Marcus &amp; Dana L. · Belmont · 28205</div>
-      </div>
-      <div class="review">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The name says it all. Two months in and our backyard is completely usable again. Worth every penny."</p>
-        <div class="review-author">Priya S. · Villa Heights · 28205</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- WAVE -->
+<div class="wave" style="background:var(--linen)">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" width="100%" height="40">
+    <path d="M0,22 C150,5 350,38 600,18 C800,2 1050,35 1200,15 L1200,40 L0,40 Z" fill="#1e2d1e"/>
+  </svg>
+</div>
 
-<!-- BOOKING -->
-<section class="booking" id="book">
+<!-- BOOK -->
+<section class="section book" id="book">
   <div class="container">
-    <div class="booking-inner">
-      <div>
-        <div class="section-eyebrow fade" style="margin-bottom:12px"><span class="eyebrow">Get started</span></div>
-        <h2 class="section-h2 fade" style="font-size:clamp(36px,6vw,64px)">Ready to fog off<br><em>for good?</em></h2>
-        <p class="section-body fade" style="margin-bottom:32px">Fill out the form and we'll text you within 2 hours to confirm your first treatment. Or just text us directly.</p>
-        <div>
-          <div class="booking-detail fade">
+    <div class="book-inner">
+      <div class="book-left">
+        <span class="label fade" style="color:var(--sage)">Get started</span>
+        <h2 class="big-h big-h-light fade" style="font-size:clamp(32px,6vw,56px)">Ready to fog off<br><em>for good?</em></h2>
+        <div class="book-details fade">
+          <div class="book-detail">
             <div class="bd-icon">💬</div>
-            <div><div class="bd-label">Text us directly</div><div class="bd-value">(704) 000-0000</div></div>
+            <div><div class="bd-label">Text us directly</div><div class="bd-val">(704) 000-0000</div></div>
           </div>
-          <div class="booking-detail fade">
+          <div class="book-detail">
             <div class="bd-icon">📍</div>
-            <div><div class="bd-label">Service area</div><div class="bd-value">28205 — Plaza Midwood, Belmont, Chantilly, Villa Heights, Commonwealth</div></div>
+            <div><div class="bd-label">Service area</div><div class="bd-val">28205 — Plaza Midwood, Belmont, Chantilly, Villa Heights, Commonwealth</div></div>
           </div>
-          <div class="booking-detail fade">
+          <div class="book-detail">
             <div class="bd-icon">📅</div>
-            <div><div class="bd-label">Season</div><div class="bd-value">April – October · Monthly billing · Cancel anytime by text</div></div>
-          </div>
-          <div class="booking-detail fade">
-            <div class="bd-icon">🌿</div>
-            <div><div class="bd-label">Formula</div><div class="bd-value">Eco-right formula · Pet &amp; pollinator friendly · 30 min post-treatment</div></div>
+            <div><div class="bd-label">Season</div><div class="bd-val">April – October · Cancel anytime by text</div></div>
           </div>
         </div>
       </div>
       <div class="fade">
-        <form class="form-wrap" id="bookingForm" novalidate>
+        <form class="form-card" id="bookForm" novalidate>
           <div class="form-title">Fog Off My Yard</div>
-          <p class="form-sub">We'll text you within 2 hours to confirm.</p>
+          <p class="form-sub">We'll text you within 2 hours.</p>
           <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First name</label>
-              <input type="text" id="fname" name="fname" placeholder="Ashley" required autocomplete="given-name"/>
-            </div>
-            <div class="form-group">
-              <label for="lname">Last name</label>
-              <input type="text" id="lname" name="lname" placeholder="Smith" required autocomplete="family-name"/>
-            </div>
+            <div class="fg"><label for="fn">First name</label><input type="text" id="fn" name="fname" placeholder="Ashley" required autocomplete="given-name"/></div>
+            <div class="fg"><label for="ln">Last name</label><input type="text" id="ln" name="lname" placeholder="Smith" required autocomplete="family-name"/></div>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone (we'll text you)</label>
-            <input type="tel" id="phone" name="phone" placeholder="(704) 555-0100" required autocomplete="tel"/>
-          </div>
-          <div class="form-group">
-            <label for="address">Street address in 28205</label>
-            <input type="text" id="address" name="address" placeholder="123 The Plaza" required autocomplete="street-address"/>
-          </div>
-          <div class="form-group">
-            <label for="plan">Plan you're interested in</label>
-            <select id="plan" name="plan" required>
+          <div class="fg"><label for="ph">Phone (we'll text you)</label><input type="tel" id="ph" name="phone" placeholder="(704) 555-0100" required autocomplete="tel"/></div>
+          <div class="fg"><label for="addr">Address in 28205</label><input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="street-address"/></div>
+          <div class="fg">
+            <label for="pl">Plan</label>
+            <select id="pl" name="plan" required>
               <option value="" disabled selected>Select a plan</option>
               <option value="starter">Starter Fog — $69/mo</option>
-              <option value="fullsend">Full Send — $119/mo (most popular)</option>
+              <option value="fullsend">Full Send — $119/mo</option>
               <option value="fogboss">Fog Boss — $179/mo</option>
-              <option value="onetime">One-time treatment — $89</option>
-              <option value="event">Event fogging — $149–$299</option>
+              <option value="onetime">One-time — $89</option>
+              <option value="event">Event fog — $149–$299</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="notes">Anything we should know? (optional)</label>
-            <textarea id="notes" name="notes" placeholder="Dogs, garden, near Briar Creek, big party this weekend..."></textarea>
+          <div class="fg"><label for="nt">Anything we should know? (optional)</label><textarea id="nt" name="notes" placeholder="Dogs, garden, near Briar Creek..."></textarea></div>
+          <button type="submit" class="form-cta">Fog off my yard →</button>
+          <p class="form-note">No payment now. We confirm by text then send a payment link.</p>
+          <!-- SUCCESS STATE -->
+          <div class="form-success" id="formSuccess" style="display:none">
+            <div class="fmot-success">
+              <div class="fmot-icon">🌿</div>
+              <div class="fmot-eyebrow">You're in.</div>
+              <div class="fmot-headline">Your yard's about to fog off.</div>
+              <p class="fmot-body">We'll text you within 2 hours to confirm your first treatment. In the meantime — go enjoy that backyard. The mosquitoes' days are numbered.</p>
+              <div class="fmot-divider"></div>
+              <div class="fmot-what-next">
+                <div class="fmot-next-label">What happens next</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">1</span> We text you within 2 hours to confirm your slot</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">2</span> We send a payment link — no card on file until you confirm</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">3</span> You get a 24h reminder text the day before</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">4</span> We show up, fog off, text you when it's done</div>
+              </div>
+              <div class="fmot-divider"></div>
+              <div class="fmot-referral">
+                <div class="fmot-ref-text">Know someone on your street who's suffering?</div>
+                <div class="fmot-ref-sub">Spread the fog, not the bite. Refer a neighbor and get $20 off your next treatment. Just tell them to mention your name.</div>
+              </div>
+            </div>
           </div>
-          <button type="submit" class="form-submit">Send it — fog off my yard →</button>
-          <p class="form-note">No payment now. We'll confirm your visit by text then send a payment link.</p>
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon">🌿</div>
-            <strong>Fog-get about mosquitoes!</strong>
-            <p>We'll text you within 2 hours to confirm your first treatment. Welcome to the neighborhood.</p>
+
+          <!-- OUT OF AREA STATE -->
+          <div class="form-ooa" id="formOOA" style="display:none">
+            <div class="fmot-ooa">
+              <div class="fmot-icon">📍</div>
+              <div class="fmot-eyebrow">Not quite.</div>
+              <div class="fmot-headline">We don't serve your zip yet.</div>
+              <p class="fmot-body">Fog Off is 28205 only right now — Plaza Midwood, Belmont, Chantilly, Villa Heights, and Commonwealth. That's not forever. That's the plan.</p>
+              <div class="fmot-divider"></div>
+              <div class="fmot-ooa-why">
+                <div class="fmot-next-label">Why only 28205?</div>
+                <p style="font-size:14px;color:var(--muted);line-height:1.65;margin:0">We'd rather be exceptional in one neighborhood than mediocre across twenty zip codes. The nationals cover all of Charlotte. Nobody actually knows your yard. We do things differently.</p>
+              </div>
+              <div class="fmot-divider"></div>
+              <div class="fmot-ooa-next">
+                <div class="fmot-next-label">Two things you can do right now</div>
+                <div class="fmot-next-item"><span class="fmot-next-num">1</span> <span>Join the waitlist — we're expanding to 28207 (Myers Park) next season. <a href="mailto:hello@fogoff.net" style="color:var(--terra)">Email us your address →</a></span></div>
+                <div class="fmot-next-item"><span class="fmot-next-num">2</span> <span>Know someone in 28205? Tell them about us. <em style="color:var(--muted)">Spread the fog, not the bite.</em></span></div>
+              </div>
+              <div class="fmot-divider"></div>
+              <div class="fmot-ooa-promise">
+                <div class="fmot-ref-text">We'll be in your neighborhood.</div>
+                <div class="fmot-ref-sub">28207 (Myers Park) is next. Then 28211 (Cotswold). We expand when we can do it right — not before. You'll be the first to know.</div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -679,38 +739,34 @@
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
+<section class="section faq-section" id="faq">
   <div class="container">
-    <div class="section-eyebrow fade" style="margin-bottom:12px"><span class="eyebrow">FAQ</span></div>
-    <h2 class="section-h2 fade" style="font-size:clamp(36px,6vw,64px);margin-bottom:32px">Got questions?</h2>
+    <span class="label fade">FAQ</span>
+    <h2 class="big-h fade" style="font-size:clamp(32px,6vw,56px);margin-bottom:0">Got questions?</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q">Is the formula safe for my dogs, kids, and pollinators?<span class="faq-icon">+</span></button>
-        <div class="faq-a">We use an eco-right formula specifically chosen because we care about the neighborhood — not as an upsell. It's safe for pets, children, and pollinators when applied correctly. We never charge extra to do the job the right way.</div>
+        <button class="faq-q">Safe for my dogs, kids, and pollinators?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. Eco-right formula chosen because it's the right thing — not as an upsell. Safe for pets, kids, and pollinators. We never charge extra to do the job right.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What if it rains right after my treatment?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Text us. We monitor forecasts and will let you know if we need to reschedule. If your treatment gets washed out within 24 hours, we re-treat within 5 days at no extra charge. No forms — just a text.</div>
+        <button class="faq-q">What if it rains after my treatment?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Text us. If treatment gets washed out within 24 hours, we re-treat within 5 days at no charge. No forms — just a text.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Why do you only serve 28205?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Because doing one zip code really well beats doing twenty zip codes adequately. We live here. We know Briar Creek floods. We know when the greenway gets bad. When your entire route is 12 miles of streets you know by name, you can offer things no franchise ever can.</div>
+        <button class="faq-q">Why only 28205?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Doing one zip code really well beats doing twenty adequately. We live here. We know Briar Creek floods. We know your street. That's the whole model.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Can I cancel or pause my subscription?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — text us anytime. No contracts, no cancellation fees, no forms. Going out of town for a month? Just text "pause." We'll check in when mosquito season rolls around next spring.</div>
+        <button class="faq-q">Can I cancel or pause?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Text us anytime. No contracts, no fees, no forms. Going out of town? Just text "pause."</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do you have a referral program?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Spread the fog, not the bite. Refer a neighbor and get $20 off your next treatment. They get their first treatment free. Just have them mention your name when they book.</div>
+        <button class="faq-q">Referral program?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Spread the fog, not the bite. Refer a neighbor and get $20 off your next treatment. They get their first treatment free.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Are you licensed and insured?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — NC Pesticide Applicator License (Category 7B, Ornamental & Turf) and full general liability insurance. Happy to provide copies on request. We're also your neighbor, which counts for something.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can you fog for an outdoor event?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — event fogging runs $149–$299 depending on the space. We treat 2–4 hours before your event and it keeps mosquitoes suppressed for up to 72 hours. Text us the date and address for a quick quote.</div>
+        <button class="faq-q">Licensed and insured?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — NC Pesticide Applicator License (Category 7B) and full general liability insurance. We're also your neighbor, which counts for something.</div>
       </div>
     </div>
   </div>
@@ -718,46 +774,43 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
+  <div class="foot-inner">
     <div>
-      <div class="footer-logo">Fog<em>Off</em></div>
-      <p class="footer-tagline">Charlotte's only zip-bound,<br>neighbor-run mosquito fogging service.<br>Serving 28205 — Plaza Midwood.</p>
+      <div class="foot-logo">Fog<em>Off</em></div>
+      <p class="foot-tag">Charlotte's only zip-bound,<br>neighbor-run mosquito fogging service.<br>Serving 28205.</p>
     </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Navigate</div>
+    <div class="foot-col">
+      <div class="foot-col-title">Navigate</div>
       <a href="#why">Why Fog Off</a>
-      <a href="#plans">Plans &amp; pricing</a>
-      <a href="#about">Meet the foggers</a>
+      <a href="#plans">Plans</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
-      <a href="#book">Book a treatment</a>
+      <a href="#book">Book</a>
     </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Contact</div>
+    <div class="foot-col">
+      <div class="foot-col-title">Contact</div>
       <p>Text: (704) 000-0000</p>
       <p>28205 · Charlotte, NC</p>
-      <p style="margin-top:12px;font-size:11px;opacity:.5">NC Pesticide Applicator License<br>Fully Insured · Eco-right Formula</p>
+      <p style="margin-top:10px;font-size:11px;opacity:.4">NC Licensed · Fully Insured</p>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-legal">© 2025 Fog Off LLC · Charlotte, NC · 28205</span>
-    <span class="footer-legal">Tell mosquitoes to fog off.</span>
+  <div class="foot-bottom">
+    <span class="foot-legal">© 2025 Fog Off LLC · Charlotte NC</span>
+    <span class="foot-legal">Tell mosquitoes to fog off.</span>
   </div>
 </footer>
 
-<!-- MOBILE CTA -->
-<div class="sticky-cta">
+<!-- STICKY MOBILE CTA -->
+<div class="sticky">
   <a href="#book">Fog off my yard — book now →</a>
 </div>
 
 <script>
-  const nav = document.getElementById('mainNav');
-  const ham = document.getElementById('hamburger');
-  ham.addEventListener('click', () => { const o = nav.classList.toggle('open'); ham.setAttribute('aria-expanded', o); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); ham.setAttribute('aria-expanded','false'); }));
-
-  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  // Fade on scroll
+  const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
+  // FAQ
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -767,21 +820,72 @@
     });
   });
 
-  const form = document.getElementById('bookingForm');
-  const success = document.getElementById('formSuccess');
+  // Form — zip validation + dual FMOT states
+  const VALID_ZIPS = ['28205'];
+  const form = document.getElementById('bookForm');
+
+  function getZipFromAddress(addr) {
+    const match = addr.match(/\b(\d{5})\b/);
+    return match ? match[1] : null;
+  }
+
+  function hideForm() {
+    form.querySelectorAll('input,select,textarea,button,p.form-note').forEach(el => el.style.display = 'none');
+    form.querySelector('.form-title').style.display = 'none';
+    form.querySelector('.form-sub').style.display = 'none';
+  }
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('.form-submit');
+    const btn = form.querySelector('.form-cta');
+    const addr = document.getElementById('addr').value.trim();
+    const zip = getZipFromAddress(addr);
+
+    // Check zip — if address contains a non-28205 zip, show OOA
+    if (zip && !VALID_ZIPS.includes(zip)) {
+      hideForm();
+      document.getElementById('formOOA').style.display = 'block';
+      return;
+    }
+
     btn.textContent = 'Sending...'; btn.disabled = true;
-    // TODO: Replace with Formspree endpoint
-    // await fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} })
-    await new Promise(r => setTimeout(r, 1200));
-    form.querySelectorAll('input,select,textarea,button').forEach(el => el.style.display = 'none');
-    success.style.display = 'block';
+
+    try {
+      // TODO: Replace YOUR_ACCESS_KEY with your Web3Forms key from web3forms.com
+      // Web3Forms is free, 250 submissions/month, no account required to get a key
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_ACCESS_KEY',
+          from_name: 'Fog Off · fogoff.net',
+          subject: `New Fog Off booking — ${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
+          name: `${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
+          phone: document.getElementById('ph').value,
+          address: addr,
+          plan: document.getElementById('pl').value,
+          notes: document.getElementById('nt').value,
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        hideForm();
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Fog off my yard →'; btn.disabled = false;
+        btn.textContent = 'Something went wrong — try again';
+      }
+    } catch {
+      // Fallback for demo — remove in production
+      hideForm();
+      document.getElementById('formSuccess').style.display = 'block';
+    }
   });
 
+  // Nav scroll
+  const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
-    nav.style.background = window.scrollY > 60 ? 'rgba(245,240,232,0.97)' : 'rgba(245,240,232,0.92)';
+    nav.style.background = window.scrollY > 40 ? 'rgba(245,240,232,0.98)' : 'rgba(245,240,232,0.95)';
   }, { passive: true });
 </script>
 </body>
