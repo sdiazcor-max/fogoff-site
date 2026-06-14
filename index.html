@@ -905,27 +905,53 @@
 
 <script>
   // Fade on scroll
-  const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
+ const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-(function() {
-  const p = new URLSearchParams(window.location.search);
-  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
-    const el = document.getElementById(k);
-    if(el) el.value = p.get(k) || '';
-  });
-  const ref = document.getElementById('referrer');
-  if(ref) {
-    const r = document.referrer;
-    if(r.includes('nextdoor')) ref.value = 'nextdoor';
-    else if(r.includes('facebook')) ref.value = 'facebook';
-    else if(r.includes('instagram')) ref.value = 'instagram';
-    else if(r.includes('google')) ref.value = 'google';
-    else if(r) ref.value = r;
-    else ref.value = 'direct';
+
+  function initAutocomplete() {
+    const input = document.getElementById('addr');
+    if (!input || typeof google === 'undefined') return;
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      componentRestrictions: { country: 'us' },
+      fields: ['address_components', 'formatted_address'],
+      types: ['address']
+    });
+    const charBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(35.1800, -80.8800),
+      new google.maps.LatLng(35.2400, -80.7900)
+    );
+    autocomplete.setBounds(charBounds);
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place.address_components) return;
+      const zipComp = place.address_components.find(c => c.types.includes('postal_code'));
+      const zip = zipComp ? zipComp.short_name : '';
+      const ooa = document.getElementById('addrOOA');
+      if (zip && zip !== '28205') { ooa.style.display = 'block'; }
+      else { ooa.style.display = 'none'; }
+      input.value = place.formatted_address;
+    });
   }
-  const lp = document.getElementById('landing_page');
-  if(lp) lp.value = window.location.href;
-})();
+
+  (function() {
+    const p = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+      const el = document.getElementById(k);
+      if(el) el.value = p.get(k) || '';
+    });
+    const ref = document.getElementById('referrer');
+    if(ref) {
+      const r = document.referrer;
+      if(r.includes('nextdoor')) ref.value = 'nextdoor';
+      else if(r.includes('facebook')) ref.value = 'facebook';
+      else if(r.includes('instagram')) ref.value = 'instagram';
+      else if(r.includes('google')) ref.value = 'google';
+      else if(r) ref.value = r;
+      else ref.value = 'direct';
+    }
+    const lp = document.getElementById('landing_page');
+    if(lp) lp.value = window.location.href;
+  })();
   // FAQ
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
