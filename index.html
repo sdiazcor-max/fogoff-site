@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="twilio-domain-verification" content="80cfc924b97b58ff6ef4168f8f4d1eb2"/>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Mosquito fogging for 28205. Eco-safe. Text us directly. No call centers."/>
@@ -11,12 +10,22 @@
   <meta property="og:url" content="https://fogoff.net"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="theme-color" content="#1e2d1e"/>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initAutocomplete" async defer></script>
   <title>Fog Off · Charlotte 28205</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e2d1e'/%3E%3Ctext x='16' y='23' font-family='Georgia%2Cserif' font-size='19' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231e2d1e'/%3E%3Ctext x='90' y='130' font-family='Georgia%2Cserif' font-size='115' font-weight='700' font-style='italic' fill='%23c4622d' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- ══ ANALYTICS & TRACKING ══ -->
+  <!-- Google Tag Manager — add your GTM-XXXXXXX container ID when ready -->
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+
+  <!-- Meta Pixel — add your Pixel ID when ready -->
+  <!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script> -->
+
+  <!-- Google Analytics 4 — add your GA4 Measurement ID when ready -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -328,14 +337,32 @@
       font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
       padding: 15px; border-radius: 4px;
     }
-.consent-wrap { margin: 14px 0 10px; }
-.consent-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; position: relative; }
-.consent-label input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
-.consent-check { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; border: 1.5px solid var(--linen2); border-radius: 3px; background: var(--cream); transition: all .15s; display: flex; align-items: center; justify-content: center; }
-.consent-label input:checked ~ .consent-check { background: var(--sage); border-color: var(--sage); }
-.consent-label input:checked ~ .consent-check::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; line-height: 1; }
-.consent-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
-.consent-fine { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.6; padding-left: 28px; opacity: 0.8; }
+
+    /* ── SMS CONSENT ── */
+    .consent-wrap { margin: 14px 0 10px; }
+    .consent-label {
+      display: flex; align-items: flex-start; gap: 10px;
+      cursor: pointer; position: relative;
+    }
+    .consent-label input[type="checkbox"] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+    .consent-check {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+      border: 1.5px solid var(--linen2); border-radius: 3px;
+      background: var(--cream); transition: all .15s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .consent-label input:checked ~ .consent-check {
+      background: var(--sage); border-color: var(--sage);
+    }
+    .consent-label input:checked ~ .consent-check::after {
+      content: '✓'; color: #fff; font-size: 11px; font-weight: 700; line-height: 1;
+    }
+    .consent-label input:focus ~ .consent-check { border-color: var(--sage); }
+    .consent-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .consent-fine { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.6; padding-left: 28px; opacity: 0.8; }
+
     /* ── FMOT STATES ── */
     .fmot-success, .fmot-ooa {
       padding: 4px 0 8px;
@@ -428,10 +455,49 @@
     .fmot-ref-sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
     .fmot-ooa-why { }
 
+    /* ── COOKIE BANNER ── */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+      background: var(--ink); border-top: 2px solid var(--terra);
+      padding: 16px 20px; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      transform: translateY(100%); transition: transform .4s ease;
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    @media(max-width:640px){ .cookie-banner { padding-bottom: max(16px, env(safe-area-inset-bottom)); flex-direction: column; align-items: flex-start; } }
+    .cookie-text { font-size: 13px; color: rgba(245,240,232,0.75); line-height: 1.6; flex: 1; min-width: 200px; }
+    .cookie-text a { color: var(--terra); text-decoration: none; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-accept {
+      background: var(--terra); color: #fff;
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; padding: 10px 20px; border-radius: 4px;
+      border: none; cursor: pointer; white-space: nowrap;
+    }
+    .cookie-decline {
+      background: transparent; color: rgba(245,240,232,0.5);
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.06em; padding: 10px 16px; border-radius: 4px;
+      border: 1px solid rgba(245,240,232,0.15); cursor: pointer; white-space: nowrap;
+    }
+    .cookie-decline:hover { color: var(--linen); border-color: rgba(245,240,232,0.3); }
+
     /* ── FADE ── */
     .fade { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
     .fade.in { opacity: 1; transform: none; }
   </style>
+  <!-- Fog Off config — all keys and links live here -->
+  <script src="./config.js"></script>
+  <!-- Google Places Autocomplete — key comes from config.js -->
+  <script>
+    // Inject Google Maps API key from config
+    (function() {
+      const s = document.createElement('script');
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + FOGOFF_CONFIG.googleMapsKey + '&libraries=places&callback=initAutocomplete';
+      s.async = true; s.defer = true;
+      document.head.appendChild(s);
+    })();
+  </script>
 </head>
 <body>
 
@@ -541,7 +607,7 @@
           <li>SMS confirmation</li>
           <li>5-day re-treat guarantee</li>
         </ul>
-        <a href="#book<a href="https://buy.stripe.com/cNiaEW9zPctq14M3pz9IQ00" class="plan-btn" target="_blank">Get started →</a>" class="plan-btn">Get started →</a>
+        <a href="#" onclick="this.href=FOGOFF_CONFIG.stripe.starterFog" target="_blank" class="plan-btn">Get started →</a>
       </div>
       <div class="plan pop fade" style="transition-delay:.1s">
         <div class="plan-badge">Most popular</div>
@@ -556,7 +622,7 @@
           <li>1 free add-on / month</li>
           <li>5-day re-treat guarantee</li>
         </ul>
-        <a href="#book" class="pl<a href="https://buy.stripe.com/8x24gy13jalieVC6BL9IQ01" class="plan-btn" target="_blank">Get started →</a>an-btn">Get started →</a>
+        <a href="#" onclick="this.href=FOGOFF_CONFIG.stripe.fullSend" target="_blank" class="plan-btn">Get started →</a>
       </div>
       <div class="plan fade" style="transition-delay:.2s">
         <div class="plan-name">Fog Boss</div>
@@ -569,7 +635,7 @@
           <li>Priority scheduling</li>
           <li>$20 referral credit — you and them</li>
         </ul>
-        <a href="https://buy.stripe.com/6oU4gy27ngJGcNu1hr9IQ02" class="plan-btn" target="_blank">Get started →</a>
+        <a href="#" onclick="this.href=FOGOFF_CONFIG.stripe.fogBoss" target="_blank" class="plan-btn">Get started →</a>
       </div>
     </div>
     <p class="plans-fine">Month-to-month. Cancel or pause anytime by text.</p>
@@ -707,7 +773,7 @@
         <div class="book-details fade">
           <div class="book-detail">
             <div class="bd-icon">💬</div>
-            <div><div class="bd-label">Text us directly</div><div class="bd-val">(704) 997-3336</div></div>
+            <div><div class="bd-label">Text us directly</div><div class="bd-val" id="cfg-phone"></div></div>
           </div>
           <div class="book-detail">
             <div class="bd-icon">📍</div>
@@ -729,8 +795,12 @@
           </div>
           <div class="fg"><label for="ph">Phone (we'll text you)</label><input type="tel" id="ph" name="phone" placeholder="(704) 555-0100" required autocomplete="tel"/></div>
           <div class="fg"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="ashley@gmail.com" required autocomplete="email"/></div>
-          <div class="fg"><label for="addr">Address in 28205</label><input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="off"/>
-<div id="addrOOA" style="display:none;font-size:11px;color:var(--terra);margin-top:4px;font-family:var(--mono);letter-spacing:0.05em">⚠ We only serve 28205 — is this address in Plaza Midwood?</div>
+          <div class="fg" style="position:relative">
+            <label for="addr">Address in 28205</label>
+            <input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="off"/>
+            <div id="addrOOA" style="display:none;font-size:11px;color:var(--terra);margin-top:4px;font-family:var(--mono);letter-spacing:0.05em">⚠ We only serve 28205 — is this address in Plaza Midwood?</div>
+          </div>
+          <div class="fg">
             <label for="pl">Plan</label>
             <select id="pl" name="plan" required>
               <option value="" disabled selected>Select a plan</option>
@@ -742,21 +812,26 @@
             </select>
           </div>
           <div class="fg"><label for="nt">Anything we should know? (optional)</label><textarea id="nt" name="notes" placeholder="Dogs, garden, near Briar Creek..."></textarea></div>
-          <input type="hidden" id="utm_source" name="utm_source"/>
-<input type="hidden" id="utm_medium" name="utm_medium"/>
-<input type="hidden" id="utm_campaign" name="utm_campaign"/>
-<input type="hidden" id="utm_content" name="utm_content"/>
-<input type="hidden" id="utm_term" name="utm_term"/>
-<input type="hidden" id="referrer" name="referrer"/>
-<input type="hidden" id="landing_page" name="landing_page"/>
+
+          <!-- UTM tracking — auto-populated from URL, invisible to customer -->
+          <input type="hidden" id="utm_source"   name="utm_source"/>
+          <input type="hidden" id="utm_medium"   name="utm_medium"/>
+          <input type="hidden" id="utm_campaign" name="utm_campaign"/>
+          <input type="hidden" id="utm_content"  name="utm_content"/>
+          <input type="hidden" id="utm_term"     name="utm_term"/>
+          <input type="hidden" id="referrer"     name="referrer"/>
+          <input type="hidden" id="landing_page" name="landing_page"/>
+          <!-- SMS CONSENT — Required for Twilio A2P 10DLC compliance -->
           <div class="consent-wrap">
-  <label class="consent-label">
-    <input type="checkbox" id="sms_consent" name="sms_consent" value="yes" required/>
-    <span class="consent-check"></span>
-    <span class="consent-text">I agree to receive text messages from Fog Off about my service, appointment reminders, and account updates. Message frequency varies. Message &amp; data rates may apply. Reply STOP to opt out at any time.</span>
-  </label>
-  <div class="consent-fine">By submitting this form you also agree to our <a href="/Terms.html" style="color:var(--terra)">Terms of Service</a> and <a href="/Terms.html" style="color:var(--terra)">Privacy Policy</a>. We will never share or sell your information.</div>
-</div>
+            <label class="consent-label">
+              <input type="checkbox" id="sms_consent" name="sms_consent" value="yes" required/>
+              <span class="consent-check"></span>
+              <span class="consent-text">I agree to receive text messages from Fog Off about my service, appointment reminders, and account updates. Message frequency varies. Message &amp; data rates may apply. Reply STOP to opt out at any time.</span>
+            </label>
+            <div class="consent-fine">
+              By submitting this form you also agree to our <a href="#" style="color:var(--terra)">Terms of Service</a> and <a href="#" style="color:var(--terra)">Privacy Policy</a>. We will never share or sell your information.
+            </div>
+          </div>
           <button type="submit" class="form-cta">Fog off my yard →</button>
           <p class="form-note">No payment now. We confirm by text then send a payment link.</p>
           <!-- SUCCESS STATE -->
@@ -778,7 +853,7 @@
               </div>
               <div class="fmot-divider"></div>
               <div class="fmot-referral">
-                <div class="fmot-ref-hed">Show you fogging care. 🌿</div>
+                <div class="fmot-ref-hed">Show your fogging care. 🌿</div>
                 <div class="fmot-ref-sub">Spread the love to those you care about in 28205 — and you both save $20 on your next treatment.</div>
                 <div class="fmot-ref-how">
                   <div class="fmot-ref-how-label">Forward this text to a neighbor right now</div>
@@ -811,7 +886,7 @@
                 <div class="fmot-next-label">Two things — takes 30 seconds</div>
                 <div class="fmot-next-item"><span class="fmot-next-num">1</span>
                   <span><strong style="font-weight:500;color:var(--ink)">Text us to join the waitlist.</strong> We're expanding to 28207 (Myers Park) next season. One text puts you first in line.<br>
-                  <a class="fmot-sms-btn fmot-sms-btn-sm" href="sms:(704)000-0000&body=Hey! I'm outside 28205 but want to be on the Fog Off waitlist. My address is:" style="margin-top:8px;display:inline-block">Text us your address →</a></span>
+                  <a class="fmot-sms-btn fmot-sms-btn-sm" id="cfg-ooa-sms" href="#" onclick="this.href='sms:'+FOGOFF_CONFIG.phoneSMS+'&body=Hey! I'm outside 28205 but want to be on the Fog Off waitlist. My address is:" style="margin-top:8px;display:inline-block">Text us your address →</a></span>
                 </div>
                 <div class="fmot-next-item" style="margin-top:12px"><span class="fmot-next-num">2</span>
                   <span><strong style="font-weight:500;color:var(--ink)">Show your fogging care.</strong> Know someone in 28205? Send them this — they save $20 on their first treatment, and you get a $20 credit waiting when we expand to your zip.<br>
@@ -887,7 +962,7 @@
     </div>
     <div class="foot-col">
       <div class="foot-col-title">Contact</div>
-      <p>Text: (704) 997-3336</p>
+      <p id="cfg-footer-phone"></p>
       <p>28205 · Charlotte, NC</p>
       <p style="margin-top:10px;font-size:11px;opacity:.4">NC Licensed · Fully Insured</p>
     </div>
@@ -903,55 +978,48 @@
   <a href="#book">Fog off my yard — book now →</a>
 </div>
 
+<!-- COOKIE CONSENT BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p class="cookie-text">
+    We use cookies to understand how you found us and improve our service.
+    No advertising cookies — just analytics.
+    <a href="/legal">Privacy Policy →</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="declineCookies()">Essential only</button>
+    <button class="cookie-accept" onclick="acceptCookies()">Accept all</button>
+  </div>
+</div>
+
 <script>
   // Fade on scroll
- const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
+  const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting){ i.target.classList.add('in'); obs.unobserve(i.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-  function initAutocomplete() {
-    const input = document.getElementById('addr');
-    if (!input || typeof google === 'undefined') return;
-    const autocomplete = new google.maps.places.Autocomplete(input, {
-      componentRestrictions: { country: 'us' },
-      fields: ['address_components', 'formatted_address'],
-      types: ['address']
-    });
-    const charBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(35.1800, -80.8800),
-      new google.maps.LatLng(35.2400, -80.7900)
-    );
-    autocomplete.setBounds(charBounds);
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
-      if (!place.address_components) return;
-      const zipComp = place.address_components.find(c => c.types.includes('postal_code'));
-      const zip = zipComp ? zipComp.short_name : '';
-      const ooa = document.getElementById('addrOOA');
-      if (zip && zip !== '28205') { ooa.style.display = 'block'; }
-      else { ooa.style.display = 'none'; }
-      input.value = place.formatted_address;
-    });
-  }
-
+  // UTM capture — runs on page load, populates hidden fields from URL params
   (function() {
     const p = new URLSearchParams(window.location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+    const fields = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    fields.forEach(k => {
       const el = document.getElementById(k);
-      if(el) el.value = p.get(k) || '';
+      if (el) el.value = p.get(k) || '';
     });
+    // Referrer — where they came from
     const ref = document.getElementById('referrer');
-    if(ref) {
+    if (ref) {
       const r = document.referrer;
-      if(r.includes('nextdoor')) ref.value = 'nextdoor';
-      else if(r.includes('facebook')) ref.value = 'facebook';
-      else if(r.includes('instagram')) ref.value = 'instagram';
-      else if(r.includes('google')) ref.value = 'google';
-      else if(r) ref.value = r;
+      if (r.includes('nextdoor')) ref.value = 'nextdoor';
+      else if (r.includes('facebook')) ref.value = 'facebook';
+      else if (r.includes('instagram')) ref.value = 'instagram';
+      else if (r.includes('google')) ref.value = 'google';
+      else if (r) ref.value = r;
       else ref.value = 'direct';
     }
+    // Landing page
     const lp = document.getElementById('landing_page');
-    if(lp) lp.value = window.location.href;
+    if (lp) lp.value = window.location.href;
   })();
+
   // FAQ
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -981,13 +1049,13 @@
     e.preventDefault();
     const btn = form.querySelector('.form-cta');
     const consent = document.getElementById('sms_consent');
-if (!consent.checked) {
-  consent.closest('.consent-label').querySelector('.consent-check').style.borderColor = 'var(--terra)';
-  consent.closest('.consent-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  btn.textContent = 'Please agree to SMS communications →';
-  setTimeout(() => { btn.textContent = 'Fog off my yard →'; }, 2500);
-  return;
-}
+    if (!consent.checked) {
+      consent.closest('.consent-label').querySelector('.consent-check').style.borderColor = 'var(--terra)';
+      consent.closest('.consent-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      btn.textContent = 'Please agree to SMS communications →';
+      setTimeout(() => { btn.textContent = 'Fog off my yard →'; }, 2500);
+      return;
+    }
     const addr = document.getElementById('addr').value.trim();
     const zip = getZipFromAddress(addr);
 
@@ -1007,7 +1075,7 @@ if (!consent.checked) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          access_key: '5281736b-9f0f-49fe-8c70-d6d78c0cc8a0',
+          access_key: FOGOFF_CONFIG.web3formsKey,
           from_name: 'Fog Off · fogoff.net',
           subject: `New Fog Off booking — ${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
           name: `${document.getElementById('fn').value} ${document.getElementById('ln').value}`,
@@ -1016,6 +1084,14 @@ if (!consent.checked) {
           address: addr,
           plan: document.getElementById('pl').value,
           notes: document.getElementById('nt').value,
+          sms_consent:  document.getElementById('sms_consent').checked ? 'Yes — opted in' : 'No',
+          utm_source:   document.getElementById('utm_source').value,
+          utm_medium:   document.getElementById('utm_medium').value,
+          utm_campaign: document.getElementById('utm_campaign').value,
+          utm_content:  document.getElementById('utm_content').value,
+          utm_term:     document.getElementById('utm_term').value,
+          referrer:     document.getElementById('referrer').value,
+          landing_page: document.getElementById('landing_page').value,
         })
       });
       const data = await res.json();
@@ -1063,11 +1139,114 @@ if (!consent.checked) {
   }
   detectMobile();
 
+  // ── GOOGLE PLACES AUTOCOMPLETE ──
+  function initAutocomplete() {
+    const input = document.getElementById('addr');
+    if (!input || typeof google === 'undefined') return;
+
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      componentRestrictions: { country: 'us' },
+      fields: ['address_components', 'formatted_address', 'geometry'],
+      types: ['address']
+    });
+
+    // Bias results toward Charlotte 28205
+    const charBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(35.1800, -80.8800), // SW corner of 28205
+      new google.maps.LatLng(35.2400, -80.7900)  // NE corner of 28205
+    );
+    autocomplete.setBounds(charBounds);
+
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place.address_components) return;
+
+      // Extract zip from place
+      const zipComp = place.address_components.find(c => c.types.includes('postal_code'));
+      const zip = zipComp ? zipComp.short_name : '';
+
+      // Show OOA warning if not 28205
+      const ooa = document.getElementById('addrOOA');
+      if (zip && zip !== '28205') {
+        ooa.style.display = 'block';
+      } else {
+        ooa.style.display = 'none';
+      }
+
+      // Set the full formatted address
+      input.value = place.formatted_address;
+    });
+
+    // Style the Google autocomplete dropdown to match Fog Off brand
+    const style = document.createElement('style');
+    style.textContent = `
+      .pac-container {
+        border-radius: 6px;
+        border: 1px solid var(--linen2);
+        box-shadow: 0 4px 16px rgba(30,45,30,0.12);
+        font-family: var(--sans);
+        margin-top: 2px;
+      }
+      .pac-item {
+        padding: 8px 14px;
+        font-size: 14px;
+        color: var(--ink);
+        cursor: pointer;
+        border-top: 1px solid var(--linen2);
+      }
+      .pac-item:first-child { border-top: none; }
+      .pac-item:hover, .pac-item-selected { background: var(--linen); }
+      .pac-item-query { font-weight: 500; color: var(--ink); }
+      .pac-matched { color: var(--terra); font-weight: 700; }
+      .pac-icon { display: none; }
+      .pac-logo { display: none !important; }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // ── POPULATE FROM CONFIG ──
+  (function() {
+    // Phone numbers
+    const ph = document.getElementById('cfg-phone');
+    if(ph) ph.textContent = FOGOFF_CONFIG.phone;
+    const fph = document.getElementById('cfg-footer-phone');
+    if(fph) fph.textContent = 'Text: ' + FOGOFF_CONFIG.phone;
+    // Nav book button
+    document.querySelectorAll('a.nav-book').forEach(a => a.href = '#book');
+  })();
+
   // Nav scroll
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     nav.style.background = window.scrollY > 40 ? 'rgba(245,240,232,0.98)' : 'rgba(245,240,232,0.95)';
   }, { passive: true });
+
+  // ── COOKIE CONSENT ──
+  function setCookie(name, val, days) {
+    const d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name+'='+val+';expires='+d.toUTCString()+';path=/;SameSite=Lax';
+  }
+  function getCookie(name) {
+    const v = document.cookie.match('(^|;) ?'+name+'=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
+  function acceptCookies() {
+    setCookie('fog_cookie_consent','accepted',365);
+    document.getElementById('cookieBanner').classList.remove('show');
+    // Fire analytics once accepted
+    // gtag('consent','update',{'analytics_storage':'granted'});
+    // fbq('consent','grant');
+  }
+  function declineCookies() {
+    setCookie('fog_cookie_consent','declined',365);
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+  // Show banner if no consent recorded
+  window.addEventListener('load', () => {
+    if (!getCookie('fog_cookie_consent')) {
+      setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1500);
+    }
+  });
 </script>
 </body>
 </html>
