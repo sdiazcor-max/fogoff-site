@@ -256,7 +256,7 @@
     .stat-label { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
     /* ── BOOK ── */
-    .book { background: var(--ink); }
+    .book { background: var(--ink); overflow: visible; }
     .book-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
     @media(max-width:700px){ .book-inner { grid-template-columns: 1fr; gap: 32px; } }
     .book-left {}
@@ -266,7 +266,7 @@
     .bd-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
     .bd-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 3px; }
     .bd-val { font-size: 15px; color: var(--linen); }
-    .form-card { background: var(--linen); border-radius: 14px; padding: 28px 24px; }
+    .form-card { background: var(--linen); border-radius: 14px; padding: 28px 24px; overflow: visible; }
     .form-title { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
     .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -482,6 +482,17 @@
     }
     .cookie-decline:hover { color: var(--linen); border-color: rgba(245,240,232,0.3); }
 
+    /* ── GOOGLE PLACES DROPDOWN FIX ── */
+    .pac-container {
+      z-index: 10000 !important;
+      pointer-events: auto !important;
+    }
+    gmp-place-autocomplete {
+      z-index: 10000 !important;
+      pointer-events: auto !important;
+      position: relative;
+    }
+
     /* ── FADE ── */
     .fade { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
     .fade.in { opacity: 1; transform: none; }
@@ -527,15 +538,26 @@
         `;
         document.head.appendChild(style);
 
-        pac.addEventListener('gmp-select', async (event) => {
-  const place = event.placePrediction.toPlace();
-  await place.fetchFields({ fields: ['addressComponents', 'formattedAddress'] });
-          const zipComp = place.addressComponents?.find(c => c.types.includes('postal_code'));
-          const zip = zipComp ? zipComp.shortText : '';
-          const ooa = document.getElementById('addrOOA');
-          if (ooa) ooa.style.display = (zip && zip !== '28205') ? 'block' : 'none';
-          originalInput.value = place.formattedAddress || '';
-        });
+        // Try both event names for compatibility
+        const handleSelect = async (event) => {
+          try {
+            let place;
+            if (event.placePrediction) {
+              place = event.placePrediction.toPlace();
+            } else if (event.place) {
+              place = event.place;
+            } else return;
+
+            await place.fetchFields({ fields: ['addressComponents', 'formattedAddress'] });
+            const zipComp = place.addressComponents?.find(c => c.types.includes('postal_code'));
+            const zip = zipComp ? zipComp.shortText : '';
+            const ooa = document.getElementById('addrOOA');
+            if (ooa) ooa.style.display = (zip && zip !== '28205') ? 'block' : 'none';
+            originalInput.value = place.formattedAddress || '';
+          } catch(e) { console.warn('Place select error:', e); }
+        };
+        pac.addEventListener('gmp-select', handleSelect);
+        pac.addEventListener('gmp-placeselect', handleSelect);
 
       } catch(e) { console.warn('Places autocomplete error:', e); }
     };
