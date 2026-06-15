@@ -280,6 +280,9 @@
       transition: border-color .2s; appearance: none; -webkit-appearance: none;
     }
     .fg input::placeholder, .fg textarea::placeholder { color: rgba(74,90,74,0.3); }
+    .fg input::-webkit-contacts-auto-fill-button,
+.fg input::-webkit-credentials-auto-fill-button { visibility: hidden; display: none !important; pointer-events: none; }
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--cream) inset !important; -webkit-text-fill-color: var(--ink) !important; }
     .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--sage); background: var(--cream); }
     .fg textarea { resize: vertical; min-height: 80px; }
     .form-cta {
