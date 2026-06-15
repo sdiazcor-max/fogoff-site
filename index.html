@@ -795,9 +795,9 @@
           </div>
           <div class="fg"><label for="ph">Phone (we'll text you)</label><input type="tel" id="ph" name="phone" placeholder="(704) 555-0100" required autocomplete="tel"/></div>
           <div class="fg"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="ashley@gmail.com" required autocomplete="email"/></div>
-          <div class="fg" style="position:relative">
+          <div class="fg">
             <label for="addr">Address in 28205</label>
-            <input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="off"/>
+            <input type="text" id="addr" name="address" placeholder="123 The Plaza" required autocomplete="new-password"/>
             <div id="addrOOA" style="display:none;font-size:11px;color:var(--terra);margin-top:4px;font-family:var(--mono);letter-spacing:0.05em">⚠ We only serve 28205 — is this address in Plaza Midwood?</div>
           </div>
           <div class="fg">
@@ -1203,6 +1203,43 @@
     `;
     document.head.appendChild(style);
   }
+
+  // ── ANALYTICS LOADER ──
+  (function() {
+    const cfg = FOGOFF_CONFIG.analytics;
+    if (!cfg) return;
+
+    // Google Tag Manager
+    if (cfg.gtmId) {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',cfg.gtmId);
+    }
+
+    // GA4
+    if (cfg.ga4Id) {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + cfg.ga4Id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', cfg.ga4Id);
+    }
+
+    // Meta Pixel
+    if (cfg.metaPixel) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+      (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', cfg.metaPixel);
+      fbq('track', 'PageView');
+    }
+  })();
 
   // ── POPULATE FROM CONFIG ──
   (function() {
