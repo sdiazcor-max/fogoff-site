@@ -488,14 +488,13 @@
   </style>
   <!-- Fog Off config — all keys and links live here -->
   <script src="./config.js"></script>
-  <!-- Google Places — new PlaceAutocompleteElement API -->
+  <!-- Google Places Autocomplete -->
   <script>
     (function() {
       const s = document.createElement('script');
-      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + FOGOFF_CONFIG.googleMapsKey + '&libraries=places&loading=async&v=weekly';
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + FOGOFF_CONFIG.googleMapsKey + '&libraries=places&loading=async&callback=initAutocomplete';
       s.async = true;
       s.defer = true;
-      s.onload = initAutocomplete;
       document.head.appendChild(s);
     })();
   </script>
