@@ -527,9 +527,9 @@
         `;
         document.head.appendChild(style);
 
-        pac.addEventListener('gmp-placeselect', async (event) => {
-          const place = event.place;
-          await place.fetchFields({ fields: ['addressComponents', 'formattedAddress'] });
+        pac.addEventListener('gmp-select', async (event) => {
+  const place = event.placePrediction.toPlace();
+  await place.fetchFields({ fields: ['addressComponents', 'formattedAddress'] });
           const zipComp = place.addressComponents?.find(c => c.types.includes('postal_code'));
           const zip = zipComp ? zipComp.shortText : '';
           const ooa = document.getElementById('addrOOA');
