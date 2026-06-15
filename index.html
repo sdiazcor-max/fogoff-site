@@ -1276,6 +1276,36 @@
     `;
     document.head.appendChild(style);
   }
+      // Set the full formatted address
+      input.value = place.formatted_address;
+    });
+
+    // Style the Google autocomplete dropdown to match Fog Off brand
+    const style = document.createElement('style');
+    style.textContent = `
+      .pac-container {
+        border-radius: 6px;
+        border: 1px solid var(--linen2);
+        box-shadow: 0 4px 16px rgba(30,45,30,0.12);
+        font-family: var(--sans);
+        margin-top: 2px;
+      }
+      .pac-item {
+        padding: 8px 14px;
+        font-size: 14px;
+        color: var(--ink);
+        cursor: pointer;
+        border-top: 1px solid var(--linen2);
+      }
+      .pac-item:first-child { border-top: none; }
+      .pac-item:hover, .pac-item-selected { background: var(--linen); }
+      .pac-item-query { font-weight: 500; color: var(--ink); }
+      .pac-matched { color: var(--terra); font-weight: 700; }
+      .pac-icon { display: none; }
+      .pac-logo { display: none !important; }
+    `;
+    document.head.appendChild(style);
+  }
 
   // ── ANALYTICS LOADER ──
   (function() {
