@@ -488,14 +488,64 @@
   </style>
   <!-- Fog Off config — all keys and links live here -->
   <script src="./config.js"></script>
-  <!-- Google Places — PlaceAutocompleteElement (new API) -->
+  <!-- Google Places — PlaceAutocompleteElement (new API, correct async pattern) -->
   <script>
+    window.initAutocomplete = async function() {
+      try {
+        const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
+        const originalInput = document.getElementById('addr');
+        if (!originalInput) return;
+        const wrapper = originalInput.parentElement;
+
+        const pac = new PlaceAutocompleteElement({
+          componentRestrictions: { country: 'us' },
+          types: ['address'],
+          locationBias: { center: { lat: 35.2100, lng: -80.8300 }, radius: 5000 }
+        });
+
+        originalInput.style.display = 'none';
+        wrapper.insertBefore(pac, originalInput);
+
+        const style = document.createElement('style');
+        style.textContent = `
+          gmp-place-autocomplete { width:100%; display:block; }
+          gmp-place-autocomplete input, .pac-target-input {
+            width:100% !important; padding:13px 14px !important;
+            background:#faf7f2 !important; border:1px solid #ece5d8 !important;
+            border-radius:4px !important; color:#1e2d1e !important;
+            font-family:'DM Sans',system-ui,sans-serif !important;
+            font-size:16px !important; outline:none !important;
+            box-sizing:border-box !important; -webkit-appearance:none !important;
+          }
+          gmp-place-autocomplete input::placeholder { color:rgba(74,90,74,0.3) !important; }
+          gmp-place-autocomplete input:focus { border-color:#4a7c59 !important; }
+          .pac-container { border-radius:6px; border:1px solid #ece5d8; box-shadow:0 4px 16px rgba(30,45,30,0.12); font-family:'DM Sans',sans-serif; z-index:9999; margin-top:2px; }
+          .pac-item { padding:10px 14px; font-size:14px; color:#1e2d1e; cursor:pointer; }
+          .pac-item:hover { background:#f5f0e8; }
+          .pac-icon,.pac-logo { display:none !important; }
+          .pac-matched { color:#c4622d; font-weight:700; }
+        `;
+        document.head.appendChild(style);
+
+        pac.addEventListener('gmp-placeselect', async (event) => {
+          const place = event.place;
+          await place.fetchFields({ fields: ['addressComponents', 'formattedAddress'] });
+          const zipComp = place.addressComponents?.find(c => c.types.includes('postal_code'));
+          const zip = zipComp ? zipComp.shortText : '';
+          const ooa = document.getElementById('addrOOA');
+          if (ooa) ooa.style.display = (zip && zip !== '28205') ? 'block' : 'none';
+          originalInput.value = place.formattedAddress || '';
+        });
+
+      } catch(e) { console.warn('Places autocomplete error:', e); }
+    };
+
+    // Load Maps API with callback
     (function() {
       const s = document.createElement('script');
-      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + FOGOFF_CONFIG.googleMapsKey + '&v=beta&libraries=places&loading=async';
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + FOGOFF_CONFIG.googleMapsKey + '&v=beta&libraries=places&loading=async&callback=initAutocomplete';
       s.async = true;
       s.defer = true;
-      s.onload = initAutocomplete;
       document.head.appendChild(s);
     })();
   </script>
