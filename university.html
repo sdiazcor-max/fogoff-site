@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fog University · NC Pesticide Applicator License</title>
+  <meta name="description" content="Study for the NC Pesticide Applicator Exam, Category 7B Ornamental & Turf. Fog University — by Fog Off." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest: #1e2d1e;
+      --forest-light: #263826;
+      --sage: #4a7c59;
+      --gold: #c8a84b;
+      --terracotta: #c4622d;
+      --linen: #f5f0e8;
+      --cream: #faf7f2;
+      --muted: #7a9a82;
+      --border: rgba(255,255,255,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--forest);
+      color: var(--linen);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    .mono { font-family: 'Space Mono', monospace; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(30,45,30,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 800; color: var(--linen); text-decoration: none; }
+    .nav-logo em { color: var(--terracotta); font-style: italic; }
+    .nav-back { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 72px 24px 60px;
+      max-width: 860px; margin: 0 auto; text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em;
+      color: var(--gold); background: rgba(200,168,75,0.12);
+      border: 1px solid rgba(200,168,75,0.3);
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .hero h1 em { color: var(--terracotta); font-style: italic; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 36px; }
+    .exam-stats {
+      display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+    }
+    .stat {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 24px; text-align: center;
+    }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--muted); margin-top: 4px; text-transform: uppercase; }
+
+    /* ── TABS ── */
+    .tabs-container { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+    .tabs-nav {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 8px; margin-bottom: 32px;
+    }
+    .tab-btn {
+      flex: 1; min-width: 120px;
+      background: transparent; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+      color: var(--muted); padding: 12px 16px; border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--linen); background: rgba(255,255,255,0.05); }
+    .tab-btn.active { background: var(--sage); color: var(--cream); font-weight: 600; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── STUDY GUIDE ── */
+    .section-intro {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
+    }
+    .section-intro h2 { font-size: 1.5rem; margin-bottom: 8px; }
+    .section-intro p { color: var(--muted); font-size: 0.95rem; }
+    .accordion { display: flex; flex-direction: column; gap: 12px; }
+    .acc-item {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .acc-header {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; text-align: left;
+    }
+    .acc-header:hover { background: rgba(255,255,255,0.03); }
+    .acc-header-left { display: flex; align-items: center; gap: 16px; }
+    .acc-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(74,124,89,0.2); border: 1px solid rgba(74,124,89,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .acc-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--linen); }
+    .acc-sub { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 2px; }
+    .acc-chevron { color: var(--muted); font-size: 1.1rem; transition: transform 0.25s; }
+    .acc-item.open .acc-chevron { transform: rotate(180deg); }
+    .acc-body { display: none; padding: 0 24px 24px; }
+    .acc-item.open .acc-body { display: block; }
+    .acc-body h4 { font-size: 0.9rem; color: var(--gold); margin: 20px 0 10px; font-family: 'Space Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+    .acc-body h4:first-child { margin-top: 4px; }
+    .acc-body p { color: var(--linen); font-size: 0.93rem; line-height: 1.7; margin-bottom: 10px; }
+    .acc-body ul { padding-left: 20px; color: var(--linen); font-size: 0.93rem; line-height: 1.8; }
+    .acc-body li { margin-bottom: 4px; }
+    .highlight {
+      display: inline-block; background: rgba(200,168,75,0.15);
+      border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0;
+      padding: 10px 16px; margin: 10px 0; font-size: 0.9rem;
+      color: var(--cream);
+    }
+    .danger-box {
+      background: rgba(196,98,45,0.12); border: 1px solid rgba(196,98,45,0.3);
+      border-radius: 8px; padding: 12px 16px; margin: 12px 0;
+      font-size: 0.88rem; color: var(--linen);
+    }
+    .danger-box strong { color: var(--terracotta); }
+    .signal-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.88rem; }
+    .signal-table th {
+      background: rgba(255,255,255,0.05); font-family: 'Space Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.06em; color: var(--muted);
+      padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .signal-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .signal-table tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em; font-weight: 700;
+    }
+    .badge-danger { background: rgba(196,98,45,0.2); color: var(--terracotta); border: 1px solid rgba(196,98,45,0.3); }
+    .badge-warn { background: rgba(200,168,75,0.2); color: var(--gold); border: 1px solid rgba(200,168,75,0.3); }
+    .badge-caution { background: rgba(74,124,89,0.2); color: #7ec895; border: 1px solid rgba(74,124,89,0.3); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0; }
+    @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+    .mini-card {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px;
+    }
+    .mini-card h5 { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 6px; }
+
+    /* ── QUIZ ── */
+    .quiz-header {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+    }
+    .quiz-header h2 { font-size: 1.5rem; }
+    .quiz-header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+    .quiz-score {
+      text-align: right; flex-shrink: 0;
+    }
+    .score-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: var(--gold); }
+    .score-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
+    .quiz-progress {
+      height: 4px; background: rgba(255,255,255,0.1);
+      border-radius: 2px; margin-bottom: 24px; overflow: hidden;
+    }
+    .quiz-progress-bar { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.4s; width: 0%; }
+    .question-card {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px; margin-bottom: 16px;
+    }
+    .question-card.correct { border-color: rgba(74,124,89,0.5); background: rgba(74,124,89,0.08); }
+    .question-card.incorrect { border-color: rgba(196,98,45,0.5); background: rgba(196,98,45,0.06); }
+    .q-num { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 10px; }
+    .q-text { font-size: 1rem; font-weight: 500; color: var(--cream); margin-bottom: 20px; line-height: 1.6; }
+    .q-options { display: flex; flex-direction: column; gap: 10px; }
+    .q-option {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 10px; padding: 13px 16px; cursor: pointer;
+      font-size: 0.9rem; color: var(--linen); text-align: left;
+      transition: all 0.15s; display: flex; align-items: flex-start; gap: 10px;
+    }
+    .q-option:hover:not(:disabled) { background: rgba(255,255,255,0.08); border-color: var(--sage); }
+    .q-option:disabled { cursor: default; }
+    .q-option.selected { border-color: var(--sage); background: rgba(74,124,89,0.15); }
+    .q-option.correct-ans { border-color: #4a7c59; background: rgba(74,124,89,0.2); color: #7ec895; }
+    .q-option.wrong-ans { border-color: var(--terracotta); background: rgba(196,98,45,0.1); color: #e08060; }
+    .q-letter { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: var(--muted); min-width: 18px; margin-top: 1px; }
+    .q-explanation {
+      margin-top: 14px; padding: 12px 16px;
+      background: rgba(200,168,75,0.1); border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0; font-size: 0.88rem; color: var(--linen);
+      display: none;
+    }
+    .q-explanation.visible { display: block; }
+    .quiz-controls {
+      display: flex; gap: 12px; margin-top: 24px;
+    }
+    .btn {
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9rem;
+      padding: 12px 24px; border-radius: 10px; cursor: pointer; border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: var(--sage); color: var(--cream); }
+    .btn-primary:hover { background: #5a8c6a; }
+    .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--linen); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.05); }
+    .btn-gold { background: var(--gold); color: var(--forest); }
+    .btn-gold:hover { background: #d8b85b; }
+    .quiz-final {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 48px 28px; text-align: center;
+      display: none;
+    }
+    .quiz-final h2 { font-size: 2rem; margin-bottom: 12px; }
+    .quiz-final .big-score {
+      font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 800;
+      color: var(--gold); line-height: 1; margin: 16px 0;
+    }
+    .quiz-final p { color: var(--muted); margin-bottom: 24px; }
+    .pass-msg { color: #7ec895; font-weight: 600; font-size: 1.1rem; }
+    .fail-msg { color: var(--terracotta); font-weight: 600; font-size: 1.1rem; }
+
+    /* ── FLASHCARDS ── */
+    .fc-header {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
+    }
+    .fc-header h2 { font-size: 1.5rem; }
+    .fc-header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+    .fc-progress-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 12px; }
+    .fc-area {
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    .fc-card-wrap {
+      width: 100%; max-width: 600px;
+      perspective: 1000px; cursor: pointer;
+    }
+    .fc-card-inner {
+      position: relative; width: 100%; height: 260px;
+      transform-style: preserve-3d; transition: transform 0.5s;
+    }
+    .fc-card-wrap.flipped .fc-card-inner { transform: rotateY(180deg); }
+    .fc-front, .fc-back {
+      position: absolute; width: 100%; height: 100%;
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 36px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; backface-visibility: hidden;
+    }
+    .fc-back { transform: rotateY(180deg); border-color: rgba(74,124,89,0.4); }
+    .fc-face-label {
+      font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+      color: var(--muted); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .fc-term { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--cream); }
+    .fc-def { font-size: 0.95rem; color: var(--linen); line-height: 1.7; }
+    .fc-hint { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 16px; letter-spacing: 0.06em; }
+    .fc-controls { display: flex; gap: 12px; align-items: center; }
+    .fc-nav-btn {
+      width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border);
+      background: var(--forest-light); color: var(--linen); font-size: 1.2rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .fc-nav-btn:hover { background: var(--sage); border-color: var(--sage); }
+    .fc-counter { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--muted); min-width: 70px; text-align: center; }
+    .fc-category-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .fc-cat-btn {
+      font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em;
+      padding: 6px 14px; border-radius: 100px; cursor: pointer;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--muted); transition: all 0.15s;
+    }
+    .fc-cat-btn:hover, .fc-cat-btn.active { background: var(--sage); border-color: var(--sage); color: var(--cream); }
+
+    /* ── REGISTER ── */
+    .reg-alert {
+      background: rgba(200,168,75,0.1); border: 1px solid rgba(200,168,75,0.3);
+      border-radius: 12px; padding: 16px 20px; margin-bottom: 24px;
+      font-size: 0.9rem; color: var(--linen); display: flex; gap: 12px;
+    }
+    .reg-alert span { font-size: 1.1rem; }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 20px; position: relative;
+    }
+    .step-line {
+      display: flex; flex-direction: column; align-items: center;
+      flex-shrink: 0; width: 40px;
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--sage); color: var(--cream);
+      font-family: 'Space Mono', monospace; font-weight: 700; font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+    .step-connector {
+      flex: 1; width: 2px; background: rgba(74,124,89,0.3);
+      margin: 4px 0;
+    }
+    .step:last-child .step-connector { display: none; }
+    .step-content { padding: 4px 0 32px; flex: 1; }
+    .step-content h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 8px; color: var(--cream); }
+    .step-content p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+    .step-content ul { color: var(--muted); font-size: 0.9rem; padding-left: 18px; margin-top: 8px; line-height: 1.8; }
+    .step-content a { color: var(--gold); text-decoration: none; }
+    .step-content a:hover { text-decoration: underline; }
+    .step-callout {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px; margin-top: 12px; font-size: 0.88rem;
+    }
+    .step-callout strong { color: var(--gold); }
+    .reg-tabs-nav { display: flex; gap: 8px; margin-bottom: 24px; }
+    .reg-tab-btn {
+      flex: 1; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--forest-light); color: var(--muted); cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+      transition: all 0.2s; text-align: center;
+    }
+    .reg-tab-btn.active { background: var(--sage); border-color: var(--sage); color: var(--cream); }
+    .reg-tab-panel { display: none; }
+    .reg-tab-panel.active { display: block; }
+    .checklist { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px; font-size: 0.9rem;
+    }
+    .checklist li::before { content: '☐'; font-size: 1rem; color: var(--sage); flex-shrink: 0; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    @media (max-width: 560px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box {
+      background: var(--forest-light); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+    }
+    .info-box-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+    .info-box-value { font-size: 0.95rem; color: var(--cream); font-weight: 500; }
+    .screenshot-note {
+      background: rgba(196,98,45,0.08); border: 1px solid rgba(196,98,45,0.25);
+      border-radius: 8px; padding: 14px 16px; font-size: 0.88rem; color: var(--linen);
+      margin-top: 12px;
+    }
+    .screenshot-note strong { color: var(--terracotta); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">Fog<em>Off</em></a>
+  <a class="nav-back" href="/">← Back to fogoff.net</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="tag mono">NC PESTICIDE APPLICATOR LICENSE · CATEGORY 7B</div>
+  <h1>Fog <em>University.</em></h1>
+  <p>Everything you need to pass the NC Pesticide Applicator Exam tonight. Study guide, practice quiz, flashcards, and step-by-step exam registration.</p>
+  <div class="exam-stats">
+    <div class="stat">
+      <div class="stat-num">50–100</div>
+      <div class="stat-label">Multiple choice Q's</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">70%</div>
+      <div class="stat-label">Passing score</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$25</div>
+      <div class="stat-label">Exam fee</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$75</div>
+      <div class="stat-label">License fee</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2 exams</div>
+      <div class="stat-label">Core + Category 7B</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="tabs-container">
+  <div class="tabs-nav">
+    <button class="tab-btn active" data-tab="study">📖 Study Guide</button>
+    <button class="tab-btn" data-tab="quiz">✏️ Practice Quiz</button>
+    <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
+    <button class="tab-btn" data-tab="register">📋 Register for Exam</button>
+  </div>
+
+  <!-- ════════════════ STUDY GUIDE ════════════════ -->
+  <div id="study" class="tab-panel active">
+    <div class="section-intro">
+      <h2>Study Guide</h2>
+      <p>Covers both the <strong>Core exam</strong> (required for everyone) and <strong>Category 7B: Ornamental &amp; Turf</strong> (your specific license). You must pass both. Click any section to expand.</p>
+    </div>
+
+    <div class="accordion">
+
+      <!-- CORE: FIFRA -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">⚖️</div>
+            <div>
+              <div class="acc-title">FIFRA &amp; NC Pesticide Law</div>
+              <div class="acc-sub mono">CORE EXAM · Federal &amp; State Law</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>FIFRA — Federal Law</h4>
+          <p>The <strong>Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA)</strong> is the primary federal law governing pesticide use in the United States. Administered by the <strong>EPA</strong>.</p>
+          <ul>
+            <li>All pesticides sold in the US must be <strong>registered with the EPA</strong></li>
+            <li>Sets standards for labeling, safety testing, and approved uses</li>
+            <li>Establishes categories for <strong>General Use Pesticides (GUP)</strong> and <strong>Restricted Use Pesticides (RUP)</strong></li>
+            <li>RUPs can only be purchased and applied by <strong>certified applicators</strong></li>
+            <li>States can have <strong>stricter</strong> laws than FIFRA but not weaker</li>
+          </ul>
+          <h4>NC Pesticide Law (NCDA&amp;CS)</h4>
+          <p>In North Carolina, the <strong>NC Department of Agriculture &amp; Consumer Services (NCDA&amp;CS)</strong> administers pesticide licensing through the Structural Pest Control &amp; Pesticides Division.</p>
+          <ul>
+            <li>Anyone applying pesticides for compensation on someone else's property must be <strong>licensed</strong></li>
+            <li><strong>Private applicators</strong>: apply pesticides on their own land for agricultural purposes</li>
+            <li><strong>Commercial applicators</strong>: apply pesticides for hire (that's you)</li>
+            <li>You must pass the <strong>Core exam + at least one Category exam</strong></li>
+            <li>Category 7B = <strong>Ornamental &amp; Turf</strong></li>
+            <li>Records of RUP applications must be kept for <strong>at least 2 years</strong></li>
+          </ul>
+          <div class="highlight">⚠️ The label is the LAW. Following label directions is legally required, not optional.</div>
+        </div>
+      </div>
+
+      <!-- CORE: LABELS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🏷️</div>
+            <div>
+              <div class="acc-title">Pesticide Labels</div>
+              <div class="acc-sub mono">CORE EXAM · Heavily Tested</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>What Must Be On Every Label</h4>
+          <ul>
+            <li>Product/brand name</li>
+            <li>Active ingredients (with percentages) and inert ingredients</li>
+            <li>EPA Registration Number and Establishment Number</li>
+            <li>Net contents (weight or volume)</li>
+            <li>Signal word and skull-and-crossbones (if required)</li>
+            <li>First aid / emergency treatment</li>
+            <li>Precautionary statements (hazards to humans, animals, environment)</li>
+            <li>Directions for use (including pests, sites, rates, timing, REI)</li>
+            <li>Storage and disposal instructions</li>
+          </ul>
+          <h4>Signal Words</h4>
+          <table class="signal-table">
+            <thead><tr><th>Signal Word</th><th>Toxicity Category</th><th>Oral LD50</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge badge-danger">DANGER / POISON ☠</span></td><td>Category I</td><td>&lt; 50 mg/kg</td><td>Highly toxic — a few drops can kill</td></tr>
+              <tr><td><span class="badge badge-warn">WARNING</span></td><td>Category II</td><td>50–500 mg/kg</td><td>Moderately toxic — teaspoon to tablespoon lethal</td></tr>
+              <tr><td><span class="badge badge-caution">CAUTION</span></td><td>Category III &amp; IV</td><td>&gt; 500 mg/kg</td><td>Slightly or relatively non-toxic</td></tr>
+            </tbody>
+          </table>
+          <div class="highlight">💡 <strong>LD50 trick:</strong> LOWER number = MORE toxic. DANGER = smallest LD50.</div>
+          <h4>Reading the Label for Application</h4>
+          <ul>
+            <li><strong>Always read the label before mixing, loading, or applying</strong></li>
+            <li>Directions are site-specific — you can only apply to <strong>sites listed on the label</strong></li>
+            <li>Never exceed labeled <strong>rates</strong></li>
+            <li>Observe labeled <strong>Restricted Entry Intervals (REIs)</strong></li>
+            <li>Restricted Use Pesticides are labeled "RESTRICTED USE PESTICIDE" at top</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CORE: PPE -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🥽</div>
+            <div>
+              <div class="acc-title">Personal Protective Equipment (PPE)</div>
+              <div class="acc-sub mono">CORE EXAM · PPE &amp; Safety</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Most Common Exposure Route</h4>
+          <div class="danger-box"><strong>DERMAL (skin) is the #1 exposure route</strong> for pesticide applicators. More pesticide enters the body through skin contact than through breathing or swallowing. Chemical-resistant gloves are your most critical PPE.</div>
+          <h4>Routes of Exposure (in order of frequency)</h4>
+          <ol style="padding-left:20px; color:var(--linen); font-size:0.93rem; line-height:1.9;">
+            <li><strong>Dermal (skin)</strong> — most common; often unnoticed</li>
+            <li><strong>Inhalation (lungs)</strong> — especially in enclosed spaces or with fine sprays</li>
+            <li><strong>Oral (swallowing)</strong> — often from hand-to-mouth; wash hands!</li>
+            <li><strong>Ocular (eyes)</strong> — eyes absorb rapidly; splash risk</li>
+          </ol>
+          <h4>Required PPE (varies by label)</h4>
+          <ul>
+            <li><strong>Chemical-resistant gloves</strong> — always (not just leather or fabric)</li>
+            <li><strong>Long-sleeved shirt and long pants</strong> — minimum for most labels</li>
+            <li><strong>Closed-toe shoes + socks</strong> — no sandals</li>
+            <li><strong>Protective eyewear</strong> — goggles or face shield for concentrates</li>
+            <li><strong>Respirator</strong> — when label requires (N95 for particulates; OV cartridge for organic vapors/fumigants)</li>
+            <li><strong>Chemical-resistant apron</strong> — when mixing concentrates</li>
+          </ul>
+          <h4>Critical Safety Rules</h4>
+          <ul>
+            <li>Never eat, drink, smoke, or use tobacco while applying pesticides</li>
+            <li>Wash hands and face before eating, drinking, or using the restroom</li>
+            <li>Never wear contaminated clothing home — change and wash separately</li>
+            <li>Remove PPE carefully (peel gloves inside-out) to avoid self-contamination</li>
+            <li>Shower and change clothes as soon as possible after application</li>
+          </ul>
+          <div class="highlight">☎️ <strong>Poison Control: 1-800-222-1222</strong> — memorize this number.</div>
+        </div>
+      </div>
+
+      <!-- CORE: TOXICOLOGY -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">☠️</div>
+            <div>
+              <div class="acc-title">Toxicology</div>
+              <div class="acc-sub mono">CORE EXAM · LD50, Modes of Action</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>LD50</h4>
+          <p><strong>Lethal Dose 50 (LD50)</strong> is the dose of a chemical that kills 50% of a test population. Expressed in mg of pesticide per kg of body weight.</p>
+          <div class="highlight">⚠️ <strong>Lower LD50 = MORE toxic.</strong> An LD50 of 5 mg/kg is far more dangerous than 500 mg/kg.</div>
+          <h4>Key Pesticide Classes &amp; Symptoms</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>Organophosphates &amp; Carbamates</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Cholinesterase inhibitors. Symptoms: SLUDGE — Salivation, Lacrimation (tears), Urination, Defecation, GI distress, Emesis (vomiting). Also: miosis (pinpoint pupils), muscle tremors.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Pyrethrins &amp; Pyrethroids</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Sodium channel disruptors. Symptoms: paresthesia (tingling/burning skin), tremors, seizures in severe cases. Generally less toxic to mammals.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Organochlorines</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">CNS stimulants. Most banned (DDT). Symptoms: tremors, convulsions. Bioaccumulate in fatty tissue.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Neonicotinoids</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Nicotinic receptor agonists. Systemic in plants. High bee toxicity — avoid applying to blooming flowers.</p>
+            </div>
+          </div>
+          <h4>First Aid Basics</h4>
+          <ul>
+            <li><strong>Skin contact:</strong> Remove contaminated clothing, flush with water 15–20 min</li>
+            <li><strong>Eye contact:</strong> Flush with clean water 15–20 min; seek medical attention</li>
+            <li><strong>Ingestion:</strong> Do NOT induce vomiting unless label says to; call 1-800-222-1222</li>
+            <li><strong>Inhalation:</strong> Move to fresh air; if not breathing, call 911</li>
+            <li>Always bring the <strong>pesticide label</strong> to the emergency room</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CORE: IPM -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🌿</div>
+            <div>
+              <div class="acc-title">Integrated Pest Management (IPM)</div>
+              <div class="acc-sub mono">CORE EXAM · Strategy &amp; Thresholds</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>What is IPM?</h4>
+          <p>IPM is an <strong>ecosystem-based strategy</strong> that uses a combination of practices to manage pests. Chemical control is a <strong>last resort</strong> — not the first step.</p>
+          <h4>IPM Steps (in order)</h4>
+          <ol style="padding-left:20px; color:var(--linen); font-size:0.93rem; line-height:2;">
+            <li><strong>Identify</strong> the pest correctly — don't guess</li>
+            <li><strong>Monitor and assess</strong> — how many? where? how fast spreading?</li>
+            <li><strong>Set action threshold</strong> — at what population level does control make economic sense?</li>
+            <li><strong>Prevent</strong> — cultural and mechanical controls first</li>
+            <li><strong>Control</strong> — biological → cultural → mechanical → chemical (last resort)</li>
+            <li><strong>Evaluate</strong> — did it work? adjust next time</li>
+          </ol>
+          <h4>Key Thresholds</h4>
+          <ul>
+            <li><strong>Economic Injury Level (EIL)</strong>: Pest population that causes economic damage equal to control cost. Never let pest exceed this.</li>
+            <li><strong>Economic Threshold (ET) / Action Threshold</strong>: Population level at which you should ACT to prevent reaching EIL. Always below EIL.</li>
+          </ul>
+          <div class="highlight">💡 ET &lt; EIL. You act at the ET to prevent reaching the EIL.</div>
+          <h4>Types of Pest Control</h4>
+          <ul>
+            <li><strong>Biological:</strong> Predators, parasitoids, pathogens (Bt, beneficial nematodes)</li>
+            <li><strong>Cultural:</strong> Mowing, irrigation timing, fertilization, crop rotation, resistant varieties</li>
+            <li><strong>Mechanical/Physical:</strong> Traps, barriers, hand removal</li>
+            <li><strong>Chemical:</strong> Pesticides — most effective but environmental risk</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CORE: WPS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">👷</div>
+            <div>
+              <div class="acc-title">Worker Protection Standard (WPS)</div>
+              <div class="acc-sub mono">CORE EXAM · Worker Safety</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>What is WPS?</h4>
+          <p>WPS is an EPA regulation that protects agricultural workers and pesticide handlers from pesticide exposure on farms, forests, nurseries, and greenhouses.</p>
+          <h4>Restricted Entry Intervals (REI)</h4>
+          <ul>
+            <li>The REI is the time <strong>after a pesticide application</strong> during which no one can enter the treated area without required PPE</li>
+            <li>REI is listed on every pesticide label</li>
+            <li>Minimum REI is <strong>4 hours</strong> for most pesticides; can be much longer</li>
+            <li>Workers entering during REI (early entry) must wear specific PPE</li>
+          </ul>
+          <h4>Employer Requirements</h4>
+          <ul>
+            <li>Post <strong>warning signs</strong> at entries to treated areas during REI</li>
+            <li>Provide <strong>safety training</strong> to all agricultural workers</li>
+            <li>Provide <strong>decontamination supplies</strong> (water, soap, towels) near treated area</li>
+            <li>Provide access to <strong>pesticide application information</strong> (central posting)</li>
+            <li>Provide <strong>emergency medical transportation</strong> if needed</li>
+          </ul>
+          <div class="highlight">📌 REI = how long to stay OUT. Pre-harvest interval (PHI) = how long before you can HARVEST after application.</div>
+        </div>
+      </div>
+
+      <!-- CORE: CALIBRATION -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🧮</div>
+            <div>
+              <div class="acc-title">Calibration &amp; Math</div>
+              <div class="acc-sub mono">CORE EXAM · Calculations</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Key Formula</h4>
+          <div class="highlight" style="font-family:'Space Mono',monospace; font-size:0.88rem;">
+            GPA = (GPM × 5,940) ÷ (MPH × Nozzle Spacing in inches)
+            <br><br>
+            Where: GPA = Gallons Per Acre · GPM = Gallons Per Minute output · MPH = Speed
+          </div>
+          <h4>Mixing Concentrates</h4>
+          <ul>
+            <li><strong>Always add water first, then pesticide</strong> when mixing (fill tank halfway, add pesticide, fill to top)</li>
+            <li>Always measure accurately — never guess rates</li>
+            <li>If label says "2 oz per gallon" and you need 5 gallons: 2 × 5 = 10 oz of product</li>
+          </ul>
+          <h4>Important Conversions</h4>
+          <ul>
+            <li>1 acre = 43,560 sq ft</li>
+            <li>1 gallon = 128 fluid oz</li>
+            <li>1 pound = 16 oz</li>
+            <li>1 tablespoon = 3 teaspoons = 0.5 fl oz</li>
+          </ul>
+          <h4>Calibration Check</h4>
+          <p>To check output: <strong>catch nozzle output for 30 seconds, multiply by 2 = GPM</strong>. Compare to desired rate.</p>
+        </div>
+      </div>
+
+      <!-- CORE: ENVIRONMENTAL -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🌍</div>
+            <div>
+              <div class="acc-title">Environmental Protection</div>
+              <div class="acc-sub mono">CORE EXAM · Drift, Water, Endangered Species</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Pesticide Drift</h4>
+          <ul>
+            <li>Drift = movement of pesticides off-target through air</li>
+            <li>Use <strong>larger droplets</strong> (low-pressure, larger nozzle orifice) to minimize drift</li>
+            <li>Apply in <strong>low wind</strong> (3–10 mph ideal; &gt;15 mph stop)</li>
+            <li>Apply early morning or evening (less wind, less heat volatilization)</li>
+            <li>Never apply when rain is imminent</li>
+          </ul>
+          <h4>Water Protection</h4>
+          <ul>
+            <li>Observe <strong>buffer zones</strong> near water bodies listed on label</li>
+            <li>Never apply to or near storm drains, ditches, or ponds</li>
+            <li>Pesticides most likely to contaminate groundwater: <strong>high water solubility, low soil adsorption, persistent</strong></li>
+            <li>Prevent <strong>back-siphoning</strong> when filling tanks (use check valve or air gap)</li>
+          </ul>
+          <h4>Endangered Species Act</h4>
+          <p>Federal law making it illegal to kill, harm, harass, or collect <strong>endangered or threatened species</strong>. Some pesticide labels include <strong>Endangered Species Protection Bulletins</strong> — check these before applying.</p>
+          <div class="highlight">🐝 Pollinators (honeybees) are especially vulnerable to insecticides. Apply when bees are not foraging (evening) and avoid applying to blooming plants.</div>
+        </div>
+      </div>
+
+      <!-- 7B: TURFGRASS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🌾</div>
+            <div>
+              <div class="acc-title">Turfgrass Types &amp; Biology</div>
+              <div class="acc-sub mono">CATEGORY 7B · Ornamental &amp; Turf</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Cool-Season Grasses (northern NC)</h4>
+          <ul>
+            <li><strong>Tall Fescue</strong> — most common cool-season in NC; bunch-type; deep roots; drought tolerant</li>
+            <li><strong>Kentucky Bluegrass</strong> — spreading rhizomes; excellent quality; less heat tolerant</li>
+            <li><strong>Perennial Ryegrass</strong> — rapid germination; used for overseeding; no rhizomes</li>
+            <li>Grow best in <strong>fall and spring</strong>; go dormant or struggle in NC summer heat</li>
+          </ul>
+          <h4>Warm-Season Grasses (Charlotte/southern NC)</h4>
+          <ul>
+            <li><strong>Bermudagrass</strong> — most common warm-season; aggressive; stolons + rhizomes; invades flowerbeds</li>
+            <li><strong>Zoysiagrass</strong> — slow growing; dense; good shade tolerance; wiry texture</li>
+            <li><strong>Centipedegrass</strong> — low maintenance; light green; low fertility needs; stolons only</li>
+            <li><strong>St. Augustinegrass</strong> — coarse texture; excellent shade tolerance; stolons; not cold-hardy</li>
+            <li>Grow best in <strong>summer</strong>; go dormant (brown) in winter</li>
+          </ul>
+          <div class="highlight">📍 Charlotte is in the Piedmont — transition zone. Both warm and cool-season grasses are grown here. Bermuda and tall fescue are most common in 28205.</div>
+          <h4>Turfgrass Problem Diagnosis Steps</h4>
+          <ol style="padding-left:20px; color:var(--linen); font-size:0.93rem; line-height:1.9;">
+            <li>Identify the grass species</li>
+            <li>Look at distribution (uniform vs. irregular pattern)</li>
+            <li>Check roots, crowns, and soil</li>
+            <li>Consider recent weather and management practices</li>
+            <li>Determine if pest, disease, or cultural/environmental cause</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 7B: TURF INSECTS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🐛</div>
+            <div>
+              <div class="acc-title">Turfgrass Insects</div>
+              <div class="acc-sub mono">CATEGORY 7B · Heavily Tested</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Root-Feeding Insects</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>White Grubs</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Larvae of Japanese beetles, masked chafers, May/June beetles. C-shaped, creamy-white. Feed on roots → turf lifts like carpet. <strong>Treat late summer</strong> when young grubs are near surface.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Mole Crickets</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Tunnel through soil, severing roots. Mounds of loose soil visible. Mostly bermuda and bahia. <strong>Flush test</strong>: soapy water flush reveals mole crickets if present.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Billbugs</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Adults are weevils; larvae feed in crown and roots. Turf pulls up easily in fall. "Sawdust" frass at crown. Zoysiagrass vulnerable.</p>
+            </div>
+          </div>
+          <h4>Surface-Feeding Insects</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>Sod Webworm</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Caterpillars of small moths. Chew off grass blades near soil surface. Irregular brown patches. Birds pecking is a sign. <strong>Soap flush test</strong> reveals larvae.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Armyworm (Fall)</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Fall armyworm can strip turf overnight. Greenish-brown caterpillars. Look for egg masses on light-colored surfaces near turf. Bermuda and ryegrass most attacked.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Chinch Bugs</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Piercing-sucking insects. Cause yellowing patches in hot, dry areas (full sun). Mostly St. Augustinegrass. <strong>Flotation method</strong>: remove can bottom, push into soil, fill with water — chinch bugs float up.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Fire Ants</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Build mounds 1–2 ft tall. Sting in mass when disturbed. Two-step control: broadcast bait + individual mound treatment. Never disturb mound before applying bait.</p>
+            </div>
+          </div>
+          <div class="highlight">🔍 <strong>Soap flush test:</strong> 1–2 tbsp dish soap in 1 gallon water, pour on 1 sq ft of turf. Surface insects emerge in 2–5 minutes.</div>
+        </div>
+      </div>
+
+      <!-- 7B: TURF DISEASES -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🍄</div>
+            <div>
+              <div class="acc-title">Turfgrass Diseases</div>
+              <div class="acc-sub mono">CATEGORY 7B · Identification &amp; Control</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Common NC Turfgrass Diseases</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>Brown Patch (Rhizoctonia)</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Most common NC turf disease. Circular brown patches with "smoke ring" border. Tall fescue and bermuda. Triggered by hot, humid nights (&gt;70°F). Reduce nitrogen, improve drainage.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Dollar Spot (Sclerotinia)</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Small (silver-dollar sized) bleached spots. White mycelium visible in morning dew. Indicates <strong>low nitrogen</strong>. Improve fertility, reduce dew period. Fungicide: propiconazole.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Pythium Blight</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Greasy, water-soaked patches that collapse rapidly. White cottony mycelium at margins. Worst in hot, wet conditions with poor drainage. Pythium is an oomycete (water mold), not true fungus — requires oomycete-active fungicides (mefenoxam).</p>
+            </div>
+            <div class="mini-card">
+              <h5>Spring Dead Spot</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Circular dead patches in bermudagrass that fail to green up in spring. Caused by Ophiosphaerella spp. Apply fungicide in fall before dormancy. Avoid high nitrogen in late summer.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Gray Leaf Spot</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Tan/gray diamond-shaped lesions on leaves. Primarily St. Augustinegrass and perennial ryegrass. Worse in hot, humid summer. Reduce nitrogen; apply fungicide preventively.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Red Thread / Pink Patch</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Pink or red thread-like mycelium visible in turf. Cool, wet weather. Low nitrogen indicator. Improve fertility. Fungicide if severe.</p>
+            </div>
+          </div>
+          <h4>Fungicide Resistance Management</h4>
+          <ul>
+            <li>Rotate between FRAC groups (different modes of action)</li>
+            <li>FRAC 11 (azoxystrobin, pyraclostrobin) — most common; high resistance risk</li>
+            <li>FRAC 3 (propiconazole, triticonazole) — DMI fungicides</li>
+            <li>FRAC 7 (fluopyram, boscalid) — SDHI fungicides</li>
+            <li>Tank-mix or rotate; never use same FRAC group consecutively</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 7B: WEEDS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🌱</div>
+            <div>
+              <div class="acc-title">Turfgrass Weeds &amp; Herbicides</div>
+              <div class="acc-sub mono">CATEGORY 7B · Weed ID &amp; Control</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Weed Categories</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>By Lifecycle</h5>
+              <p style="font-size:0.85rem; color:var(--linen);"><strong>Annual:</strong> complete lifecycle in one year (summer annuals: crabgrass; winter annuals: annual bluegrass/Poa annua)<br><strong>Perennial:</strong> live multiple years, regrow from roots (dandelion, nutsedge)</p>
+            </div>
+            <div class="mini-card">
+              <h5>By Type</h5>
+              <p style="font-size:0.85rem; color:var(--linen);"><strong>Grassy weeds:</strong> crabgrass, goosegrass, annual bluegrass, nutsedge (sedge)<br><strong>Broadleaf weeds:</strong> dandelion, clover, spurge, chickweed, henbit, oxalis</p>
+            </div>
+          </div>
+          <h4>Herbicide Timing</h4>
+          <ul>
+            <li><strong>Pre-emergent:</strong> Apply BEFORE weed germination. Prevents seedling establishment. Common: pendimethalin, prodiamine, dithiopyr. Apply before soil temps reach 55°F (crabgrass) in spring.</li>
+            <li><strong>Post-emergent:</strong> Apply AFTER weeds are visible. Works on actively growing weeds.</li>
+          </ul>
+          <h4>Herbicide Selectivity</h4>
+          <ul>
+            <li><strong>Selective:</strong> Kill specific plants (e.g., 2,4-D kills broadleaf but not grass)</li>
+            <li><strong>Non-selective:</strong> Kill all plants (glyphosate/Roundup, triclopyr at high rates)</li>
+          </ul>
+          <h4>Common Herbicide Modes of Action</h4>
+          <ul>
+            <li><strong>Photosynthesis inhibitors:</strong> atrazine, simazine</li>
+            <li><strong>Growth regulators (synthetic auxins):</strong> 2,4-D, dicamba, triclopyr — broadleaf killers</li>
+            <li><strong>Amino acid synthesis inhibitors:</strong> glyphosate (EPSPS inhibitor)</li>
+            <li><strong>Cell membrane disruptors:</strong> paraquat, carfentrazone</li>
+          </ul>
+          <div class="highlight">⚠️ Nutsedge (yellow and purple) is a <strong>sedge, not a grass</strong> — standard grass or broadleaf herbicides often don't work. Requires sedge-specific products (sulfentrazone, halosulfuron).</div>
+        </div>
+      </div>
+
+      <!-- 7B: ORNAMENTAL PESTS -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🌺</div>
+            <div>
+              <div class="acc-title">Ornamental Plant Pests</div>
+              <div class="acc-sub mono">CATEGORY 7B · Trees, Shrubs &amp; Flowers</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Key Ornamental Insect Pests</h4>
+          <div class="two-col">
+            <div class="mini-card">
+              <h5>Aphids</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Soft-bodied, piercing-sucking. Cluster on new growth. Produce <strong>honeydew → sooty mold</strong>. Many natural predators (ladybugs, lacewings). Soap spray effective.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Scale Insects</h5>
+              <p style="font-size:0.85rem; color:var(--linen);"><strong>Armored scale:</strong> hard cover; contact insecticides don't penetrate — use systemic or horticultural oil during crawler stage.<br><strong>Soft scale:</strong> waxy; easier to control; produce honeydew.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Spider Mites</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">NOT insects — 8-legged arachnids. Stippled, bronze leaves; fine webbing. Worse in hot, dry conditions. Many insecticides make them WORSE (kill predatory mites). Use miticide/acaricide.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Whiteflies</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Tiny, white; fly in clouds when plant is disturbed. Piercing-sucking; honeydew and sooty mold. Apply insecticide to leaf undersides. Systemic insecticides (imidacloprid) effective.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Thrips</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Rasping-sucking. Cause silvery streaks, distorted flowers. Especially on roses and impatiens. Spinosad effective; rotate with other modes of action.</p>
+            </div>
+            <div class="mini-card">
+              <h5>Borers</h5>
+              <p style="font-size:0.85rem; color:var(--linen);">Larvae bore into stems/trunks. Sawdust-like frass at entry holes. Often target stressed trees. Prevent by keeping plants healthy. Systemic insecticides applied preventively; hard to kill once inside.</p>
+            </div>
+          </div>
+          <div class="highlight">🕷️ <strong>Mites are NOT insects</strong> — they are arachnids (8 legs). Do not treat with standard insecticides; use a miticide/acaricide. This is a common exam question.</div>
+          <h4>Ornamental Diseases</h4>
+          <ul>
+            <li><strong>Powdery mildew:</strong> White powdery coating on leaves; loves dry weather + humid nights; use fungicide (tebuconazole, myclobutanil)</li>
+            <li><strong>Black spot (roses):</strong> Black circular spots with yellow halos on leaves; requires wet weather; preventive fungicide program</li>
+            <li><strong>Fire blight:</strong> Bacterial disease of apple/pear family; "shepherd's crook" dieback; prune 12" below infection; copper bactericide</li>
+            <li><strong>Root rot (Phytophthora):</strong> Oomycete; poorly drained soils; requires oomycete-active fungicide (mefenoxam)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 7B: MOSQUITOES (RELEVANT!) -->
+      <div class="acc-item">
+        <button class="acc-header">
+          <div class="acc-header-left">
+            <div class="acc-icon">🦟</div>
+            <div>
+              <div class="acc-title">Mosquito Control (Your Thing)</div>
+              <div class="acc-sub mono">CATEGORY 7B · Applied to Your Business</div>
+            </div>
+          </div>
+          <div class="acc-chevron">▼</div>
+        </button>
+        <div class="acc-body">
+          <h4>Mosquito Biology</h4>
+          <ul>
+            <li>Complete metamorphosis: egg → larva → pupa → adult (4 stages)</li>
+            <li>Eggs require <strong>standing water</strong> to hatch (even 1/4 inch)</li>
+            <li>Larval and pupal stages are <strong>aquatic</strong></li>
+            <li>Only female mosquitoes bite (need blood for egg development)</li>
+            <li>Primary NC species: <em>Aedes albopictus</em> (Asian tiger, daytime biter), <em>Culex quinquefasciatus</em> (house mosquito, evening)</li>
+          </ul>
+          <h4>Control Methods — IPM Approach</h4>
+          <ul>
+            <li><strong>Source reduction (best):</strong> Eliminate standing water — key breeding sites: gutters, pots, birdbaths, low spots, tarps</li>
+            <li><strong>Larviciding:</strong> BTi (Bacillus thuringiensis israelensis) — biological, safe for humans/pets/wildlife. Mosquito dunks. Apply to standing water.</li>
+            <li><strong>Adulticiding (what you do):</strong> ULV cold fogging with pyrethrin-based products</li>
+          </ul>
+          <h4>Pyrethrin Products (Relevant to Fog Off)</h4>
+          <ul>
+            <li><strong>Pyrethrins</strong> — derived from chrysanthemum flowers; fast knockdown; breaks down quickly in UV light; relatively low mammalian toxicity; CAUTION signal word for most formulations</li>
+            <li><strong>Pyrethroids</strong> — synthetic versions; more persistent (permethrin, bifenthrin, lambda-cyhalothrin)</li>
+            <li>Your <strong>Riptide Pyrethrin ULV MGK</strong> contains pyrethrins + piperonyl butoxide (PBO) synergist</li>
+            <li>Apply in early morning or evening when mosquitoes are active and wind is low</li>
+            <li>Bee caution: avoid spraying blooming plants; bees not active at dawn/dusk</li>
+          </ul>
+          <h4>Larvicide: BTi (Mosquito Dunks)</h4>
+          <ul>
+            <li>Your <strong>Summit Mosquito Dunks</strong> contain Bacillus thuringiensis israelensis (BTi)</li>
+            <li>Kills mosquito and black fly larvae; safe for all other wildlife, fish, people, pets</li>
+            <li>Place in any standing water that can't be eliminated</li>
+            <li>One dunk treats 100 sq ft of standing water for 30 days</li>
+          </ul>
+          <div class="highlight">📌 For your exam: BTi is the safest larvicide. Pyrethrins are the least persistent pyrethroid-type adulticide. Label says "CAUTION" — least toxic signal word.</div>
+        </div>
+      </div>
+
+    </div><!-- end accordion -->
+  </div><!-- end study panel -->
+
+  <!-- ════════════════ PRACTICE QUIZ ════════════════ -->
+  <div id="quiz" class="tab-panel">
+    <div class="quiz-header" style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div>
+        <h2>Practice Quiz</h2>
+        <p>30 questions — Core + Category 7B. Pass rate: 70% (21/30). Answers revealed after each question.</p>
+      </div>
+      <div class="quiz-score">
+        <div class="score-num" id="scoreDisplay">0/0</div>
+        <div class="score-label">SCORE</div>
+      </div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
+    <div id="questionsList"></div>
+    <div class="quiz-final" id="quizFinal">
+      <div>🎓</div>
+      <h2>Quiz Complete</h2>
+      <div class="big-score" id="finalScore"></div>
+      <p id="finalMsg"></p>
+      <p id="passFailMsg"></p>
+      <button class="btn btn-gold" onclick="resetQuiz()">Retake Quiz</button>
+    </div>
+  </div>
+
+  <!-- ════════════════ FLASHCARDS ════════════════ -->
+  <div id="flashcards" class="tab-panel">
+    <div class="fc-header">
+      <h2>Flashcards</h2>
+      <p>Click the card to flip. Use the arrows to navigate. Filter by category to focus your study.</p>
+      <div class="fc-progress-label">CARD <span id="fcCurrent">1</span> OF <span id="fcTotal">40</span></div>
+    </div>
+    <div class="fc-area">
+      <div class="fc-category-nav" id="fcCatNav"></div>
+      <div class="fc-card-wrap" id="fcCard">
+        <div class="fc-card-inner">
+          <div class="fc-front">
+            <div class="fc-face-label">TERM</div>
+            <div class="fc-term" id="fcTerm"></div>
+            <div class="fc-hint">click to reveal definition</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-face-label">DEFINITION</div>
+            <div class="fc-def" id="fcDef"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="fc-nav-btn" onclick="fcNav(-1)">←</button>
+        <div class="fc-counter" id="fcCounter">1 / 40</div>
+        <button class="fc-nav-btn" onclick="fcNav(1)">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ REGISTER ════════════════ -->
+  <div id="register" class="tab-panel">
+    <div class="reg-alert">
+      <span>📌</span>
+      <div><strong>You need to pass TWO exams:</strong> the Core exam (open to all categories) plus Category 7B (Ornamental & Turf). You can take both on the same day. Total cost: $50 in exam fees + $75 for the license.</div>
+    </div>
+
+    <div class="reg-tabs-nav">
+      <button class="reg-tab-btn active" data-regtab="inperson">In-Person Exam</button>
+      <button class="reg-tab-btn" data-regtab="online">Online Exam</button>
+    </div>
+
+    <div id="inperson" class="reg-tab-panel active">
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">1</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Go to the In-Person Exam Registration Portal</h3>
+            <p>Open your browser and navigate to:</p>
+            <div class="step-callout" style="margin-top:10px; font-family:'Space Mono',monospace; font-size:0.85rem;">
+              <strong><a href="https://apps.ncagr.gov/AgRSysPortalV2/exam/registration" target="_blank">apps.ncagr.gov/AgRSysPortalV2/exam/registration</a></strong>
+            </div>
+            <p style="margin-top:10px;">This is the official NCDA&CS portal. If you haven't used it before, you'll need to create an account.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">2</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Create an Account or Log In</h3>
+            <p>Click "Register" to create a new account. You'll need:</p>
+            <ul>
+              <li>Full legal name (must match your government ID)</li>
+              <li>Date of birth</li>
+              <li>Social Security Number (last 4 digits or full, depending on system)</li>
+              <li>Mailing address</li>
+              <li>Email address and phone number</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">3</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Select "New Applicant" → "Commercial Applicator"</h3>
+            <p>Since this is your first license, select <strong>New Applicant</strong>. Then select your applicator type: <strong>Commercial Applicator</strong> (you're applying pesticides for compensation).</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">4</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Select Your Exams</h3>
+            <p>You must select <strong>both exams</strong>:</p>
+            <ul>
+              <li>✅ <strong>Core Exam</strong> — required for all commercial applicators</li>
+              <li>✅ <strong>Category 7B — Ornamental & Turf</strong> — your category</li>
+            </ul>
+            <div class="step-callout">
+              <strong>Tip:</strong> You can take both exams back-to-back on the same day. This is the most efficient approach — register for both at the same time slot.
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">5</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Choose Your Exam Location and Date</h3>
+            <p>In-person exams are offered at NCDA&CS offices statewide. The closest location to Charlotte is typically:</p>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-box-label">Charlotte-Area Location</div>
+                <div class="info-box-value">NCDA&CS Western Regional Office · 1205 Burkemont Ave, Morganton, NC 28655<br><br>OR check for Raleigh Central Office dates — often more frequent</div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Exam Schedule</div>
+                <div class="info-box-value">Check the current calendar at:<br><a href="https://www.ncagr.gov/divisions/structural-pest-control-and-pesticides/pesticide/licensing-and-certification/exam/in-person-exam-calendar" target="_blank" style="font-size:0.82rem;">ncagr.gov exam calendar →</a></div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Exam Start Time</div>
+                <div class="info-box-value">All exams begin at <strong>1:00 PM</strong> unless otherwise noted on the calendar</div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Cancellation Policy</div>
+                <div class="info-box-value">Must cancel <strong>48 hours in advance</strong> or you're locked out for 60 days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">6</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Submit Your Registration</h3>
+            <p>Review your selections and submit. You'll receive a confirmation email. <strong>Do not pay online</strong> — payment is collected the day of the exam.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">7</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Day-of-Exam Checklist</h3>
+            <ul class="checklist">
+              <li>Government-issued photo ID (driver's license or passport)</li>
+              <li>Pencils — at least 2 (NOT pens)</li>
+              <li>Non-phone calculator</li>
+              <li>$50 exact — check or money order payable to <strong>"NCDA&CS"</strong>, or exact cash (they cannot make change; no credit/debit cards)</li>
+              <li>Arrive before 1:00 PM — exams start on time</li>
+              <li>If you have any illness symptoms, reschedule (they may turn you away)</li>
+            </ul>
+            <div class="screenshot-note">
+              <strong>💳 Payment is cash, check, or money order ONLY at in-person exams.</strong> No credit cards, no debit cards. Bring exact cash or a check made out to NCDA&CS.
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">8</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>After Passing — Apply for Your License</h3>
+            <p>Exam results are typically available online within a few days. When you pass both the Core and 7B:</p>
+            <ul>
+              <li>Return to the portal to <strong>apply for your Commercial Pesticide Applicator License</strong></li>
+              <li>Pay the <strong>$75 license fee</strong></li>
+              <li>Your license is valid for <strong>5 years</strong>; requires 12 CEUs to renew</li>
+              <li>Once licensed, you are legally authorized to apply pesticides for compensation in NC</li>
+            </ul>
+            <div class="step-callout" style="margin-top:12px;">
+              <strong>Check results here:</strong> <a href="https://www.ncagr.gov/divisions/structural-pest-control-and-pesticides/pesticide/licensing-and-certification/exam/exam-results" target="_blank">ncagr.gov exam results →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end steps -->
+    </div><!-- end inperson panel -->
+
+    <div id="online" class="reg-tab-panel">
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">1</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Access the Online Exam Registration Form</h3>
+            <p>The online registration uses a Microsoft Forms link. Go to:</p>
+            <div class="step-callout" style="margin-top:10px; font-family:'Space Mono',monospace; font-size:0.85rem;">
+              <strong><a href="https://forms.office.com/g/xcxbk72kk4" target="_blank">forms.office.com/g/xcxbk72kk4</a></strong>
+            </div>
+            <p style="margin-top:10px;">Or visit <a href="https://www.ncagr.gov/divisions/structural-pest-control-and-pesticides/pesticide/licensing-and-certification/exam" target="_blank">ncagr.gov</a> and click "Online Exam Registration."</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">2</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Select "New Applicant"</h3>
+            <p>On the form, select the <strong>New</strong> option (not Recertification or Add a Category). Fill in your personal information: name, address, SSN, email.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">3</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Select Both Exams</h3>
+            <ul>
+              <li>✅ Core Exam</li>
+              <li>✅ Category 7B — Ornamental & Turf</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">4</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Understand the Online Fee Structure</h3>
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="info-box-label">Standard Exam Fee</div>
+                <div class="info-box-value">$25 per exam</div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Online Service Fee</div>
+                <div class="info-box-value">+$26 per exam</div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Total Per Exam (Online)</div>
+                <div class="info-box-value">$51 per exam</div>
+              </div>
+              <div class="info-box">
+                <div class="info-box-label">Two Exams Online Total</div>
+                <div class="info-box-value"><strong>$102</strong> (Core + 7B)</div>
+              </div>
+            </div>
+            <div class="screenshot-note" style="margin-top:16px;">
+              <strong>💡 In-person is cheaper:</strong> $50 total for both exams vs. $102 online. Online is more convenient but costs $52 more. Your call.
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">5</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>Review the Online Exam Guidelines</h3>
+            <p>Before your exam, read the online guidelines carefully. Key points:</p>
+            <ul>
+              <li>You'll need a <strong>webcam and microphone</strong> (proctored remotely)</li>
+              <li>Quiet, private room required</li>
+              <li>No phones, notes, or other materials</li>
+              <li>You can use a <strong>physical calculator</strong> (no phone calculator)</li>
+              <li>Government ID will be required before the exam begins</li>
+            </ul>
+            <div class="step-callout">
+              <strong>Guidelines:</strong> <a href="https://www.ncagr.gov/divisions/structural-pest-control-and-pesticides/pesticide/online-exam-guidelines" target="_blank">ncagr.gov online exam guidelines →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-line"><div class="step-num">6</div><div class="step-connector"></div></div>
+          <div class="step-content">
+            <h3>After Passing — Same Process</h3>
+            <p>Same as in-person: apply for your license through the portal, pay $75, and you're licensed. License is valid 5 years.</p>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end online panel -->
+
+    <!-- Contact Box -->
+    <div style="background:var(--forest-light); border:1px solid var(--border); border-radius:12px; padding:24px 28px; margin-top:32px;">
+      <h3 style="font-size:1.1rem; margin-bottom:12px;">Need Help With Registration?</h3>
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="info-box-label">Phone</div>
+          <div class="info-box-value"><a href="tel:+19842364575" style="color:var(--gold);">984-236-4575</a></div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">Email</div>
+          <div class="info-box-value"><a href="mailto:PesticideExams@ncagr.gov" style="color:var(--gold);">PesticideExams@ncagr.gov</a></div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">Additional Study Resources</div>
+          <div class="info-box-value"><a href="https://pestpreptest.com/state/north-carolina/" target="_blank" style="color:var(--gold);">pestpreptest.com →</a><br><a href="https://pesticidemanuals.com" target="_blank" style="color:var(--gold);">pesticidemanuals.com →</a></div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">NC State Extension</div>
+          <div class="info-box-value"><a href="https://pesticidesafety.ces.ncsu.edu/" target="_blank" style="color:var(--gold);">pesticidesafety.ces.ncsu.edu →</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end register panel -->
+
+</div><!-- end tabs-container -->
+
+<script>
+// ══════════════════════════════════════
+// TAB SWITCHING
+// ══════════════════════════════════════
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════
+// ACCORDION
+// ══════════════════════════════════════
+document.querySelectorAll('.acc-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.closest('.acc-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ══════════════════════════════════════
+// QUIZ
+// ══════════════════════════════════════
+const questions = [
+  { q: "What is the primary federal law governing pesticide use in the United States?", opts: ["The Clean Water Act","FIFRA — Federal Insecticide, Fungicide, and Rodenticide Act","The Farm Bill","OSHA Standards"], ans: 1, exp: "FIFRA (Federal Insecticide, Fungicide, and Rodenticide Act) is the primary federal law, administered by the EPA, that governs pesticide registration, labeling, and use in all states." },
+  { q: "What does the signal word 'DANGER' on a pesticide label indicate?", opts: ["The product is expired","The product is for restricted use only","The product is highly toxic (Category I) — a few drops may be lethal","The product requires a prescription"], ans: 2, exp: "DANGER (often with skull & crossbones) indicates Category I toxicity — the highest hazard level. These products have an LD50 below 50 mg/kg." },
+  { q: "What is the most common route of pesticide exposure for commercial applicators?", opts: ["Oral (swallowing)","Ocular (eyes)","Inhalation (breathing)","Dermal (skin absorption)"], ans: 3, exp: "Dermal exposure is #1. Pesticides are absorbed through skin contact, often without the applicator realizing it. This is why chemical-resistant gloves are critical." },
+  { q: "An LD50 of 10 mg/kg compared to an LD50 of 500 mg/kg indicates:", opts: ["The 10 mg/kg product is less toxic","Both products are equally toxic","The 10 mg/kg product is MORE toxic","The 500 mg/kg product is more hazardous"], ans: 2, exp: "Lower LD50 = more toxic. LD50 is the dose that kills 50% of test animals. A smaller dose required to kill = more dangerous substance." },
+  { q: "Before mixing or applying any pesticide, you should FIRST:", opts: ["Check the weather forecast","Call your supervisor","Read the entire product label","Put on your respirator"], ans: 2, exp: "The label is the law and contains all required safety information, directions, and precautions. Always read the full label first — before touching the product." },
+  { q: "What is the Poison Control Center number?", opts: ["911","1-800-222-1222","311","1-800-PESTICIDE"], ans: 1, exp: "1-800-222-1222 is the National Poison Control Center number. Memorize this for emergencies and the exam." },
+  { q: "What does IPM stand for, and what is its core principle?", opts: ["Integrated Pesticide Method — use the strongest chemical available","International Pest Management — use government-approved methods","Integrated Pest Management — chemical control is a last resort","Indoor Pesticide Monitoring — test before applying"], ans: 2, exp: "IPM = Integrated Pest Management. It's an ecosystem-based strategy where pesticides are used only after other methods (cultural, biological, mechanical) are exhausted." },
+  { q: "The Economic Threshold (ET) in IPM refers to:", opts: ["The cost of a pesticide application","The pest population level at which you must take action to prevent economic damage","The maximum number of treatments per season","The budget for pest control"], ans: 1, exp: "The ET (or Action Threshold) is the pest density at which you should act — before the pest reaches the Economic Injury Level (EIL) where actual loss exceeds control cost." },
+  { q: "A Restricted Entry Interval (REI) tells you:", opts: ["How long until the pesticide expires","How long workers must stay out of a treated area","When to reapply the pesticide","How long to wear PPE after applying"], ans: 1, exp: "The REI is the time after pesticide application during which no one may enter the treated area without required PPE. It protects workers from exposure to pesticide residues." },
+  { q: "When mixing pesticides in a sprayer, you should:", opts: ["Add pesticide first, then water","Add water first, then pesticide concentrate","Mix concentrates together before adding water","The order doesn't matter"], ans: 1, exp: "Always fill the tank halfway with water first, then add the pesticide concentrate, then fill to the desired volume. This prevents foaming and reduces exposure risk." },
+  { q: "Which PPE item is most important for preventing the most common route of pesticide exposure?", opts: ["Hard hat","Safety glasses","Chemical-resistant gloves","Boots"], ans: 2, exp: "Since dermal (skin) exposure is #1, chemical-resistant gloves are the most critical PPE. Leather or fabric gloves are not adequate — you need chemical-resistant material." },
+  { q: "Records of Restricted Use Pesticide (RUP) applications must be kept for at least:", opts: ["6 months","1 year","2 years","5 years"], ans: 2, exp: "NC and federal law require commercial applicators to keep records of RUP applications for at least 2 years from the date of application." },
+  { q: "To minimize pesticide drift during application, you should:", opts: ["Increase sprayer pressure to maximize coverage","Apply in high wind to disperse product faster","Use larger droplets and apply in low wind conditions","Use fine mist nozzles for better coverage"], ans: 2, exp: "Larger droplets are heavier and fall faster, reducing drift. Low wind (ideally 3-10 mph) prevents off-target movement. Fine mist = more drift." },
+  { q: "Organophosphate and carbamate pesticides are known to:", opts: ["Disrupt sodium channels in insect nerves","Inhibit cholinesterase enzymes","Block photosynthesis in plants","Disrupt insect molting hormones"], ans: 1, exp: "Organophosphates and carbamates inhibit acetylcholinesterase, causing nerve signals to keep firing. SLUDGE symptoms: Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis." },
+  { q: "If pesticide gets in your eyes, you should immediately:", opts: ["Rub the eyes to remove the chemical","Flush with clean water for 15-20 minutes","Apply eye drops and call a doctor the next day","Cover the eye and wait to see if symptoms develop"], ans: 1, exp: "Flush eyes with clean water for 15-20 minutes immediately. Eyes absorb chemicals rapidly — speed is critical. Always seek medical attention afterward." },
+  // 7B SPECIFIC
+  { q: "Which of the following is a warm-season turfgrass most common in Charlotte, NC?", opts: ["Kentucky Bluegrass","Perennial Ryegrass","Bermudagrass","Creeping Bentgrass"], ans: 2, exp: "Bermudagrass is the most common warm-season grass in the Charlotte area (Piedmont NC). It grows aggressively in summer but goes dormant (brown) in winter." },
+  { q: "Brown Patch disease in turfgrass is caused by:", opts: ["Pythium species (water mold)","Rhizoctonia solani (fungus)","Sclerotinia homoeocarpa","Ophiosphaerella herpotricha"], ans: 1, exp: "Brown Patch is caused by Rhizoctonia solani. It creates circular brown patches, often with a 'smoke ring' border. Most common in tall fescue and bermuda during hot, humid nights." },
+  { q: "Dollar Spot disease in turfgrass often indicates:", opts: ["Excess nitrogen levels","Low nitrogen levels","High soil pH","Compacted soil"], ans: 1, exp: "Dollar Spot (Sclerotinia homoeocarpa) is associated with low nitrogen. Small bleached spots appear, with white mycelium visible in morning dew. Increasing fertility helps reduce it." },
+  { q: "White grubs in turfgrass primarily damage grass by:", opts: ["Feeding on leaves at the surface","Severing roots below ground","Injecting toxins while feeding","Spreading fungal spores"], ans: 1, exp: "White grubs (larvae of Japanese beetles, masked chafers, etc.) are C-shaped larvae that live in soil and feed on grass roots. Affected turf can be pulled up like a loose carpet." },
+  { q: "Spider mites are most correctly described as:", opts: ["Small insects with 6 legs","Arachnids with 8 legs, not true insects","Juvenile aphids","Tiny thrips larvae"], ans: 1, exp: "Spider mites are NOT insects — they are arachnids with 8 legs. This is heavily tested! Standard insecticides often don't control mites and may make infestations worse by killing predatory mites." },
+  { q: "The 'soap flush' or 'irritant flush' test is used to detect:", opts: ["Root diseases in turfgrass","Surface-feeding insects like sod webworms and mole crickets","Soil pH levels","Fungal spores in the thatch layer"], ans: 1, exp: "The soap flush test (1-2 tbsp dish soap in 1 gallon water poured over a 1 sq ft area) irritates surface insects, driving them up to be counted. Used for sod webworms, mole crickets, and other turf insects." },
+  { q: "Pre-emergent herbicides should be applied:", opts: ["After you see weeds actively growing","Before weed seeds germinate","Only in fall, never in spring","After rainfall to activate them quickly"], ans: 1, exp: "Pre-emergent herbicides (like pendimethalin, prodiamine) create a barrier that prevents weed seed germination. They must be applied BEFORE seeds sprout — typically before soil temps reach 55°F for crabgrass control in spring." },
+  { q: "What is the correct classification of nutsedge?", opts: ["A broadleaf weed","A grassy weed","A sedge — neither grass nor broadleaf","A perennial vine"], ans: 2, exp: "Nutsedge (yellow and purple nutsedge) is a SEDGE, not a grass or broadleaf weed. It has triangular stems ('sedges have edges'). Requires sedge-specific herbicides like halosulfuron or sulfentrazone." },
+  { q: "Aphids produce a sticky substance called honeydew that can lead to:", opts: ["Root rot in nearby plants","Sooty mold on leaves and stems","Premature leaf drop from cold stress","Increased drought stress"], ans: 1, exp: "Aphids exude honeydew (excess sugars from their liquid diet), which coats plant surfaces. The black sooty mold fungus then grows on the honeydew, blocking sunlight and reducing plant health." },
+  { q: "Chinch bugs are most commonly a pest of:", opts: ["Bermudagrass","Zoysiagrass","St. Augustinegrass","Tall Fescue"], ans: 2, exp: "Chinch bugs are primarily a pest of St. Augustinegrass. They use piercing-sucking mouthparts and inject toxins that kill grass. Damage appears as yellowing patches in hot, sunny areas." },
+  { q: "What is the primary mechanism of action of BTi (Bacillus thuringiensis israelensis)?", opts: ["It is a systemic fungicide","It is a biological larvicide that produces toxins killing mosquito larvae in the gut","It repels adult mosquitoes with strong odor","It is a growth regulator that prevents mosquitoes from molting"], ans: 1, exp: "BTi produces proteins that are toxic to mosquito (and black fly) larvae when ingested. It is highly specific — safe for fish, birds, pets, bees, and all non-target organisms. Used in Mosquito Dunks." },
+  { q: "Pythium Blight differs from other turfgrass diseases because Pythium is:", opts: ["A bacterium, not a fungus","An oomycete (water mold), not a true fungus — requires different fungicides","A viral pathogen","A nematode-related disease"], ans: 1, exp: "Pythium is an oomycete (water mold), not a true fungus. This means most standard fungicides won't work — you need oomycete-active products like mefenoxam (Subdue MAXX). Pythium blight appears as greasy, collapsed patches with cottony mycelium." },
+  { q: "When using fungicides to manage turfgrass diseases, rotating FRAC groups is important because:", opts: ["Different FRAC groups smell different, confusing the fungi","Rotating prevents development of pesticide resistance in the fungal population","FRAC groups work at different temperatures","Different FRAC groups require different water rates"], ans: 1, exp: "FRAC = Fungicide Resistance Action Committee. Fungi can develop resistance to fungicides with repeated use of the same mode of action. Rotating between FRAC groups (e.g., FRAC 3 → FRAC 11 → FRAC 7) prevents resistance." },
+  { q: "Pyrethrin products (like those used in mosquito ULV fogging) are derived from:", opts: ["Petroleum distillates","Chrysanthemum flowers","Pine tree resin","Soil bacteria"], ans: 1, exp: "Pyrethrins are natural insecticides derived from chrysanthemum (pyrethrum) flowers. They provide fast knockdown, break down quickly in UV light, and have relatively low mammalian toxicity compared to synthetic pyrethroids." },
+  { q: "Which of the following best describes a 'selective' herbicide?", opts: ["A herbicide that kills all plants it contacts","A herbicide that only kills weeds, not the desired turf","A herbicide that only works on seedling weeds","A herbicide approved for selective use near water"], ans: 1, exp: "A selective herbicide kills certain types of plants while leaving others unharmed. For example, 2,4-D kills broadleaf weeds without harming most grasses. Non-selective herbicides (like glyphosate) kill all plants." }
+];
+
+let answered = [];
+let correct = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('questionsList');
+  container.innerHTML = '';
+  answered = new Array(questions.length).fill(false);
+  correct = 0;
+  updateScore();
+  document.getElementById('quizFinal').style.display = 'none';
+
+  questions.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = 'qcard_' + i;
+
+    const letters = ['A', 'B', 'C', 'D'];
+    const optsHTML = q.opts.map((opt, j) => `
+      <button class="q-option" data-qi="${i}" data-oi="${j}">
+        <span class="q-letter">${letters[j]}</span>
+        <span>${opt}</span>
+      </button>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-num mono">QUESTION ${i + 1} OF ${questions.length}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="q-options">${optsHTML}</div>
+      <div class="q-explanation" id="exp_${i}">💡 ${q.exp}</div>
+    `;
+    container.appendChild(card);
+  });
+
+  document.querySelectorAll('.q-option').forEach(btn => {
+    btn.addEventListener('click', handleAnswer);
+  });
+}
+
+function handleAnswer(e) {
+  const btn = e.currentTarget;
+  const qi = parseInt(btn.dataset.qi);
+  const oi = parseInt(btn.dataset.oi);
+  if (answered[qi]) return;
+  answered[qi] = true;
+
+  const card = document.getElementById('qcard_' + qi);
+  const options = card.querySelectorAll('.q-option');
+  options.forEach(b => b.disabled = true);
+
+  if (oi === questions[qi].ans) {
+    btn.classList.add('correct-ans');
+    card.classList.add('correct');
+    correct++;
+  } else {
+    btn.classList.add('wrong-ans');
+    card.classList.add('incorrect');
+    options[questions[qi].ans].classList.add('correct-ans');
+  }
+
+  document.getElementById('exp_' + qi).classList.add('visible');
+  updateScore();
+
+  if (answered.every(Boolean)) {
+    setTimeout(showFinal, 800);
+  }
+}
+
+function updateScore() {
+  const answeredCount = answered.filter(Boolean).length;
+  document.getElementById('scoreDisplay').textContent = `${correct}/${answeredCount}`;
+  const pct = answeredCount > 0 ? (answered.filter(Boolean).length / questions.length) * 100 : 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+function showFinal() {
+  const pct = Math.round((correct / questions.length) * 100);
+  document.getElementById('finalScore').textContent = pct + '%';
+  const passed = pct >= 70;
+  document.getElementById('finalMsg').textContent = `You got ${correct} out of ${questions.length} correct.`;
+  document.getElementById('passFailMsg').innerHTML = passed
+    ? `<span class="pass-msg">✅ That's a PASS on this practice quiz. Get some sleep — you're ready.</span>`
+    : `<span class="fail-msg">📖 Below 70%. Review the Study Guide sections you missed and retry.</span>`;
+  document.getElementById('quizFinal').style.display = 'block';
+  document.getElementById('quizFinal').scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetQuiz() {
+  document.getElementById('quizFinal').style.display = 'none';
+  buildQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ══════════════════════════════════════
+// FLASHCARDS
+// ══════════════════════════════════════
+const allCards = [
+  // CORE
+  { cat: 'Core Law', term: 'FIFRA', def: 'Federal Insecticide, Fungicide, and Rodenticide Act. Primary federal pesticide law, administered by the EPA. Requires all pesticides to be registered before sale and use in the US.' },
+  { cat: 'Core Law', term: 'Signal Word: DANGER', def: 'Category I toxicity — most toxic. LD50 below 50 mg/kg. May display skull & crossbones (☠). A few drops can be lethal.' },
+  { cat: 'Core Law', term: 'Signal Word: WARNING', def: 'Category II toxicity — moderately toxic. LD50 between 50–500 mg/kg. A teaspoon to tablespoon amount may be lethal.' },
+  { cat: 'Core Law', term: 'Signal Word: CAUTION', def: 'Category III or IV toxicity — slightly to relatively non-toxic. LD50 above 500 mg/kg. Most pesticides used in landscaping carry this signal word.' },
+  { cat: 'Core Law', term: 'LD50', def: 'Lethal Dose 50. The dose of a chemical that kills 50% of a test population. Expressed in mg/kg body weight. LOWER LD50 = MORE toxic.' },
+  { cat: 'Core Law', term: 'Restricted Use Pesticide (RUP)', def: 'Pesticides that can only be purchased and applied by certified applicators. Labeled "RESTRICTED USE PESTICIDE" prominently at the top of the label.' },
+  { cat: 'Core Safety', term: 'Most Common Exposure Route', def: 'DERMAL (skin contact). Most applicator pesticide exposure happens through the skin, often unnoticed. Chemical-resistant gloves are the most critical PPE.' },
+  { cat: 'Core Safety', term: 'Poison Control Number', def: '1-800-222-1222. The National Poison Control Center — available 24/7. Memorize this. Always bring the pesticide label to the emergency room.' },
+  { cat: 'Core Safety', term: 'SLUDGE (Organophosphate Symptoms)', def: 'Salivation · Lacrimation (tears) · Urination · Defecation · GI distress · Emesis (vomiting). Caused by cholinesterase inhibition from organophosphate or carbamate exposure.' },
+  { cat: 'Core Safety', term: 'REI — Restricted Entry Interval', def: 'The time after a pesticide application during which workers must stay out of the treated area (without required PPE). Listed on every pesticide label. Minimum 4 hours for most products.' },
+  { cat: 'Core IPM', term: 'Economic Injury Level (EIL)', def: 'The pest population level at which the cost of control equals the economic damage caused by the pest. Never let pest populations exceed the EIL.' },
+  { cat: 'Core IPM', term: 'Economic Threshold (ET)', def: 'The pest population level at which you should TAKE ACTION to prevent reaching the EIL. Always lower than the EIL. Also called Action Threshold.' },
+  { cat: 'Core IPM', term: 'IPM Control Hierarchy', def: '1. Identify the pest · 2. Monitor · 3. Set action threshold · 4. Prevent · 5. Control (biological → cultural → mechanical → chemical LAST) · 6. Evaluate.' },
+  { cat: 'Core Math', term: 'GPA Formula', def: 'GPA = (GPM × 5,940) ÷ (MPH × nozzle spacing in inches). Gallons Per Acre = nozzle output × constants ÷ (speed × spacing). Critical calibration formula.' },
+  { cat: 'Core Math', term: '1 Acre', def: '43,560 square feet. Used in calibration calculations and product rate conversions. Know this number cold.' },
+  // 7B
+  { cat: '7B Turf', term: 'Bermudagrass', def: 'Most common warm-season grass in Charlotte/Piedmont NC. Spreads by stolons AND rhizomes. Aggressive. Goes dormant (brown) in winter. Highly drought tolerant in summer.' },
+  { cat: '7B Turf', term: 'Tall Fescue', def: 'Most common cool-season grass in NC. Bunch-type (no stolons/rhizomes). Deep roots; drought tolerant for a cool-season grass. Struggles in Charlotte\'s hottest summers.' },
+  { cat: '7B Turf', term: 'Centipedegrass', def: 'Low-maintenance warm-season grass. Light green, medium texture. Spreads by stolons only. Low nitrogen needs — over-fertilizing causes decline ("centipede decline").' },
+  { cat: '7B Insects', term: 'White Grubs', def: 'C-shaped larvae of Japanese beetles, masked chafers, May/June beetles. Feed on grass roots below soil. Turf lifts like carpet when roots are severed. Control in late summer when young grubs are near surface.' },
+  { cat: '7B Insects', term: 'Mole Crickets', def: 'Subterranean insects that tunnel through soil, severing grass roots. Cause mounds of loose soil. Soapy water flush reveals them if present. Target bermuda and bahia grass.' },
+  { cat: '7B Insects', term: 'Chinch Bugs', def: 'Piercing-sucking insects. Cause yellowing patches in hot, dry, sunny areas. Primarily a pest of St. Augustinegrass. Detect with flotation method (cylinder of water — bugs float up).' },
+  { cat: '7B Insects', term: 'Sod Webworm', def: 'Caterpillars of small night-flying moths. Chew grass blades near soil surface. Irregular brown patches; birds pecking at turf is a sign. Detect with soap flush.' },
+  { cat: '7B Insects', term: 'Spider Mites', def: 'NOT insects — they are ARACHNIDS (8 legs). Cause stippled, bronze foliage and fine webbing. Worse in hot, dry conditions. Use miticide/acaricide — standard insecticides make them worse.' },
+  { cat: '7B Disease', term: 'Brown Patch (Rhizoctonia)', def: 'Most common NC turfgrass disease. Circular brown patches with "smoke ring" border. Caused by Rhizoctonia solani. Triggered by hot, humid nights (>70°F). Reduce nitrogen, improve air circulation.' },
+  { cat: '7B Disease', term: 'Dollar Spot (Sclerotinia)', def: 'Silver-dollar sized bleached spots in turf. White mycelium visible in morning dew. Indicates LOW nitrogen. Caused by Sclerotinia homoeocarpa. Improve fertility; fungicide (propiconazole) if severe.' },
+  { cat: '7B Disease', term: 'Pythium Blight', def: 'Greasy, water-soaked patches that collapse rapidly. White cottony mycelium. Pythium is an OOMYCETE (water mold), NOT a true fungus. Requires oomycete-active fungicides (mefenoxam/Subdue MAXX). Triggered by hot, wet conditions.' },
+  { cat: '7B Disease', term: 'FRAC Groups', def: 'Fungicide Resistance Action Committee codes. Classify fungicides by mode of action. Rotate FRAC groups to prevent resistance. FRAC 3 (DMI), FRAC 7 (SDHI), FRAC 11 (QoI/strobilurins). Never use same group consecutively.' },
+  { cat: '7B Weeds', term: 'Pre-emergent Herbicide', def: 'Applied BEFORE weed seed germination. Creates a barrier in soil preventing seedling establishment. Examples: pendimethalin, prodiamine, dithiopyr. Apply before soil temps reach 55°F for crabgrass control.' },
+  { cat: '7B Weeds', term: 'Nutsedge', def: 'A SEDGE, not a grass or broadleaf. Triangular stems ("sedges have edges"). Yellow and purple nutsedge are perennial. Spreads by underground tubers. Requires sedge-specific herbicides: halosulfuron, sulfentrazone, imazosulfuron.' },
+  { cat: '7B Weeds', term: 'Selective vs. Non-selective Herbicide', def: 'Selective: kills specific plant types (e.g., 2,4-D kills broadleaf, not grass). Non-selective: kills all plants contacted (e.g., glyphosate/Roundup). Choose based on what you want to kill WITHOUT damaging.' },
+  { cat: '7B Mosquito', term: 'BTi (Bacillus thuringiensis israelensis)', def: 'Biological larvicide (Mosquito Dunks). Produces proteins toxic to mosquito larvae when ingested. Kills mosquito and black fly larvae ONLY — completely safe for fish, birds, bees, pets, humans. 30-day residual in standing water.' },
+  { cat: '7B Mosquito', term: 'Pyrethrins', def: 'Natural insecticides from chrysanthemum flowers. Fast knockdown of mosquitoes. Breaks down quickly in UV light (short residual). Relatively low mammalian toxicity. CAUTION signal word. Used in ULV fogging (Riptide).' },
+  { cat: '7B Mosquito', term: 'Mosquito Life Cycle', def: 'Complete metamorphosis: Egg → Larva (aquatic) → Pupa (aquatic) → Adult. Larvae and pupae require standing water. Only females bite. Source reduction (eliminate standing water) is the most effective long-term control.' },
+];
+
+const categories = ['All', ...new Set(allCards.map(c => c.cat))];
+let filteredCards = [...allCards];
+let fcIndex = 0;
+
+function buildFC() {
+  // Category nav
+  const nav = document.getElementById('fcCatNav');
+  nav.innerHTML = '';
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'fc-cat-btn' + (cat === 'All' ? ' active' : '');
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fc-cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filteredCards = cat === 'All' ? [...allCards] : allCards.filter(c => c.cat === cat);
+      fcIndex = 0;
+      renderFC();
+    });
+    nav.appendChild(btn);
+  });
+
+  document.getElementById('fcTotal').textContent = allCards.length;
+  renderFC();
+
+  document.getElementById('fcCard').addEventListener('click', () => {
+    document.getElementById('fcCard').classList.toggle('flipped');
+  });
+}
+
+function renderFC() {
+  const card = filteredCards[fcIndex];
+  document.getElementById('fcTerm').textContent = card.term;
+  document.getElementById('fcDef').textContent = card.def;
+  document.getElementById('fcCard').classList.remove('flipped');
+  document.getElementById('fcCurrent').textContent = fcIndex + 1;
+  document.getElementById('fcTotal').textContent = filteredCards.length;
+  document.getElementById('fcCounter').textContent = `${fcIndex + 1} / ${filteredCards.length}`;
+}
+
+function fcNav(dir) {
+  fcIndex = (fcIndex + dir + filteredCards.length) % filteredCards.length;
+  renderFC();
+}
+
+// ══════════════════════════════════════
+// REGISTER SUB-TABS
+// ══════════════════════════════════════
+document.querySelectorAll('.reg-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.reg-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.reg-tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.regtab).classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+buildQuiz();
+buildFC();
+</script>
+</body>
+</html>
