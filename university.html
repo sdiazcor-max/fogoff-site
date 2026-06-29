@@ -1336,8 +1336,18 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.tab).classList.add('active');
+    localStorage.setItem('foguni_tab', btn.dataset.tab);
   });
 });
+
+// Restore last tab
+const savedTab = localStorage.getItem('foguni_tab');
+if (savedTab && document.getElementById(savedTab)) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[data-tab="${savedTab}"]`).classList.add('active');
+  document.getElementById(savedTab).classList.add('active');
+}
 
 // ══════════════════════════════════════
 // ACCORDION
@@ -1390,12 +1400,30 @@ const questions = [
 
 let answered = [];
 let correct = 0;
+let selections = {}; // qi → oi chosen
 
-function buildQuiz() {
+const QUIZ_KEY = 'foguni_quiz';
+
+function saveQuizState() {
+  localStorage.setItem(QUIZ_KEY, JSON.stringify({ answered, correct, selections }));
+}
+
+function loadQuizState() {
+  try {
+    const raw = localStorage.getItem(QUIZ_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+
+function buildQuiz(restoreState) {
   const container = document.getElementById('questionsList');
   container.innerHTML = '';
-  answered = new Array(questions.length).fill(false);
-  correct = 0;
+  const saved = restoreState !== false ? loadQuizState() : null;
+
+  answered = saved ? saved.answered : new Array(questions.length).fill(false);
+  correct  = saved ? saved.correct  : 0;
+  selections = saved ? saved.selections : {};
+
   updateScore();
   document.getElementById('quizFinal').style.display = 'none';
 
@@ -1419,11 +1447,32 @@ function buildQuiz() {
       <div class="q-explanation" id="exp_${i}">💡 ${q.exp}</div>
     `;
     container.appendChild(card);
+
+    // Restore answered state visually
+    if (answered[i] && selections[i] !== undefined) {
+      const options = card.querySelectorAll('.q-option');
+      options.forEach(b => b.disabled = true);
+      const chosen = selections[i];
+      if (chosen === q.ans) {
+        options[chosen].classList.add('correct-ans');
+        card.classList.add('correct');
+      } else {
+        options[chosen].classList.add('wrong-ans');
+        card.classList.add('incorrect');
+        options[q.ans].classList.add('correct-ans');
+      }
+      document.getElementById('exp_' + i).classList.add('visible');
+    }
   });
 
   document.querySelectorAll('.q-option').forEach(btn => {
     btn.addEventListener('click', handleAnswer);
   });
+
+  // If all answered on restore, show final
+  if (answered.every(Boolean)) {
+    setTimeout(showFinal, 300);
+  }
 }
 
 function handleAnswer(e) {
@@ -1432,6 +1481,7 @@ function handleAnswer(e) {
   const oi = parseInt(btn.dataset.oi);
   if (answered[qi]) return;
   answered[qi] = true;
+  selections[qi] = oi;
 
   const card = document.getElementById('qcard_' + qi);
   const options = card.querySelectorAll('.q-option');
@@ -1449,6 +1499,7 @@ function handleAnswer(e) {
 
   document.getElementById('exp_' + qi).classList.add('visible');
   updateScore();
+  saveQuizState();
 
   if (answered.every(Boolean)) {
     setTimeout(showFinal, 800);
@@ -1458,7 +1509,7 @@ function handleAnswer(e) {
 function updateScore() {
   const answeredCount = answered.filter(Boolean).length;
   document.getElementById('scoreDisplay').textContent = `${correct}/${answeredCount}`;
-  const pct = answeredCount > 0 ? (answered.filter(Boolean).length / questions.length) * 100 : 0;
+  const pct = answeredCount > 0 ? (answeredCount / questions.length) * 100 : 0;
   document.getElementById('progressBar').style.width = pct + '%';
 }
 
@@ -1475,14 +1526,30 @@ function showFinal() {
 }
 
 function resetQuiz() {
+  localStorage.removeItem(QUIZ_KEY);
+  selections = {};
   document.getElementById('quizFinal').style.display = 'none';
-  buildQuiz();
+  buildQuiz(false);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ══════════════════════════════════════
 // FLASHCARDS
 // ══════════════════════════════════════
+const FC_KEY = 'foguni_fc';
+
+function saveFCState() {
+  const activeCat = document.querySelector('.fc-cat-btn.active')?.textContent || 'All';
+  localStorage.setItem(FC_KEY, JSON.stringify({ index: fcIndex, category: activeCat }));
+}
+
+function loadFCState() {
+  try {
+    const raw = localStorage.getItem(FC_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+
 const allCards = [
   // CORE
   { cat: 'Core Law', term: 'FIFRA', def: 'Federal Insecticide, Fungicide, and Rodenticide Act. Primary federal pesticide law, administered by the EPA. Requires all pesticides to be registered before sale and use in the US.' },
@@ -1526,12 +1593,15 @@ let filteredCards = [...allCards];
 let fcIndex = 0;
 
 function buildFC() {
+  const saved = loadFCState();
+  const savedCat = saved?.category || 'All';
+
   // Category nav
   const nav = document.getElementById('fcCatNav');
   nav.innerHTML = '';
   categories.forEach(cat => {
     const btn = document.createElement('button');
-    btn.className = 'fc-cat-btn' + (cat === 'All' ? ' active' : '');
+    btn.className = 'fc-cat-btn' + (cat === savedCat ? ' active' : '');
     btn.textContent = cat;
     btn.addEventListener('click', () => {
       document.querySelectorAll('.fc-cat-btn').forEach(b => b.classList.remove('active'));
@@ -1539,11 +1609,17 @@ function buildFC() {
       filteredCards = cat === 'All' ? [...allCards] : allCards.filter(c => c.cat === cat);
       fcIndex = 0;
       renderFC();
+      saveFCState();
     });
     nav.appendChild(btn);
   });
 
-  document.getElementById('fcTotal').textContent = allCards.length;
+  // Restore category filter
+  filteredCards = savedCat === 'All' ? [...allCards] : allCards.filter(c => c.cat === savedCat);
+  // Restore index (clamp to valid range)
+  fcIndex = saved ? Math.min(saved.index, filteredCards.length - 1) : 0;
+
+  document.getElementById('fcTotal').textContent = filteredCards.length;
   renderFC();
 
   document.getElementById('fcCard').addEventListener('click', () => {
@@ -1564,6 +1640,7 @@ function renderFC() {
 function fcNav(dir) {
   fcIndex = (fcIndex + dir + filteredCards.length) % filteredCards.length;
   renderFC();
+  saveFCState();
 }
 
 // ══════════════════════════════════════
